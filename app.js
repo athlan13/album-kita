@@ -133,6 +133,9 @@ function render(fit) {
   acts.append(el('a', { className: 'btn', href: url, target: '_blank', rel: 'noopener' }, 'Buka di Google Maps'));
   const cp = el('button', {}, 'Salin link lokasi'); cp.onclick = () => copyLink(url); acts.append(cp);
   if (admin) {
+    const add = el('button', { className: 'primary' }, '+ Tambah foto ke album ini'); add.onclick = () => addPhotosToAlbum(cur); acts.append(add);
+    const pend = drafts.filter(d => d.place === cur.place).length;
+    if (pend) { const sv = el('button', { className: 'primary' }, 'Simpan ' + pend + ' foto baru ke situs'); sv.onclick = () => $('saveBtn').click(); acts.append(sv); }
     const rn = el('button', {}, 'Ubah nama album'); rn.onclick = () => renameAlbum(cur); acts.append(rn);
     const ed = el('button', {}, 'Ubah lokasi'); ed.onclick = () => editLocation(cur); acts.append(ed);
     const b = el('button', { className: 'danger' }, 'Hapus album ini'); b.onclick = () => removeAlbum(cur.place); acts.append(b);
@@ -208,6 +211,29 @@ $('addBtn').onclick = async () => {
   $('hint').textContent = HINT;
   render(false);
 };
+
+function addPhotosToAlbum(cur) {
+  const inp = el('input', { type: 'file', accept: 'image/*', multiple: true });
+  inp.onchange = async () => {
+    const files = [...inp.files];
+    if (!files.length) return;
+    const last = cur.items.map(i => i.date).filter(Boolean).sort().pop() || '';
+    const d = prompt('Tanggal foto (format 2026-10-25). Kosongkan jika tidak tahu:', last);
+    if (d === null) return;
+    const date = /^\d{4}-\d{2}-\d{2}$/.test(d.trim()) ? d.trim() : '';
+    toast('Memproses ' + files.length + ' foto…');
+    try {
+      for (const f of files) {
+        const blob = await shrink(f);
+        drafts.push({ blob, name: 'foto-' + Date.now() + '-' + Math.random().toString(36).slice(2, 6) + '.jpg', place: cur.place, lat: cur.lat, lng: cur.lng,
+          address: cur.address || '', caption: '', date, preview: URL.createObjectURL(blob) });
+      }
+      toast(files.length + ' foto ditambahkan. Klik "Simpan foto baru ke situs" untuk menyimpan.');
+    } catch (e) { toast('Gagal memproses foto: ' + e.message); }
+    render(false);
+  };
+  inp.click();
+}
 
 async function renameAlbum(cur) {
   if (busy) return;
