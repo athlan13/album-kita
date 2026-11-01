@@ -399,3 +399,42 @@ $('allBtn').onclick = () => { filter = null; render(true); };
 $('lb').onclick = () => $('lb').close();
 render(true);
 try { const t = localStorage.getItem('gh_token'); if (t) tryLogin(t, true); } catch (_) {}
+
+// ---------- Musik latar (tetap berputar saat login atau pindah album) ----------
+// Taruh file lagu di repo dengan nama di bawah ini (satu folder dengan index.html).
+const MUSIC_SRC = 'lagu.mp3';
+const MUSIC_TITLE = 'Our Little Story';
+(function () {
+  const a = $('bgm'), btn = $('musicBtn'), box = $('player'), vol = $('vol');
+  if (!a) return;
+  const ls = { get: k => { try { return localStorage.getItem(k); } catch (_) { return null; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch (_) {} } };
+  $('musicTitle').textContent = MUSIC_TITLE;
+  a.volume = ls.get('bgm_vol') !== null ? +ls.get('bgm_vol') : .5;
+  vol.value = a.volume;
+  const setBtn = () => { btn.innerHTML = a.paused ? '&#9654;' : '&#10074;&#10074;'; btn.setAttribute('aria-label', a.paused ? 'Putar musik' : 'Jeda musik'); };
+  a.addEventListener('play', setBtn); a.addEventListener('pause', setBtn);
+  a.addEventListener('error', () => { box.hidden = true; });
+  // Browser memblokir suara otomatis: kalau gagal, lagu mulai pada klik/ketukan pertama di mana saja.
+  function arm() {
+    const evs = ['pointerdown', 'keydown'];
+    const go = e => {
+      if (e.target && e.target.closest && e.target.closest('#player')) return;
+      evs.forEach(x => document.removeEventListener(x, go));
+      if (ls.get('bgm_off') !== '1') a.play().catch(() => {});
+    };
+    evs.forEach(x => document.addEventListener(x, go));
+  }
+  a.addEventListener('loadedmetadata', () => {
+    box.hidden = false;
+    const p = +ls.get('bgm_pos');
+    if (p > 0 && p < a.duration) a.currentTime = p;
+    if (ls.get('bgm_off') !== '1') a.play().catch(arm);
+  });
+  btn.onclick = () => {
+    if (a.paused) { ls.set('bgm_off', '0'); a.play().catch(() => {}); }
+    else { ls.set('bgm_off', '1'); a.pause(); }
+  };
+  vol.oninput = () => { a.volume = +vol.value; ls.set('bgm_vol', vol.value); };
+  setInterval(() => { if (!a.paused) ls.set('bgm_pos', Math.floor(a.currentTime)); }, 3000);
+  a.src = MUSIC_SRC;
+})();
