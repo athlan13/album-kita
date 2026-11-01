@@ -1,5 +1,21 @@
 const PHOTOS = [
   {
+    "src": "photos/foto-1793511958632-oswa.jpg",
+    "place": "Central Park",
+    "lat": -6.17584,
+    "lng": 106.77306,
+    "caption": "",
+    "date": "2026-07-04"
+  },
+  {
+    "src": "photos/foto-1793511958973-tqm1.jpg",
+    "place": "Central Park",
+    "lat": -6.17584,
+    "lng": 106.77306,
+    "caption": "",
+    "date": "2026-07-04"
+  },
+  {
     "src": "photos/foto-1793510684514-qsju.jpg",
     "place": "The Great Asia Afrika",
     "lat": -6.80208,
