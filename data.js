@@ -1,5 +1,14 @@
 const PHOTOS = [
   {
+    "src": "photos/foto-1793533531551-js01.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
     "src": "photos/foto-1793532054701-0fkp.jpg",
     "place": "The Great Asia Africa",
     "lat": -6.8326,
