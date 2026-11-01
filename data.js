@@ -4,7 +4,7 @@ const PHOTOS = [
     "place": "Memori Lane - Blok M",
     "lat": -6.24454,
     "lng": 106.80069,
-    "address": "",
+    "address": "Bl. M Square, Jl. Melawai 5 GF DKS 229, RT.3/RW.1, Melawai, Kebayoran Baru, South Jakarta City, Jakarta 12130",
     "caption": "",
     "date": "2026-08-08"
   },
