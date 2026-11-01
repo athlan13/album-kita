@@ -15,7 +15,7 @@ function toast(t) { const m = $('msg'); m.textContent = t; m.style.display = 'bl
 // ---------- API GitHub ----------
 async function gh(path, opt = {}) {
   const r = await fetch('https://api.github.com/repos/' + GH_OWNER + '/' + GH_REPO + path, {
-    ...opt,
+    ...opt, cache: 'no-store',
     headers: { Authorization: 'Bearer ' + token, Accept: 'application/vnd.github+json', ...(opt.body ? { 'Content-Type': 'application/json' } : {}) }
   });
   if (!r.ok) throw new Error(((await r.json().catch(() => ({}))).message) || ('Kode ' + r.status));
@@ -24,13 +24,25 @@ async function gh(path, opt = {}) {
 const blobB64 = b => new Promise(res => { const f = new FileReader(); f.onload = () => res(f.result.split(',')[1]); f.readAsDataURL(b); });
 const textB64 = s => { let bin = ''; new TextEncoder().encode(s).forEach(c => bin += String.fromCharCode(c)); return btoa(bin); };
 async function readRemote() {
-  const f = await gh('/contents/data.js?ref=' + GH_BRANCH);
+  const f = await gh('/contents/data.js?ref=' + GH_BRANCH + '&_=' + Date.now());
   const txt = new TextDecoder().decode(Uint8Array.from(atob(f.content.replace(/\n/g, '')), c => c.charCodeAt(0)));
   const i = txt.indexOf('[', txt.indexOf('const PHOTOS'));
   return { list: JSON.parse(txt.slice(i, txt.lastIndexOf(']') + 1)), sha: f.sha };
 }
 const writeData = (list, sha, message) => gh('/contents/data.js', { method: 'PUT', body: JSON.stringify({
   message, sha, branch: GH_BRANCH, content: textB64('const PHOTOS = ' + JSON.stringify(list, null, 2) + ';\n') }) });
+
+// Baca data.js terbaru, ubah, lalu simpan. Kalau bentrok versi, baca ulang dan coba lagi.
+async function updateData(mutate, message) {
+  for (let i = 0; ; i++) {
+    const r = await readRemote();
+    try { return await writeData(mutate(r.list), r.sha, message); }
+    catch (e) {
+      if (i < 3 && /does not match|conflict|sha/i.test(e.message)) { await new Promise(t => setTimeout(t, 1200 * (i + 1))); continue; }
+      throw e;
+    }
+  }
+}
 
 // ---------- Peta ----------
 const map = L.map('map').setView([-2.5, 118], 4);
@@ -207,9 +219,7 @@ async function editLocation(cur) {
   const apply = x => { if (ll) { x.lat = +ll.lat.toFixed(5); x.lng = +ll.lng.toFixed(5); } if (a !== null) x.address = a.trim(); };
   busy = true;
   try {
-    const r = await readRemote();
-    r.list.forEach(x => { if (x.place === cur.place) apply(x); });
-    await writeData(r.list, r.sha, 'Ubah lokasi: ' + cur.place);
+    await updateData(list => { list.forEach(x => { if (x.place === cur.place) apply(x); }); return list; }, 'Ubah lokasi: ' + cur.place);
     PHOTOS.forEach(x => { if (x.place === cur.place) apply(x); });
     drafts.forEach(x => { if (x.place === cur.place) apply(x); });
     toast('Lokasi album diperbarui.');
@@ -230,8 +240,7 @@ $('saveBtn').onclick = async () => {
       await gh('/contents/photos/' + d.name, { method: 'PUT', body: JSON.stringify({ message: 'Tambah foto: ' + d.place, branch: GH_BRANCH, content: await blobB64(d.blob) }) });
       entries.push({ src: 'photos/' + d.name, place: d.place, lat: d.lat, lng: d.lng, address: d.address, caption: d.caption, date: d.date });
     }
-    const r = await readRemote();
-    await writeData([...entries, ...r.list], r.sha, 'Perbarui daftar foto');
+    await updateData(list => [...entries, ...list.filter(x => !entries.some(e => e.src === x.src))], 'Perbarui daftar foto');
     entries.forEach((e, i) => PHOTOS.unshift({ ...e, path: e.src, src: drafts[i].preview }));
     drafts = [];
     toast('Tersimpan! Situs publik diperbarui dalam ±1 menit.');
@@ -244,11 +253,13 @@ async function removeSaved(p) {
   busy = true;
   try {
     const path = p.path || p.src;
-    const f = await gh('/contents/' + path + '?ref=' + GH_BRANCH);
-    await gh('/contents/' + path, { method: 'DELETE', body: JSON.stringify({ message: 'Hapus foto', sha: f.sha, branch: GH_BRANCH }) });
-    const r = await readRemote();
-    await writeData(r.list.filter(x => x.src !== path), r.sha, 'Perbarui daftar foto');
-    PHOTOS.splice(PHOTOS.findIndex(x => (x.path || x.src) === path), 1);
+    try { // kalau file sudah tidak ada di repo (sisa hapus yang gagal), lanjut bersihkan daftarnya
+      const f = await gh('/contents/' + path + '?ref=' + GH_BRANCH);
+      await gh('/contents/' + path, { method: 'DELETE', body: JSON.stringify({ message: 'Hapus foto', sha: f.sha, branch: GH_BRANCH }) });
+    } catch (e) { if (!/not found/i.test(e.message)) throw e; }
+    await updateData(list => list.filter(x => x.src !== path), 'Perbarui daftar foto');
+    const i = PHOTOS.findIndex(x => (x.path || x.src) === path);
+    if (i >= 0) PHOTOS.splice(i, 1);
     toast('Foto dihapus.');
   } catch (e) { toast('Gagal menghapus: ' + e.message); }
   busy = false; render(false);
@@ -270,7 +281,7 @@ async function removeAlbum(place) {
         await gh('/contents/' + targets[i].src, { method: 'DELETE', body: JSON.stringify({ message: 'Hapus album: ' + place, sha: f.sha, branch: GH_BRANCH }) });
       } catch (e) { if (!/not found/i.test(e.message)) throw e; } // file sudah tidak ada: lanjut
     }
-    await writeData(r.list.filter(x => x.place !== place), r.sha, 'Hapus album: ' + place);
+    await updateData(list => list.filter(x => x.place !== place), 'Hapus album: ' + place);
     for (let i = PHOTOS.length - 1; i >= 0; i--) if (PHOTOS[i].place === place) PHOTOS.splice(i, 1);
     filter = null;
     toast('Album dihapus.');
