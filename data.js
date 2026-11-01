@@ -1,5 +1,14 @@
 const PHOTOS = [
   {
+    "src": "photos/foto-1793530872592-d853.jpg",
+    "place": "The Great Asia Africa",
+    "lat": -6.8326,
+    "lng": 107.60476,
+    "address": "Jl. Raya Lembang - Bandung No.71, Gudangkahuripan, Kec. Lembang, Kabupaten Bandung Barat, Jawa Barat 40391",
+    "caption": "The Great Asia Africa - Bandung",
+    "date": "2026-10-25"
+  },
+  {
     "src": "photos/foto-1793530391631-0yis.jpg",
     "place": "M BLoce Space",
     "lat": -6.23576,
