@@ -1,5 +1,2543 @@
 const PHOTOS = [
   {
+    "src": "photos/foto-1793533847561-xv3y.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533848812-5s27.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533849999-sdz5.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533851244-e8xt.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533852118-9pde.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533852858-g3zy.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533853536-vh14.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533854381-98dr.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533855013-ntmh.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533855714-d0j0.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533856424-kf39.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533857130-00nb.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533857746-j7y3.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533858394-2qx2.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533859185-6u7n.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533860113-1q9r.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533860145-96bt.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533861173-p1qi.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533861217-19zi.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533862056-bumi.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533862092-gnh7.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533863298-js69.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533863334-83ab.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533864370-4x06.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533864418-ofj1.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533865307-syud.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533865349-xzse.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533866120-pjza.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533866159-1iyw.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533867458-1jmn.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533867498-wwa1.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533868471-9kkh.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533868510-posz.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533869540-cyev.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533869585-i2sh.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533870553-7xec.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533870596-welu.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533871558-xovu.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533871596-06eo.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533872444-pnrz.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533872488-itzt.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533873220-mfib.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533873271-oqak.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533874010-gsd9.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533874048-0hlj.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533874985-z2x6.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533875017-obze.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533875743-erkd.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533875772-ikv2.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533876805-g14r.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533876836-96dl.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533877598-56iu.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533877638-rc8b.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533878377-4yi7.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533878416-95et.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533879290-wv4f.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533879331-uldo.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533880191-euq3.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533880227-wyzy.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533880989-egxq.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533881019-41b3.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533882093-rz63.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533882123-s4y7.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533882993-vv9h.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533883035-iott.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533883958-fi3p.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533883997-d5lx.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533884926-j3e9.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533884968-igad.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533885853-s8uw.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533885891-qcff.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533886737-u1s6.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533886778-j048.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533888083-fml5.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533888103-8x7v.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533889152-57dm.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533889197-ckpp.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533890115-i736.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533890161-504q.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533891512-0y4v.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533891557-v53q.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533892498-zdnm.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533892548-ru9m.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533893392-zl3q.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533893432-x4uh.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533894391-txyi.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533894433-uurk.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533895534-9qlt.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533895561-0csn.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533896469-39hn.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533896510-z88k.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533897337-fuwq.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533897372-q1nq.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533898238-4ill.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533898285-9xst.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533899167-7ekd.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533899213-gawn.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533900125-ldyk.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533900164-2j6l.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533901210-cfh2.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533901366-upsh.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533902336-nfi6.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533902381-te2s.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533903356-ixiy.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533903400-r6i0.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533904331-mgzr.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533904378-h71k.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533905290-5c2p.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533905329-yzoi.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533906400-23dq.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533906439-t7t1.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533907381-mtf6.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533907414-fcca.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533908992-0rpl.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533909022-u0rs.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533909783-r3il.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533909811-krvh.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533910543-shtt.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533910576-19qi.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533911296-yvd5.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533911326-f1v0.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533912099-7o5g.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533912143-56zt.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533912929-2em8.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533912960-omr4.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533913730-brmr.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533913758-jqz5.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533914746-usar.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533914784-8q4v.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533915521-953h.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533915556-8y19.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533916320-ghq8.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533916358-f3au.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533917175-kl1g.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533917208-g138.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533917993-364c.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533918032-6wj4.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533918972-gs0m.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533919009-kdvs.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533920057-5oro.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533920207-4w5y.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533921123-60ox.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533921164-iyy0.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533922131-revy.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533922170-jntk.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533923066-ne2s.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533923117-0i7y.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533924001-dj4q.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533924038-xvmn.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533924829-8ld8.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533924872-x0d1.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533925843-h69r.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533925888-2tfc.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533927087-9g3i.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533927116-c5fm.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533928130-och0.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533928172-o4r0.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533929041-yh43.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533929082-6uw9.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533929992-syd6.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533930028-hii7.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533930892-xyzx.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533930927-6mhm.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533931834-0ee7.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533931874-ctxn.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533932807-ptp0.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533932838-s79a.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533933862-r8b1.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533933900-0sed.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533934758-twoc.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533934793-2r5x.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533935772-imxf.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533935795-gmf1.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533936620-s2uz.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533936648-14n7.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533937392-ho8t.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533937431-8wri.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533938308-vfv6.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533938351-ju71.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533939480-1r3a.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533939516-ahp8.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533940320-dw9u.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533940365-54az.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533941222-uoav.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533941275-nwu0.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533942176-8hhd.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533942221-t4sy.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533943106-5va5.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533943138-idrd.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533943944-8zx5.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533943971-9snz.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533944715-g77g.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533944753-y96s.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533945780-jr0k.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533945795-kjwv.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533946529-ew0c.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533946561-14jh.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533947324-rdsk.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533947355-q8ap.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533948152-8obk.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533948183-sec3.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533948932-vmrz.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533948962-6qtf.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533949745-4f2o.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533949777-eexm.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533950555-pi3q.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533950586-nqrd.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533951506-mg1c.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533951548-ew2h.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533952406-udev.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533952447-dxwl.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533953339-j3mq.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533953386-gnz2.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533954266-4mp6.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533954311-xbnt.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533955211-fb3l.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533955250-kwx6.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533956136-8gro.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533956188-agrn.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533957254-z198.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533957285-vne6.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533958283-8ofn.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533958329-hmzq.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533959171-l6l5.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533959208-0a8u.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533960026-l3ab.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533960063-969t.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533960902-jx06.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533960937-wrbh.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533961788-9rzd.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533961830-c2bi.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533962775-ifrb.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533962820-7r4x.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533963966-tpy8.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533963997-xacc.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533964973-i149.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533964993-mj1z.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533965804-o9a5.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533965844-hmx5.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533966724-k1sy.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533966766-dxql.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533967625-phzv.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533967667-mgid.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533968510-yk4o.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533968548-8dxb.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533969353-ii62.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533969389-idwb.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533970383-m82y.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533970546-eiwt.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533971422-h88b.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533971463-ekxy.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533972357-n5li.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533972405-dmfc.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533973424-6w3m.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533973465-ir55.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533974314-yk24.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533974355-j6n8.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533975254-8eqr.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533975296-w7rc.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533976171-kb9t.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533976222-cql6.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533977033-mayw.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533977067-2wd0.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533978201-0lea.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533978228-w6oc.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533979074-36vr.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "Rancaupas (Penangkaran Rusa)",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533979405-jq53.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533980326-uih2.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533981238-9ms0.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533982257-m94w.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533983242-l8vs.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533984281-qj7m.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533985524-9tie.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533986635-fv58.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533987709-nw5w.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533988900-c5z2.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533990027-rf7o.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533991151-hl57.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533992209-eepm.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533993317-xrzx.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533994421-xnw7.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "",
+    "date": "2026-09-20"
+  },
+  {
+    "src": "photos/foto-1793533996091-0hxb.jpg",
+    "place": "Rancaupas",
+    "lat": -7.14035,
+    "lng": 107.39363,
+    "address": "V95V+VF2, Jl. Camp Ranca Upas, Patengan, Kec. Rancabali, Kabupaten Bandung, Jawa Barat 40973",
+    "caption": "",
+    "date": "2026-09-20"
+  },
+  {
     "src": "photos/foto-1793533531551-js01.jpg",
     "place": "Rancaupas",
     "lat": -7.14035,
