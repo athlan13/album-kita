@@ -1,5 +1,113 @@
 const PHOTOS = [
   {
+    "src": "photos/foto-1793528838485-e6ze.jpg",
+    "place": "Blok M",
+    "lat": -6.26206,
+    "lng": 106.81166,
+    "address": "",
+    "caption": "",
+    "date": "2026-08-08"
+  },
+  {
+    "src": "photos/foto-1793528838978-l1wo.jpg",
+    "place": "Blok M",
+    "lat": -6.26206,
+    "lng": 106.81166,
+    "address": "",
+    "caption": "",
+    "date": "2026-08-08"
+  },
+  {
+    "src": "photos/foto-1793528839442-v3yw.jpg",
+    "place": "Blok M",
+    "lat": -6.26206,
+    "lng": 106.81166,
+    "address": "",
+    "caption": "",
+    "date": "2026-08-08"
+  },
+  {
+    "src": "photos/foto-1793528839923-02zg.jpg",
+    "place": "Blok M",
+    "lat": -6.26206,
+    "lng": 106.81166,
+    "address": "",
+    "caption": "",
+    "date": "2026-08-08"
+  },
+  {
+    "src": "photos/foto-1793528840387-rcip.jpg",
+    "place": "Blok M",
+    "lat": -6.26206,
+    "lng": 106.81166,
+    "address": "",
+    "caption": "",
+    "date": "2026-08-08"
+  },
+  {
+    "src": "photos/foto-1793528840869-i1ne.jpg",
+    "place": "Blok M",
+    "lat": -6.26206,
+    "lng": 106.81166,
+    "address": "",
+    "caption": "",
+    "date": "2026-08-08"
+  },
+  {
+    "src": "photos/foto-1793528844190-qyh1.jpg",
+    "place": "Blok M",
+    "lat": -6.26206,
+    "lng": 106.81166,
+    "address": "",
+    "caption": "",
+    "date": "2026-08-08"
+  },
+  {
+    "src": "photos/foto-1793528844647-ix5h.jpg",
+    "place": "Blok M",
+    "lat": -6.26206,
+    "lng": 106.81166,
+    "address": "",
+    "caption": "",
+    "date": "2026-08-08"
+  },
+  {
+    "src": "photos/foto-1793528845142-mthc.jpg",
+    "place": "Blok M",
+    "lat": -6.26206,
+    "lng": 106.81166,
+    "address": "",
+    "caption": "",
+    "date": "2026-08-08"
+  },
+  {
+    "src": "photos/foto-1793528845587-erjs.jpg",
+    "place": "Blok M",
+    "lat": -6.26206,
+    "lng": 106.81166,
+    "address": "",
+    "caption": "",
+    "date": "2026-08-08"
+  },
+  {
+    "src": "photos/foto-1793528846028-kmct.jpg",
+    "place": "Blok M",
+    "lat": -6.26206,
+    "lng": 106.81166,
+    "address": "",
+    "caption": "",
+    "date": "2026-08-08"
+  },
+  {
+    "src": "photos/foto-1793528846497-d1uj.jpg",
+    "place": "Blok M",
+    "lat": -6.26206,
+    "lng": 106.81166,
+    "address": "",
+    "caption": "",
+    "date": "2026-08-08"
+  },
+  {
     "src": "photos/foto-1793528199697-u8pj.jpg",
     "place": "The Great Asia Africa",
     "lat": -6.8326,
