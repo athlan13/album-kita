@@ -16,14 +16,6 @@ const PHOTOS = [
     "date": "2026-07-04"
   },
   {
-    "src": "photos/foto-1793510685980-ei73.jpg",
-    "place": "The Great Asia Afrika",
-    "lat": -6.80208,
-    "lng": 107.61699,
-    "caption": "Tempat Wisata Bandung",
-    "date": "2026-10-25"
-  },
-  {
     "src": "photos/foto-1793510686949-wyys.jpg",
     "place": "The Great Asia Afrika",
     "lat": -6.80208,
