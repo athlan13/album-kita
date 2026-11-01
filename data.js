@@ -27,15 +27,6 @@ const PHOTOS = [
     "date": "2026-08-08"
   },
   {
-    "src": "photos/foto-1793528840869-i1ne.jpg",
-    "place": "Blok M",
-    "lat": -6.26206,
-    "lng": 106.81166,
-    "address": "",
-    "caption": "",
-    "date": "2026-08-08"
-  },
-  {
     "src": "photos/foto-1793528844190-qyh1.jpg",
     "place": "Blok M",
     "lat": -6.26206,
