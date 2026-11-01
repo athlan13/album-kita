@@ -46,24 +46,61 @@ dialog::backdrop{background:rgba(0,0,0,.5)}
 #lb img{max-width:96vw;max-height:88vh;display:block;margin:auto;border-radius:6px}
 #lbc{color:#fff;text-align:center;font:500 22px 'Caveat',cursive;padding:8px}
 #msg{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:8px;display:none;z-index:9999}
-@media (prefers-reduced-motion:reduce){figure{transition:none}}
+.folders{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:26px 20px;margin-top:22px}
+.folder{position:relative;padding:0;border:0;background:none;text-align:left;cursor:pointer;color:inherit;font:inherit}
+.folder .tab{position:absolute;top:-11px;left:0;width:84px;height:16px;background:var(--accent);border-radius:9px 9px 0 0}
+.folder .fbody{position:relative;background:var(--card);border:1px solid var(--line);border-radius:0 12px 12px 12px;overflow:hidden;transition:transform .15s}
+.folder:hover .fbody{transform:translateY(-3px)}
+.folder img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:#ddd}
+.ftext{padding:10px 12px 12px;display:flex;flex-direction:column}
+.ftext strong{font:600 18px 'Fraunces',serif}
+.ftext span{color:var(--mute);font-size:13px}
+.ahead{margin-top:20px}.ahead h2{font:600 30px 'Fraunces',serif;margin:0}
+.ahead .addr{margin-top:4px}
+.ahead .acts{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 16px}
+a.btn{font:inherit;font-size:14px;text-decoration:none;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:8px 14px;border-radius:8px}
+.ahead .danger{border-color:#b3261e;color:#b3261e}
+.ahead .meta{margin:2px 0 12px;color:var(--mute);font-size:14px}
+.hl{display:flex;gap:14px;align-items:flex-end}
+.menu{padding:10px;line-height:0;margin-bottom:4px}
+#scrim{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:9999}
+#scrim[hidden]{display:none}
+#drawer{position:fixed;top:0;bottom:0;left:0;width:min(340px,86vw);background:var(--card);border-right:1px solid var(--line);z-index:10000;transform:translateX(-100%);visibility:hidden;transition:transform .2s,visibility .2s;overflow-y:auto;padding:16px}
+#drawer.open{transform:none;visibility:visible}
+.dhead{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.dhead h3{font:600 20px/1.2 'Fraunces',serif;margin:0}
+.dhead button{border:0;background:none;font-size:26px;line-height:1;padding:0 6px}
+.dall{width:100%;margin:14px 0 6px}
+#dlist{list-style:none;margin:0;padding:0}
+#dlist li{border-bottom:1px solid var(--line)}
+#dlist li button{width:100%;text-align:left;background:none;border:0;border-radius:0;padding:12px 6px;display:flex;flex-direction:column;color:inherit}
+#dlist li button:hover strong,#dlist li button.on strong{color:var(--accent)}
+#dlist span{color:var(--mute);font-size:13px}
+#dlist small{color:var(--mute);font-size:12px}
+.dempty{color:var(--mute);padding:14px 6px}
+@media (prefers-reduced-motion:reduce){figure,.folder .fbody,#drawer{transition:none}}
 </style>
 </head>
 <body>
 <header>
-  <div>
+  <div class="hl">
+    <button id="menuBtn" class="menu" aria-label="Buka daftar tempat" aria-controls="drawer" aria-expanded="false"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    <div>
     <h1>Album Farhan & Eva</h1>
     <p class="sub">Foto-foto kita, dikelompokkan berdasarkan tempat.</p>
+    </div>
   </div>
   <div><button id="loginBtn">Masuk admin</button></div>
 </header>
 <main>
   <div id="admin">
     <h3>Tambah foto</h3>
-    <div id="hint">Klik peta untuk menandai lokasi foto.</div>
+    <div id="hint">Klik peta atau tempel link Google Maps untuk menandai lokasi foto.</div>
     <div class="row">
       <label>Nama tempat<input id="place" list="places" placeholder="Contoh: Pantai Kuta"></label>
       <label>Tanggal<input id="date" type="date"></label>
+      <label>Link Google Maps atau koordinat (opsional)<input id="gmap" placeholder="Tempel link dari Google Maps"></label>
+      <label>Alamat / patokan (opsional)<input id="addr" placeholder="Jl. Braga No. 1, Bandung"></label>
       <label>Keterangan (opsional)<input id="cap" placeholder="Sunset pertama kita"></label>
       <label>Foto (boleh banyak)<input id="files" type="file" accept="image/*" multiple></label>
     </div>
@@ -74,15 +111,23 @@ dialog::backdrop{background:rgba(0,0,0,.5)}
     <p class="note">Foto yang ditambahkan ditandai “belum disimpan” sampai Anda klik <b>Simpan ke situs</b>. Setelah itu foto langsung tersimpan di GitHub dan tampil untuk semua pengunjung dalam ±1 menit.</p>
   </div>
   <div id="map" role="application" aria-label="Peta lokasi kenangan"></div>
-  <div class="bar"><span id="info"></span><button id="allBtn" style="display:none">Tampilkan semua tempat</button></div>
+  <div class="bar"><span id="info"></span><button id="allBtn" style="display:none">← Kembali ke semua album</button></div>
   <div id="gallery"></div>
 </main>
+
+<div id="scrim" hidden></div>
+<aside id="drawer" aria-label="Tempat yang sudah dikunjungi" aria-hidden="true">
+  <div class="dhead"><h3 id="dtitle">Tempat yang sudah kita kunjungi</h3><button id="closeDrawer" aria-label="Tutup daftar">×</button></div>
+  <button id="dhome" class="dall">Lihat semua album</button>
+  <ul id="dlist"></ul>
+</aside>
 
 <dialog id="loginDlg">
   <form method="dialog" id="loginForm">
     <h3 style="margin-top:0">Masuk admin</h3>
     <label>Token GitHub<input id="pw" type="password" required autocomplete="off"></label>
     <label style="margin-top:8px"><input id="remember" type="checkbox" style="width:auto"> Ingat di perangkat ini</label>
+    <p id="loginErr" role="alert" style="color:var(--accent);font-size:14px;margin:8px 0 0"></p>
     <p style="display:flex;gap:8px;margin-bottom:0"><button class="primary" value="ok">Masuk</button><button value="cancel" formnovalidate>Batal</button></p>
   </form>
 </dialog>
