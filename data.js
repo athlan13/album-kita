@@ -1,5 +1,32 @@
 const PHOTOS = [
   {
+    "src": "photos/foto-1793530391631-0yis.jpg",
+    "place": "M BLoce Space",
+    "lat": -6.23576,
+    "lng": 106.80979,
+    "address": "",
+    "caption": "Photobooth Spiderman x Sony Pictures",
+    "date": "2026-07-26"
+  },
+  {
+    "src": "photos/foto-1793530392251-ccs6.jpg",
+    "place": "M BLoce Space",
+    "lat": -6.23576,
+    "lng": 106.80979,
+    "address": "",
+    "caption": "Photobooth Spiderman x Sony Pictures",
+    "date": "2026-07-26"
+  },
+  {
+    "src": "photos/foto-1793530392772-m936.jpg",
+    "place": "M BLoce Space",
+    "lat": -6.23576,
+    "lng": 106.80979,
+    "address": "",
+    "caption": "Photobooth Spiderman x Sony Pictures",
+    "date": "2026-07-26"
+  },
+  {
     "src": "photos/foto-1793530090614-ih41.jpg",
     "place": "Memori Lane - Blok M",
     "lat": -6.26206,
