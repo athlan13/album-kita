@@ -133,6 +133,7 @@ function render(fit) {
   acts.append(el('a', { className: 'btn', href: url, target: '_blank', rel: 'noopener' }, 'Buka di Google Maps'));
   const cp = el('button', {}, 'Salin link lokasi'); cp.onclick = () => copyLink(url); acts.append(cp);
   if (admin) {
+    const rn = el('button', {}, 'Ubah nama album'); rn.onclick = () => renameAlbum(cur); acts.append(rn);
     const ed = el('button', {}, 'Ubah lokasi'); ed.onclick = () => editLocation(cur); acts.append(ed);
     const b = el('button', { className: 'danger' }, 'Hapus album ini'); b.onclick = () => removeAlbum(cur.place); acts.append(b);
   }
@@ -207,6 +208,31 @@ $('addBtn').onclick = async () => {
   $('hint').textContent = HINT;
   render(false);
 };
+
+async function renameAlbum(cur) {
+  if (busy) return;
+  const old = cur.place;
+  const v = prompt('Nama album baru:', old);
+  if (v === null) return;
+  const name = v.trim();
+  if (!name || name === old) return;
+  const target = allPhotos().find(p => p.place === name);
+  if (target && !confirm('Album "' + name + '" sudah ada. Gabungkan foto album ini ke sana?')) return;
+  const apply = x => {
+    if (x.place !== old) return;
+    x.place = name;
+    if (target) { x.lat = target.lat; x.lng = target.lng; if (target.address) x.address = target.address; }
+  };
+  busy = true;
+  try {
+    await updateData(list => { list.forEach(apply); return list; }, 'Ubah nama album: ' + old + ' -> ' + name);
+    PHOTOS.forEach(apply);
+    drafts.forEach(apply);
+    filter = name;
+    toast('Nama album diubah.');
+  } catch (e) { toast('Gagal mengubah nama: ' + e.message); }
+  busy = false; render(true);
+}
 
 async function editLocation(cur) {
   if (busy) return;
