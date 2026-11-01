@@ -1,7 +1,7 @@
 const PHOTOS = [
   {
     "src": "photos/foto-1793530090614-ih41.jpg",
-    "place": "Blok M",
+    "place": "Memori Lane - Blok M",
     "lat": -6.26206,
     "lng": 106.81166,
     "address": "",
@@ -10,7 +10,7 @@ const PHOTOS = [
   },
   {
     "src": "photos/foto-1793528844190-qyh1.jpg",
-    "place": "Blok M",
+    "place": "Memori Lane - Blok M",
     "lat": -6.26206,
     "lng": 106.81166,
     "address": "",
@@ -19,7 +19,7 @@ const PHOTOS = [
   },
   {
     "src": "photos/foto-1793528844647-ix5h.jpg",
-    "place": "Blok M",
+    "place": "Memori Lane - Blok M",
     "lat": -6.26206,
     "lng": 106.81166,
     "address": "",
@@ -28,7 +28,7 @@ const PHOTOS = [
   },
   {
     "src": "photos/foto-1793528845142-mthc.jpg",
-    "place": "Blok M",
+    "place": "Memori Lane - Blok M",
     "lat": -6.26206,
     "lng": 106.81166,
     "address": "",
@@ -37,7 +37,7 @@ const PHOTOS = [
   },
   {
     "src": "photos/foto-1793528845587-erjs.jpg",
-    "place": "Blok M",
+    "place": "Memori Lane - Blok M",
     "lat": -6.26206,
     "lng": 106.81166,
     "address": "",
@@ -46,7 +46,7 @@ const PHOTOS = [
   },
   {
     "src": "photos/foto-1793528846497-d1uj.jpg",
-    "place": "Blok M",
+    "place": "Memori Lane - Blok M",
     "lat": -6.26206,
     "lng": 106.81166,
     "address": "",
