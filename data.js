@@ -38,20 +38,20 @@ const PHOTOS = [
   {
     "src": "photos/foto-1793511958632-oswa.jpg",
     "place": "Central Park",
-    "lat": -6.91732,
-    "lng": 107.61011,
+    "lat": -6.17617,
+    "lng": 106.79193,
     "caption": "",
     "date": "2026-07-04",
-    "address": ""
+    "address": "Jl. Letjen S. Parman No.Kav.28, RT.12/RW.6, Tj. Duren Sel., Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470"
   },
   {
     "src": "photos/foto-1793511958973-tqm1.jpg",
     "place": "Central Park",
-    "lat": -6.91732,
-    "lng": 107.61011,
+    "lat": -6.17617,
+    "lng": 106.79193,
     "caption": "",
     "date": "2026-07-04",
-    "address": ""
+    "address": "Jl. Letjen S. Parman No.Kav.28, RT.12/RW.6, Tj. Duren Sel., Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470"
   },
   {
     "src": "photos/foto-1793510480078-b2kt.jpg",
