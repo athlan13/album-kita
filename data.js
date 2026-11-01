@@ -5186,27 +5186,27 @@ const PHOTOS = [
   {
     "src": "photos/foto-1793530391631-0yis.jpg",
     "place": "M BLoce Space",
-    "lat": -6.23576,
-    "lng": 106.80979,
-    "address": "",
+    "lat": -6.24152,
+    "lng": 106.79877,
+    "address": "Jl. Panglima Polim No.37, RT.1/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12160",
     "caption": "Photobooth Spiderman x Sony Pictures",
     "date": "2026-07-26"
   },
   {
     "src": "photos/foto-1793530392251-ccs6.jpg",
     "place": "M BLoce Space",
-    "lat": -6.23576,
-    "lng": 106.80979,
-    "address": "",
+    "lat": -6.24152,
+    "lng": 106.79877,
+    "address": "Jl. Panglima Polim No.37, RT.1/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12160",
     "caption": "Photobooth Spiderman x Sony Pictures",
     "date": "2026-07-26"
   },
   {
     "src": "photos/foto-1793530392772-m936.jpg",
     "place": "M BLoce Space",
-    "lat": -6.23576,
-    "lng": 106.80979,
-    "address": "",
+    "lat": -6.24152,
+    "lng": 106.79877,
+    "address": "Jl. Panglima Polim No.37, RT.1/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12160",
     "caption": "Photobooth Spiderman x Sony Pictures",
     "date": "2026-07-26"
   },
