@@ -212,28 +212,33 @@ $('addBtn').onclick = async () => {
   render(false);
 };
 
+let addTarget = null;
 function addPhotosToAlbum(cur) {
-  const inp = el('input', { type: 'file', accept: 'image/*', multiple: true });
-  inp.onchange = async () => {
-    const files = [...inp.files];
-    if (!files.length) return;
-    const last = cur.items.map(i => i.date).filter(Boolean).sort().pop() || '';
-    const d = prompt('Tanggal foto (format 2026-10-25). Kosongkan jika tidak tahu:', last);
-    if (d === null) return;
-    const date = /^\d{4}-\d{2}-\d{2}$/.test(d.trim()) ? d.trim() : '';
-    toast('Memproses ' + files.length + ' foto…');
-    try {
-      for (const f of files) {
-        const blob = await shrink(f);
-        drafts.push({ blob, name: 'foto-' + Date.now() + '-' + Math.random().toString(36).slice(2, 6) + '.jpg', place: cur.place, lat: cur.lat, lng: cur.lng,
-          address: cur.address || '', caption: '', date, preview: URL.createObjectURL(blob) });
-      }
-      toast(files.length + ' foto ditambahkan. Klik "Simpan foto baru ke situs" untuk menyimpan.');
-    } catch (e) { toast('Gagal memproses foto: ' + e.message); }
-    render(false);
-  };
-  inp.click();
+  if (!$('addDlg')) return toast('Perbarui juga index.html ke versi terbaru.');
+  addTarget = cur;
+  $('addTitle').textContent = 'Tambah foto ke ' + cur.place;
+  $('aFiles').value = ''; $('aCap').value = '';
+  $('aDate').value = cur.items.map(i => i.date).filter(Boolean).sort().pop() || '';
+  $('addDlg').showModal();
 }
+if ($('addForm')) $('addForm').onsubmit = async e => {
+  e.preventDefault();
+  if (e.submitter && e.submitter.value === 'cancel') return $('addDlg').close();
+  const cur = addTarget, files = [...$('aFiles').files];
+  if (!cur || !files.length) return;
+  const date = $('aDate').value, caption = $('aCap').value.trim();
+  $('addDlg').close();
+  toast('Memproses ' + files.length + ' foto…');
+  try {
+    for (const f of files) {
+      const blob = await shrink(f);
+      drafts.push({ blob, name: 'foto-' + Date.now() + '-' + Math.random().toString(36).slice(2, 6) + '.jpg', place: cur.place, lat: cur.lat, lng: cur.lng,
+        address: cur.address || '', caption, date, preview: URL.createObjectURL(blob) });
+    }
+    toast(files.length + ' foto ditambahkan. Klik "Simpan foto baru ke situs" untuk menyimpan.');
+  } catch (err) { toast('Gagal memproses foto: ' + err.message); }
+  render(false);
+};
 
 async function renameAlbum(cur) {
   if (busy) return;
