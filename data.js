@@ -1,5 +1,14 @@
 const PHOTOS = [
   {
+    "src": "photos/foto-1793530090614-ih41.jpg",
+    "place": "Blok M",
+    "lat": -6.26206,
+    "lng": 106.81166,
+    "address": "",
+    "caption": "",
+    "date": "2026-08-08"
+  },
+  {
     "src": "photos/foto-1793529106645-skz8.jpg",
     "place": "Memori Lane - Blok M",
     "lat": -6.24454,
