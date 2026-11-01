@@ -1,5 +1,45 @@
 const PHOTOS = [
   {
+    "src": "photos/foto-1793510480078-b2kt.jpg",
+    "place": "Theo's Wife Lois",
+    "lat": -6.92296,
+    "lng": 107.60353,
+    "caption": "Breakfast",
+    "date": "2026-10-25"
+  },
+  {
+    "src": "photos/foto-1793510480739-mxzy.jpg",
+    "place": "Theo's Wife Lois",
+    "lat": -6.92296,
+    "lng": 107.60353,
+    "caption": "Breakfast",
+    "date": "2026-10-25"
+  },
+  {
+    "src": "photos/foto-1793510481448-t1dv.jpg",
+    "place": "Theo's Wife Lois",
+    "lat": -6.92296,
+    "lng": 107.60353,
+    "caption": "Breakfast",
+    "date": "2026-10-25"
+  },
+  {
+    "src": "photos/foto-1793510481871-9iac.jpg",
+    "place": "Theo's Wife Lois",
+    "lat": -6.92296,
+    "lng": 107.60353,
+    "caption": "Breakfast",
+    "date": "2026-10-25"
+  },
+  {
+    "src": "photos/foto-1793510482480-q7qw.jpg",
+    "place": "Theo's Wife Lois",
+    "lat": -6.92296,
+    "lng": 107.60353,
+    "caption": "Breakfast",
+    "date": "2026-10-25"
+  },
+  {
     "src": "photos/foto-1793510128632-220y.jpg",
     "place": "Theo's Wife Lois",
     "lat": -6.92423,
