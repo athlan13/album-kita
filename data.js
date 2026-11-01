@@ -1,14 +1,5 @@
 const PHOTOS = [
   {
-    "src": "photos/foto-1793528838485-e6ze.jpg",
-    "place": "Blok M",
-    "lat": -6.26206,
-    "lng": 106.81166,
-    "address": "",
-    "caption": "",
-    "date": "2026-08-08"
-  },
-  {
     "src": "photos/foto-1793528838978-l1wo.jpg",
     "place": "Blok M",
     "lat": -6.26206,
