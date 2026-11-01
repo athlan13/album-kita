@@ -1,5 +1,23 @@
 const PHOTOS = [
   {
+    "src": "photos/foto-1793527557520-zh6w.jpg",
+    "place": "The Great Asia Africa",
+    "lat": -6.8326,
+    "lng": 107.60476,
+    "address": "Jl. Raya Lembang - Bandung No.71, Gudangkahuripan, Kec. Lembang, Kabupaten Bandung Barat, Jawa Barat 40391",
+    "caption": "Tempat Wisata Bandung",
+    "date": "2026-10-25"
+  },
+  {
+    "src": "photos/foto-1793527557568-gf29.jpg",
+    "place": "The Great Asia Africa",
+    "lat": -6.8326,
+    "lng": 107.60476,
+    "address": "Jl. Raya Lembang - Bandung No.71, Gudangkahuripan, Kec. Lembang, Kabupaten Bandung Barat, Jawa Barat 40391",
+    "caption": "Tempat Wisata Bandung",
+    "date": "2026-10-25"
+  },
+  {
     "src": "photos/foto-1793511958632-oswa.jpg",
     "place": "Central Park",
     "lat": -6.17584,
