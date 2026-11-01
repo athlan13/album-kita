@@ -105,7 +105,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "Breakfast",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510480739-mxzy.jpg",
@@ -114,7 +114,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "Breakfast",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510481448-t1dv.jpg",
@@ -123,7 +123,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "Breakfast",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510481871-9iac.jpg",
@@ -132,7 +132,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "Breakfast",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510482480-q7qw.jpg",
@@ -141,7 +141,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "Breakfast",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510128632-220y.jpg",
@@ -150,7 +150,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "Breakfast",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510129326-5bpp.jpg",
@@ -159,7 +159,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "Breakfast",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510129870-v8yu.jpg",
@@ -168,7 +168,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "Breakfast",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510130371-y3jy.jpg",
@@ -177,7 +177,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "Breakfast",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510130882-bg4g.jpg",
@@ -186,7 +186,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "Breakfast",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510131349-i8tp.jpg",
@@ -195,7 +195,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "Breakfast",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510131782-0khy.jpg",
@@ -204,7 +204,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "Breakfast",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510132220-bhns.jpg",
@@ -213,7 +213,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "Breakfast",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510132615-diml.jpg",
@@ -222,7 +222,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "Breakfast",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510133155-xq7r.jpg",
@@ -231,7 +231,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "Breakfast",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510133578-zzso.jpg",
@@ -240,7 +240,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "Breakfast",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510134005-7yaz.jpg",
@@ -249,7 +249,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "Breakfast",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510134614-wlu0.jpg",
@@ -258,7 +258,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "Breakfast",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510135024-vu9g.jpg",
@@ -267,7 +267,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "Breakfast",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510135617-ytk9.jpg",
@@ -276,7 +276,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "Breakfast",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510135640-ju3d.jpg",
@@ -285,7 +285,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "Breakfast",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510136225-wev8.jpg",
@@ -294,7 +294,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "Breakfast",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510136251-x5pc.jpg",
@@ -303,7 +303,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "Breakfast",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510136883-tft8.jpg",
@@ -312,7 +312,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "Breakfast",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510136898-udzc.jpg",
@@ -321,7 +321,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "Breakfast",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510137426-entp.jpg",
@@ -330,7 +330,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "Breakfast",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510137460-1dql.jpg",
@@ -339,7 +339,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "Breakfast",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510138027-rwqm.jpg",
@@ -348,7 +348,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "Breakfast",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510138064-dea8.jpg",
@@ -357,7 +357,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "Breakfast",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510138574-rc9p.jpg",
@@ -366,7 +366,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "Breakfast",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510138608-upae.jpg",
@@ -375,7 +375,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "Breakfast",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510139120-qmkv.jpg",
@@ -384,7 +384,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "Breakfast",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510139145-lx9u.jpg",
@@ -393,7 +393,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "Breakfast",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510139763-vorm.jpg",
@@ -402,7 +402,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "Breakfast",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510139778-h3ke.jpg",
@@ -411,7 +411,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "Breakfast",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510140222-w48o.jpg",
@@ -420,7 +420,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510140704-223k.jpg",
@@ -429,7 +429,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510141132-nwcl.jpg",
@@ -438,7 +438,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510142079-tgjn.jpg",
@@ -447,7 +447,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510142497-f727.jpg",
@@ -456,7 +456,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510142962-5z00.jpg",
@@ -465,7 +465,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510143404-6099.jpg",
@@ -474,7 +474,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510143819-ssh3.jpg",
@@ -483,7 +483,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510144397-fy89.jpg",
@@ -492,7 +492,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510144898-471i.jpg",
@@ -501,7 +501,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510145778-0s0l.jpg",
@@ -510,7 +510,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510146333-2k7a.jpg",
@@ -519,7 +519,7 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   },
   {
     "src": "photos/foto-1793510146761-cjil.jpg",
@@ -528,6 +528,6 @@ const PHOTOS = [
     "lng": 107.61904,
     "caption": "",
     "date": "2026-10-25",
-    "address": ""
+    "address": "Jl. Progo No.23, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115"
   }
 ];
