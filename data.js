@@ -38,18 +38,20 @@ const PHOTOS = [
   {
     "src": "photos/foto-1793511958632-oswa.jpg",
     "place": "Central Park",
-    "lat": -6.17584,
-    "lng": 106.77306,
+    "lat": -6.91732,
+    "lng": 107.61011,
     "caption": "",
-    "date": "2026-07-04"
+    "date": "2026-07-04",
+    "address": ""
   },
   {
     "src": "photos/foto-1793511958973-tqm1.jpg",
     "place": "Central Park",
-    "lat": -6.17584,
-    "lng": 106.77306,
+    "lat": -6.91732,
+    "lng": 107.61011,
     "caption": "",
-    "date": "2026-07-04"
+    "date": "2026-07-04",
+    "address": ""
   },
   {
     "src": "photos/foto-1793510480078-b2kt.jpg",
