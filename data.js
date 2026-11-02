@@ -1,5 +1,473 @@
 const PHOTOS = [
   {
+    "src": "photos/foto-1793581227637-263d.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "Dinner",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581228184-0klq.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "Dinner",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581228543-gx52.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "Dinner",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581228918-yfwj.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "Dinner",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581229252-ugsi.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "Dinner",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581229545-zwva.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "Dinner",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581229835-1x00.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "Dinner",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581230188-mao1.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "Dinner",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581230836-6bly.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "Dinner",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581231666-2lgd.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "Dinner",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581232402-gbtb.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "Dinner",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581232898-o4k7.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "Dinner",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581233482-x7kv.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "Dinner",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581234034-vkhj.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "Dinner",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581234591-ziow.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "Dinner",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581235029-ydvr.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "Dinner",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581235703-on3k.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "Dinner",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581236336-j1hk.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "Dinner",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581237028-1jwk.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "Dinner",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581237863-z3xd.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "Dinner",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581238805-nyds.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "Dinner",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581239278-tlqq.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "Dinner",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581239759-cdo2.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "Dinner",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581239797-x5mc.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "Dinner",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581240582-ccgc.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "Dinner",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581240613-9qtn.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "Dinner",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581240998-cdc5.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "Dinner",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581241043-anlj.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "Dinner",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581241283-tpnw.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "Dinner",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581241456-bdkh.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "Dinner",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581241643-r2oe.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581242109-vaxg.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581242745-xo97.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581243071-loj6.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581243450-2afi.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581244099-wy1k.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581244526-nd1a.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581245133-go7s.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581245584-o303.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581246208-jl81.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581246825-air5.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581247543-tx8p.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581247932-3wlm.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581248481-0mci.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581248961-psx3.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581249672-kvhs.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581250053-m4m7.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581250753-ba0b.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581251470-k4eq.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581252325-ozkp.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581253181-9s99.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793581253993-bft5.jpg",
+    "place": "Wheels Coffee Roasters - Juanda (Dago)",
+    "lat": -6.88159,
+    "lng": 107.61599,
+    "address": "Jl. Ir. H. Juanda No.256, Sekeloa, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+    "caption": "",
+    "date": "2026-09-19"
+  },
+  {
     "src": "photos/foto-1793580529383-1iwb.jpg",
     "place": "Rancaupas",
     "lat": -7.14035,
