@@ -1,5 +1,122 @@
 const PHOTOS = [
   {
+    "src": "photos/foto-1793594758550-f6m1.jpg",
+    "place": "HAKA Dimsum Shop Blok M",
+    "lat": -6.24392,
+    "lng": 106.7986,
+    "address": "Jl. Sultan Hasanuddin Dalam No.3, RT.3/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12160",
+    "caption": "Dimsum - Blok M",
+    "date": "2026-09-02"
+  },
+  {
+    "src": "photos/foto-1793594759019-7494.jpg",
+    "place": "HAKA Dimsum Shop Blok M",
+    "lat": -6.24392,
+    "lng": 106.7986,
+    "address": "Jl. Sultan Hasanuddin Dalam No.3, RT.3/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12160",
+    "caption": "Dimsum - Blok M",
+    "date": "2026-09-02"
+  },
+  {
+    "src": "photos/foto-1793594759504-ft0e.jpg",
+    "place": "HAKA Dimsum Shop Blok M",
+    "lat": -6.24392,
+    "lng": 106.7986,
+    "address": "Jl. Sultan Hasanuddin Dalam No.3, RT.3/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12160",
+    "caption": "Dimsum - Blok M",
+    "date": "2026-09-02"
+  },
+  {
+    "src": "photos/foto-1793594760247-1tg2.jpg",
+    "place": "HAKA Dimsum Shop Blok M",
+    "lat": -6.24392,
+    "lng": 106.7986,
+    "address": "Jl. Sultan Hasanuddin Dalam No.3, RT.3/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12160",
+    "caption": "Dimsum - Blok M",
+    "date": "2026-09-02"
+  },
+  {
+    "src": "photos/foto-1793594760992-rz6z.jpg",
+    "place": "HAKA Dimsum Shop Blok M",
+    "lat": -6.24392,
+    "lng": 106.7986,
+    "address": "Jl. Sultan Hasanuddin Dalam No.3, RT.3/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12160",
+    "caption": "Dimsum - Blok M",
+    "date": "2026-09-02"
+  },
+  {
+    "src": "photos/foto-1793594761886-3h1s.jpg",
+    "place": "HAKA Dimsum Shop Blok M",
+    "lat": -6.24392,
+    "lng": 106.7986,
+    "address": "Jl. Sultan Hasanuddin Dalam No.3, RT.3/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12160",
+    "caption": "Dimsum - Blok M",
+    "date": "2026-09-02"
+  },
+  {
+    "src": "photos/foto-1793594762466-2lnt.jpg",
+    "place": "HAKA Dimsum Shop Blok M",
+    "lat": -6.24392,
+    "lng": 106.7986,
+    "address": "Jl. Sultan Hasanuddin Dalam No.3, RT.3/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12160",
+    "caption": "Dimsum - Blok M",
+    "date": "2026-09-02"
+  },
+  {
+    "src": "photos/foto-1793594762922-jj0p.jpg",
+    "place": "HAKA Dimsum Shop Blok M",
+    "lat": -6.24392,
+    "lng": 106.7986,
+    "address": "Jl. Sultan Hasanuddin Dalam No.3, RT.3/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12160",
+    "caption": "Dimsum - Blok M",
+    "date": "2026-09-02"
+  },
+  {
+    "src": "photos/foto-1793594763450-vd6o.jpg",
+    "place": "HAKA Dimsum Shop Blok M",
+    "lat": -6.24392,
+    "lng": 106.7986,
+    "address": "Jl. Sultan Hasanuddin Dalam No.3, RT.3/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12160",
+    "caption": "Dimsum - Blok M",
+    "date": "2026-09-02"
+  },
+  {
+    "src": "photos/foto-1793594764005-4ww7.jpg",
+    "place": "HAKA Dimsum Shop Blok M",
+    "lat": -6.24392,
+    "lng": 106.7986,
+    "address": "Jl. Sultan Hasanuddin Dalam No.3, RT.3/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12160",
+    "caption": "Dimsum - Blok M",
+    "date": "2026-09-02"
+  },
+  {
+    "src": "photos/foto-1793594764482-9wlb.jpg",
+    "place": "HAKA Dimsum Shop Blok M",
+    "lat": -6.24392,
+    "lng": 106.7986,
+    "address": "Jl. Sultan Hasanuddin Dalam No.3, RT.3/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12160",
+    "caption": "Dimsum - Blok M",
+    "date": "2026-09-02"
+  },
+  {
+    "src": "photos/foto-1793594765152-bqca.jpg",
+    "place": "HAKA Dimsum Shop Blok M",
+    "lat": -6.24392,
+    "lng": 106.7986,
+    "address": "Jl. Sultan Hasanuddin Dalam No.3, RT.3/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12160",
+    "caption": "Dimsum - Blok M",
+    "date": "2026-09-02"
+  },
+  {
+    "src": "photos/foto-1793594765965-vm2c.jpg",
+    "place": "HAKA Dimsum Shop Blok M",
+    "lat": -6.24392,
+    "lng": 106.7986,
+    "address": "Jl. Sultan Hasanuddin Dalam No.3, RT.3/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12160",
+    "caption": "Dimsum - Blok M",
+    "date": "2026-09-02"
+  },
+  {
     "src": "photos/foto-1793592953957-nzuj.jpg",
     "place": "The Square Room (TSR)",
     "lat": -6.89282,
