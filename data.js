@@ -1,5 +1,131 @@
 const PHOTOS = [
   {
+    "src": "photos/foto-1793582641647-8yr5.jpg",
+    "place": "Halaman Terakhir Dimsum",
+    "lat": -6.903,
+    "lng": 107.6299,
+    "address": "Jl. Terusan Ciliwung No.17, Cihaur Geulis, Kec. Cibeunying Kaler, Kota Bandung, Jawa Barat 40122",
+    "caption": "Dimsum Bandung",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793582642045-zqks.jpg",
+    "place": "Halaman Terakhir Dimsum",
+    "lat": -6.903,
+    "lng": 107.6299,
+    "address": "Jl. Terusan Ciliwung No.17, Cihaur Geulis, Kec. Cibeunying Kaler, Kota Bandung, Jawa Barat 40122",
+    "caption": "Dimsum Bandung",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793582642683-0qpl.jpg",
+    "place": "Halaman Terakhir Dimsum",
+    "lat": -6.903,
+    "lng": 107.6299,
+    "address": "Jl. Terusan Ciliwung No.17, Cihaur Geulis, Kec. Cibeunying Kaler, Kota Bandung, Jawa Barat 40122",
+    "caption": "Dimsum Bandung",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793582643462-qygv.jpg",
+    "place": "Halaman Terakhir Dimsum",
+    "lat": -6.903,
+    "lng": 107.6299,
+    "address": "Jl. Terusan Ciliwung No.17, Cihaur Geulis, Kec. Cibeunying Kaler, Kota Bandung, Jawa Barat 40122",
+    "caption": "Dimsum Bandung",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793582644031-l6wx.jpg",
+    "place": "Halaman Terakhir Dimsum",
+    "lat": -6.903,
+    "lng": 107.6299,
+    "address": "Jl. Terusan Ciliwung No.17, Cihaur Geulis, Kec. Cibeunying Kaler, Kota Bandung, Jawa Barat 40122",
+    "caption": "Dimsum Bandung",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793582644730-3zcc.jpg",
+    "place": "Halaman Terakhir Dimsum",
+    "lat": -6.903,
+    "lng": 107.6299,
+    "address": "Jl. Terusan Ciliwung No.17, Cihaur Geulis, Kec. Cibeunying Kaler, Kota Bandung, Jawa Barat 40122",
+    "caption": "Dimsum Bandung",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793582645426-3ev8.jpg",
+    "place": "Halaman Terakhir Dimsum",
+    "lat": -6.903,
+    "lng": 107.6299,
+    "address": "Jl. Terusan Ciliwung No.17, Cihaur Geulis, Kec. Cibeunying Kaler, Kota Bandung, Jawa Barat 40122",
+    "caption": "Dimsum Bandung",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793582645935-5nxq.jpg",
+    "place": "Halaman Terakhir Dimsum",
+    "lat": -6.903,
+    "lng": 107.6299,
+    "address": "Jl. Terusan Ciliwung No.17, Cihaur Geulis, Kec. Cibeunying Kaler, Kota Bandung, Jawa Barat 40122",
+    "caption": "Dimsum Bandung",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793582646393-oeba.jpg",
+    "place": "Halaman Terakhir Dimsum",
+    "lat": -6.903,
+    "lng": 107.6299,
+    "address": "Jl. Terusan Ciliwung No.17, Cihaur Geulis, Kec. Cibeunying Kaler, Kota Bandung, Jawa Barat 40122",
+    "caption": "Dimsum Bandung",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793582647045-yzcb.jpg",
+    "place": "Halaman Terakhir Dimsum",
+    "lat": -6.903,
+    "lng": 107.6299,
+    "address": "Jl. Terusan Ciliwung No.17, Cihaur Geulis, Kec. Cibeunying Kaler, Kota Bandung, Jawa Barat 40122",
+    "caption": "Dimsum Bandung",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793582647762-ifbe.jpg",
+    "place": "Halaman Terakhir Dimsum",
+    "lat": -6.903,
+    "lng": 107.6299,
+    "address": "Jl. Terusan Ciliwung No.17, Cihaur Geulis, Kec. Cibeunying Kaler, Kota Bandung, Jawa Barat 40122",
+    "caption": "Dimsum Bandung",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793582648530-22nu.jpg",
+    "place": "Halaman Terakhir Dimsum",
+    "lat": -6.903,
+    "lng": 107.6299,
+    "address": "Jl. Terusan Ciliwung No.17, Cihaur Geulis, Kec. Cibeunying Kaler, Kota Bandung, Jawa Barat 40122",
+    "caption": "Dimsum Bandung",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793582649223-q5mz.jpg",
+    "place": "Halaman Terakhir Dimsum",
+    "lat": -6.903,
+    "lng": 107.6299,
+    "address": "Jl. Terusan Ciliwung No.17, Cihaur Geulis, Kec. Cibeunying Kaler, Kota Bandung, Jawa Barat 40122",
+    "caption": "Dimsum Bandung",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793582649910-rs56.jpg",
+    "place": "Halaman Terakhir Dimsum",
+    "lat": -6.903,
+    "lng": 107.6299,
+    "address": "Jl. Terusan Ciliwung No.17, Cihaur Geulis, Kec. Cibeunying Kaler, Kota Bandung, Jawa Barat 40122",
+    "caption": "Dimsum Bandung",
+    "date": "2026-09-19"
+  },
+  {
     "src": "photos/foto-1793581227637-263d.jpg",
     "place": "Wheels Coffee Roasters - Juanda (Dago)",
     "lat": -6.88159,
