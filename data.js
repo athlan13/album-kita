@@ -1,5 +1,68 @@
 const PHOTOS = [
   {
+    "src": "photos/foto-1793595806549-5lbt.jpg",
+    "place": "Kos\"an Princesss",
+    "lat": -6.367,
+    "lng": 106.83606,
+    "address": "Jl. Margonda Jl. Pinang No.15 Blk 22, Pondok Cina, Kecamatan Beji, Kota Depok, Jawa Barat 16424",
+    "caption": "Kos\"an Princesss",
+    "date": "2026-08-01"
+  },
+  {
+    "src": "photos/foto-1793595807138-7gsb.jpg",
+    "place": "Kos\"an Princesss",
+    "lat": -6.367,
+    "lng": 106.83606,
+    "address": "Jl. Margonda Jl. Pinang No.15 Blk 22, Pondok Cina, Kecamatan Beji, Kota Depok, Jawa Barat 16424",
+    "caption": "Kos\"an Princesss",
+    "date": "2026-08-01"
+  },
+  {
+    "src": "photos/foto-1793595807700-wnmk.jpg",
+    "place": "Kos\"an Princesss",
+    "lat": -6.367,
+    "lng": 106.83606,
+    "address": "Jl. Margonda Jl. Pinang No.15 Blk 22, Pondok Cina, Kecamatan Beji, Kota Depok, Jawa Barat 16424",
+    "caption": "Kos\"an Princesss",
+    "date": "2026-08-01"
+  },
+  {
+    "src": "photos/foto-1793595808392-n80w.jpg",
+    "place": "Kos\"an Princesss",
+    "lat": -6.367,
+    "lng": 106.83606,
+    "address": "Jl. Margonda Jl. Pinang No.15 Blk 22, Pondok Cina, Kecamatan Beji, Kota Depok, Jawa Barat 16424",
+    "caption": "Kos\"an Princesss",
+    "date": "2026-08-01"
+  },
+  {
+    "src": "photos/foto-1793595809158-pd50.jpg",
+    "place": "Kos\"an Princesss",
+    "lat": -6.367,
+    "lng": 106.83606,
+    "address": "Jl. Margonda Jl. Pinang No.15 Blk 22, Pondok Cina, Kecamatan Beji, Kota Depok, Jawa Barat 16424",
+    "caption": "Kos\"an Princesss",
+    "date": "2026-08-01"
+  },
+  {
+    "src": "photos/foto-1793595809778-3p50.jpg",
+    "place": "Kos\"an Princesss",
+    "lat": -6.367,
+    "lng": 106.83606,
+    "address": "Jl. Margonda Jl. Pinang No.15 Blk 22, Pondok Cina, Kecamatan Beji, Kota Depok, Jawa Barat 16424",
+    "caption": "Kos\"an Princesss",
+    "date": "2026-08-01"
+  },
+  {
+    "src": "photos/foto-1793595810406-1ztg.jpg",
+    "place": "Kos\"an Princesss",
+    "lat": -6.367,
+    "lng": 106.83606,
+    "address": "Jl. Margonda Jl. Pinang No.15 Blk 22, Pondok Cina, Kecamatan Beji, Kota Depok, Jawa Barat 16424",
+    "caption": "Kos\"an Princesss",
+    "date": "2026-08-01"
+  },
+  {
     "src": "photos/foto-1793594758550-f6m1.jpg",
     "place": "HAKA Dimsum Shop Blok M",
     "lat": -6.24392,
