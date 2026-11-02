@@ -1,5 +1,410 @@
 const PHOTOS = [
   {
+    "src": "photos/foto-1793592953957-nzuj.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592954273-u879.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592954652-nkyj.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592955072-bhp3.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592955373-22ln.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592955663-5cxm.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592956104-b52b.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592956767-61lh.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592957393-95x9.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592958016-9bed.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592958587-11v7.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592959269-0kws.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592959951-jt6n.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592960635-9mjy.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592961236-v7xx.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592961839-reaz.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592962480-pffv.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592963318-d9oh.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592963959-yusn.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592964601-hlmy.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592965316-0qyj.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592965946-7wk8.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592966622-me4e.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592967258-5wyf.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592967801-yfgs.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592968444-wpcg.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592969121-t28c.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592969785-dvh4.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592970483-gzsd.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592971150-is4a.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592971722-k6wg.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592972474-mjb2.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592973091-g2so.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592973695-0ixp.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592974336-8mx7.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592975179-9we8.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592975780-s43y.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592976463-yxpr.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592977181-napx.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592977783-uwai.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592978445-90ng.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592979107-tqgr.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592979746-m330.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592980551-z4pr.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
+    "src": "photos/foto-1793592981552-kq95.jpg",
+    "place": "The Square Room (TSR)",
+    "lat": -6.89282,
+    "lng": 107.584,
+    "address": "Jl. Dr. Djunjunan No.153, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+    "caption": "Photobooth The Square Room",
+    "date": "2026-09-19"
+  },
+  {
     "src": "photos/foto-1793582641647-8yr5.jpg",
     "place": "Halaman Terakhir Dimsum",
     "lat": -6.903,
