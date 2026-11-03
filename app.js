@@ -439,15 +439,17 @@ const MUSIC_TITLE = 'Lagu kita';
   a.src = MUSIC_SRC;
 })();
 
-// ---------- Animasi: hati melayang + hewan peliharaan ----------
-const PET_ON = true;            // ubah ke false untuk mematikan hewan peliharaan
-const HEARTS_ON = true;         // ubah ke false untuk mematikan hati melayang
-const PET_EMOJI = '🐱';         // contoh lain: 🐶 🐰 🦊 🐼 🐥
-const PET_WORDS = ['Sayang kamu ❤', 'Meong~', 'Kangen kamu 💕', 'Peluk dong 🤗', 'Foto kalian lucu banget!', 'Semangat ya! ✨'];
+// ---------- Animasi: hati melayang + dua kucing kejar-kejaran ----------
+const PET_ON = true;       // false = tanpa kucing
+const HEARTS_ON = true;    // false = tanpa hati melayang
+const CAT_LEAD = ['#f4a259', '#d9822b'];    // kucing yang dikejar: [warna badan, warna kaki]
+const CAT_CHASE = ['#9aa5b8', '#657089'];   // kucing yang mengejar
+const WORDS_LEAD = ['Wlee, tangkap aku! 😜', 'Sayang kamu ❤', 'Kangen kamu 💕', 'Semangat ya! ✨'];
+const WORDS_CHASE = ['Awas ya, kukejar! 😼', 'Meong~ 🐾', 'Peluk dong 🤗', 'Kalian lucu banget! 💞'];
 (function () {
   const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const hearts = $('hearts'), pet = $('pet');
-  if (!hearts || !pet) return;
+  const hearts = $('hearts');
+  if (!hearts) return;
   const GLYPHS = ['♥', '♥', '💗', '💕'];
   function spawn(x, y, pop) {
     if (hearts.children.length > 40) return;
@@ -463,43 +465,83 @@ const PET_WORDS = ['Sayang kamu ❤', 'Meong~', 'Kangen kamu 💕', 'Peluk dong 
     hearts.append(h);
   }
   if (HEARTS_ON && !reduce) setInterval(() => { if (!document.hidden) spawn(Math.random() * innerWidth, 0, false); }, 1800);
-
   if (!PET_ON) return;
-  pet.hidden = false;
-  $('petBody').textContent = PET_EMOJI;
-  let x = 20, dir = 1, pause = 0, hold = 0, last = performance.now();
-  let say = null;
-  function talk(t) {
-    $('petBubble').textContent = t; pet.classList.add('say');
-    clearTimeout(say); say = setTimeout(() => pet.classList.remove('say'), 2200);
+
+  const catSVG = (c, d, stripes) => '<svg viewBox="0 0 64 44" width="58" height="40" aria-hidden="true">'
+    + '<g class="tail"><path d="M10 25 C1 25 1 12 7 8" stroke="' + c + '" stroke-width="5" stroke-linecap="round" fill="none"/></g>'
+    + '<rect class="leg l2" x="17" y="30" width="6" height="12" rx="3" fill="' + d + '"/>'
+    + '<rect class="leg l4" x="36" y="30" width="6" height="12" rx="3" fill="' + d + '"/>'
+    + '<ellipse cx="28" cy="25" rx="20" ry="11" fill="' + c + '"/>'
+    + (stripes ? '<path d="M20 16 q2 4 0 7M27 15 q2 5 0 9M34 16 q2 4 0 7" stroke="' + d + '" stroke-width="2" fill="none" stroke-linecap="round" opacity=".7"/>' : '')
+    + '<rect class="leg l1" x="12" y="30" width="6" height="12" rx="3" fill="' + c + '"/>'
+    + '<rect class="leg l3" x="41" y="30" width="6" height="12" rx="3" fill="' + c + '"/>'
+    + '<path d="M43 11 L45 1 L51 8Z" fill="' + c + '"/><path d="M53 8 L58 1 L60 12Z" fill="' + c + '"/>'
+    + '<path d="M45 9 L45.5 4.5 L48.5 8Z" fill="#ff9db8"/>'
+    + '<circle cx="51" cy="17" r="10" fill="' + c + '"/>'
+    + '<circle cx="55" cy="16" r="1.8" fill="#1d1d1d"/><circle cx="55.6" cy="15.4" r=".6" fill="#fff"/>'
+    + '<circle cx="60" cy="19.5" r="1.4" fill="#ff8fb1"/>'
+    + '<path d="M58 21 L64 20 M58 22.5 L64 24" stroke="#fff" stroke-width=".8" opacity=".8"/></svg>';
+
+  function makeCat(colors, stripes, label, words) {
+    const el = document.createElement('div');
+    el.className = 'pet';
+    el.tabIndex = 0;
+    el.setAttribute('role', 'button');
+    el.setAttribute('aria-label', label + '. Klik untuk menyapa');
+    el.innerHTML = '<span class="bubble"></span><span class="dir">' + catSVG(colors[0], colors[1], stripes) + '</span>';
+    document.body.append(el);
+    const cat = { el, dir: el.querySelector('.dir'), bubble: el.querySelector('.bubble'), x: 0, d: 1, words, timer: null };
+    const poke = () => {
+      const r = el.getBoundingClientRect();
+      if (!reduce) {
+        el.classList.remove('jump'); void el.offsetWidth; el.classList.add('jump');
+        for (let i = 0; i < 7; i++) spawn(r.left + r.width / 2 + (Math.random() * 30 - 15), r.top, true);
+      }
+      cat.bubble.textContent = words[Math.floor(Math.random() * words.length)];
+      el.classList.add('say');
+      clearTimeout(cat.timer); cat.timer = setTimeout(() => el.classList.remove('say'), 2400);
+      hold = 2.4; // keduanya berhenti sebentar
+    };
+    el.addEventListener('click', poke);
+    el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); poke(); } });
+    return cat;
   }
-  function poke() {
-    const r = pet.getBoundingClientRect();
-    if (!reduce) {
-      pet.classList.remove('jump'); void pet.offsetWidth; pet.classList.add('jump');
-      for (let i = 0; i < 7; i++) spawn(r.left + r.width / 2 + (Math.random() * 30 - 15), r.top, true);
-    }
-    talk(PET_WORDS[Math.floor(Math.random() * PET_WORDS.length)]);
-    hold = 2.2; // diam sebentar saat disapa
-  }
-  pet.addEventListener('click', poke);
-  pet.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); poke(); } });
+
+  let hold = 0, pause = 0, phase = 0, last = performance.now();
+  const lead = makeCat(CAT_LEAD, true, 'Kucing oranye', WORDS_LEAD);
+  const chase = makeCat(CAT_CHASE, false, 'Kucing abu-abu', WORDS_CHASE);
+  lead.x = 170; chase.x = 40;
+  const place = (c, bob) => { c.el.style.transform = 'translate(' + c.x + 'px,' + (bob || 0) + 'px)'; c.dir.style.transform = c.d < 0 ? 'scaleX(-1)' : 'none'; };
+  if (reduce) { place(lead); place(chase); return; }
+
   function tick(t) {
-    const dt = Math.min(.1, (t - last) / 1000); last = t;
-    const maxX = Math.max(0, innerWidth - 44);
-    let bob = 0;
+    const dt = Math.min(.1, (t - last) / 1000); last = t; phase += dt;
+    const maxX = Math.max(0, innerWidth - 60);
+    let leadMoves = false, chaseMoves = false;
     if (hold > 0) hold -= dt;
-    else if (pause > 0) pause -= dt;
     else {
-      x += dir * 42 * dt;
-      bob = -Math.abs(Math.sin(t / 130)) * 4;
-      if (x < 0) { x = 0; dir = 1; } else if (x > maxX) { x = maxX; dir = -1; }
-      if (Math.random() < dt * .22) pause = 1.5 + Math.random() * 3;
-      else if (Math.random() < dt * .1) dir = -dir;
+      if (pause > 0) pause -= dt;
+      else {
+        lead.x += lead.d * 75 * dt; leadMoves = true;
+        if (lead.x < 0) { lead.x = 0; lead.d = 1; } else if (lead.x > maxX) { lead.x = maxX; lead.d = -1; }
+        if (Math.random() < dt * .08) lead.d = -lead.d;
+        if (Math.random() < dt * .12) pause = 1 + Math.random() * 1.8;
+      }
+      const gap = 75 + Math.sin(phase * .6) * 50;            // jarak naik-turun: kadang hampir tertangkap
+      const target = Math.min(maxX, Math.max(0, lead.x - lead.d * gap));
+      const diff = target - chase.x;
+      if (Math.abs(diff) > 6) {
+        chase.d = diff > 0 ? 1 : -1;
+        chase.x += chase.d * Math.min(98, Math.abs(diff) * 3) * dt; chaseMoves = true;
+      } else chase.d = lead.d;
+      if (Math.abs(lead.x - chase.x) < 45 && Math.random() < dt * .6) { // hampir tertangkap: muncul hati
+        const r = chase.el.getBoundingClientRect(); spawn(r.left + r.width / 2, r.top, true);
+      }
     }
-    pet.style.transform = 'translate(' + x + 'px,' + bob + 'px)';
-    $('petDir').style.transform = dir < 0 ? 'scaleX(-1)' : 'none';
+    lead.el.classList.toggle('walk', leadMoves); chase.el.classList.toggle('walk', chaseMoves);
+    place(lead, leadMoves ? -Math.abs(Math.sin(t / 110)) * 3 : 0);
+    place(chase, chaseMoves ? -Math.abs(Math.sin(t / 95)) * 3 : 0);
     requestAnimationFrame(tick);
   }
-  if (reduce) pet.style.transform = 'translate(20px,0)'; else requestAnimationFrame(tick);
+  requestAnimationFrame(tick);
 })();
