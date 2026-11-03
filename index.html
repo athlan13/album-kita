@@ -84,7 +84,19 @@ a.btn{font:inherit;font-size:14px;text-decoration:none;border:1px solid var(--li
 #musicTitle{font-size:13px;max-width:130px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--mute)}
 #vol{width:80px;padding:0;border:0;background:none;accent-color:var(--accent)}
 @media (max-width:480px){#musicTitle{display:none}#vol{width:64px}}
-@media (prefers-reduced-motion:reduce){figure,.folder .fbody,#drawer{transition:none}}
+#hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:1}
+.heart{position:absolute;bottom:-30px;color:var(--accent);opacity:0;animation:floatUp linear forwards}
+@keyframes floatUp{0%{transform:translate(0,0) scale(.6);opacity:0}12%{opacity:.6}100%{transform:translate(var(--dx),-105vh) scale(1.15);opacity:0}}
+.heart.pop{bottom:auto;animation-name:popUp}
+@keyframes popUp{0%{transform:translate(0,0) scale(.5);opacity:1}100%{transform:translate(var(--dx),-90px) scale(1.2);opacity:0}}
+#pet{position:fixed;left:0;bottom:4px;z-index:9997;font-size:34px;line-height:1;cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent;touch-action:manipulation;will-change:transform}
+#pet[hidden]{display:none}
+#petDir,#petBody{display:inline-block}
+#pet.jump #petBody{animation:hop .5s}
+@keyframes hop{0%,100%{transform:translateY(0)}40%{transform:translateY(-28px) rotate(-8deg)}}
+#petBubble{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);margin-bottom:4px;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:4px 10px;font:13px 'DM Sans',sans-serif;white-space:nowrap;opacity:0;transition:opacity .2s;pointer-events:none}
+#pet.say #petBubble{opacity:1}
+@media (prefers-reduced-motion:reduce){figure,.folder .fbody,#drawer{transition:none}#hearts{display:none}#pet.jump #petBody{animation:none}}
 </style>
 </head>
 <body>
@@ -148,6 +160,11 @@ a.btn{font:inherit;font-size:14px;text-decoration:none;border:1px solid var(--li
 </dialog>
 <dialog id="lb"><img id="lbi" alt=""><div id="lbc"></div></dialog>
 <div id="msg" role="status"></div>
+
+<div id="hearts" aria-hidden="true"></div>
+<div id="pet" role="button" tabindex="0" aria-label="Hewan peliharaan. Klik untuk menyapa" hidden>
+  <span id="petBubble"></span><span id="petDir"><span id="petBody"></span></span>
+</div>
 
 <div id="player" hidden>
   <button id="musicBtn" aria-label="Putar musik">&#9654;</button>

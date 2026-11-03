@@ -403,7 +403,7 @@ try { const t = localStorage.getItem('gh_token'); if (t) tryLogin(t, true); } ca
 // ---------- Musik latar (tetap berputar saat login atau pindah album) ----------
 // Taruh file lagu di repo dengan nama di bawah ini (satu folder dengan index.html).
 const MUSIC_SRC = 'lagu.mp3';
-const MUSIC_TITLE = 'Our Little Story';
+const MUSIC_TITLE = 'Lagu kita';
 (function () {
   const a = $('bgm'), btn = $('musicBtn'), box = $('player'), vol = $('vol');
   if (!a) return;
@@ -437,4 +437,69 @@ const MUSIC_TITLE = 'Our Little Story';
   vol.oninput = () => { a.volume = +vol.value; ls.set('bgm_vol', vol.value); };
   setInterval(() => { if (!a.paused) ls.set('bgm_pos', Math.floor(a.currentTime)); }, 3000);
   a.src = MUSIC_SRC;
+})();
+
+// ---------- Animasi: hati melayang + hewan peliharaan ----------
+const PET_ON = true;            // ubah ke false untuk mematikan hewan peliharaan
+const HEARTS_ON = true;         // ubah ke false untuk mematikan hati melayang
+const PET_EMOJI = '🐱';         // contoh lain: 🐶 🐰 🦊 🐼 🐥
+const PET_WORDS = ['Sayang kamu ❤', 'Meong~', 'Kangen kamu 💕', 'Peluk dong 🤗', 'Foto kalian lucu banget!', 'Semangat ya! ✨'];
+(function () {
+  const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const hearts = $('hearts'), pet = $('pet');
+  if (!hearts || !pet) return;
+  const GLYPHS = ['♥', '♥', '💗', '💕'];
+  function spawn(x, y, pop) {
+    if (hearts.children.length > 40) return;
+    const h = document.createElement('span');
+    h.className = 'heart' + (pop ? ' pop' : '');
+    h.textContent = GLYPHS[Math.floor(Math.random() * GLYPHS.length)];
+    h.style.left = x + 'px';
+    if (pop) h.style.top = y + 'px';
+    h.style.fontSize = (pop ? 14 + Math.random() * 12 : 12 + Math.random() * 22) + 'px';
+    h.style.setProperty('--dx', (Math.random() * 80 - 40) + 'px');
+    h.style.animationDuration = (pop ? .9 + Math.random() * .5 : 7 + Math.random() * 6) + 's';
+    h.addEventListener('animationend', () => h.remove());
+    hearts.append(h);
+  }
+  if (HEARTS_ON && !reduce) setInterval(() => { if (!document.hidden) spawn(Math.random() * innerWidth, 0, false); }, 1800);
+
+  if (!PET_ON) return;
+  pet.hidden = false;
+  $('petBody').textContent = PET_EMOJI;
+  let x = 20, dir = 1, pause = 0, hold = 0, last = performance.now();
+  let say = null;
+  function talk(t) {
+    $('petBubble').textContent = t; pet.classList.add('say');
+    clearTimeout(say); say = setTimeout(() => pet.classList.remove('say'), 2200);
+  }
+  function poke() {
+    const r = pet.getBoundingClientRect();
+    if (!reduce) {
+      pet.classList.remove('jump'); void pet.offsetWidth; pet.classList.add('jump');
+      for (let i = 0; i < 7; i++) spawn(r.left + r.width / 2 + (Math.random() * 30 - 15), r.top, true);
+    }
+    talk(PET_WORDS[Math.floor(Math.random() * PET_WORDS.length)]);
+    hold = 2.2; // diam sebentar saat disapa
+  }
+  pet.addEventListener('click', poke);
+  pet.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); poke(); } });
+  function tick(t) {
+    const dt = Math.min(.1, (t - last) / 1000); last = t;
+    const maxX = Math.max(0, innerWidth - 44);
+    let bob = 0;
+    if (hold > 0) hold -= dt;
+    else if (pause > 0) pause -= dt;
+    else {
+      x += dir * 42 * dt;
+      bob = -Math.abs(Math.sin(t / 130)) * 4;
+      if (x < 0) { x = 0; dir = 1; } else if (x > maxX) { x = maxX; dir = -1; }
+      if (Math.random() < dt * .22) pause = 1.5 + Math.random() * 3;
+      else if (Math.random() < dt * .1) dir = -dir;
+    }
+    pet.style.transform = 'translate(' + x + 'px,' + bob + 'px)';
+    $('petDir').style.transform = dir < 0 ? 'scaleX(-1)' : 'none';
+    requestAnimationFrame(tick);
+  }
+  if (reduce) pet.style.transform = 'translate(20px,0)'; else requestAnimationFrame(tick);
 })();
