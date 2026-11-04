@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="theme-color" content="#14070d">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Album Farhan &amp; Eva</title>
+<title>F&amp;E: The Journey</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=DM+Sans:wght@400;500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&display=swap" rel="stylesheet">
 <style>
 :root{color-scheme:dark;--bg:#14070d;--card:#241019;--ink:#fbeef3;--mute:#c9a3b3;--line:#4a2535;--accent:#ff6f9c;--paper:#fff6f8}
 *{box-sizing:border-box}
@@ -102,6 +102,40 @@ a.btn{font:inherit;font-size:14px;text-decoration:none;border:1px solid var(--li
 .pet.walk .l1,.pet.walk .l4{animation:swing .36s ease-in-out infinite alternate}
 .pet.walk .l2,.pet.walk .l3{animation:swing .36s ease-in-out infinite alternate-reverse}
 @keyframes swing{from{transform:rotate(-28deg)}to{transform:rotate(28deg)}}
+/* ===== Penyempurnaan tampilan: modern, minimalis, elegan, responsif ===== */
+html{scroll-behavior:smooth}
+body{-webkit-font-smoothing:antialiased;letter-spacing:.005em}
+::selection{background:var(--accent);color:#2b0715}
+header{padding:clamp(26px,6vw,56px) 20px 14px;gap:16px}
+.hl{align-items:center;gap:16px}
+.menu{margin-bottom:0}
+h1{font-weight:600;font-size:clamp(34px,7vw,62px);letter-spacing:-.025em;line-height:1.02;background:linear-gradient(90deg,#fff 35%,var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.tag{font:italic 400 clamp(16px,2.6vw,22px)/1.35 'Fraunces',Georgia,serif;color:#f6d5e1;margin:10px 0 4px}
+.sub{font-size:clamp(13px,1.9vw,15px);color:var(--mute);margin:0;max-width:52ch}
+button{border-radius:999px;padding:8px 16px;transition:border-color .15s,background .15s}
+#loginBtn:hover,#menuBtn:hover,#allBtn:hover,#logoutBtn:hover,#addBtn:hover,.acts button:hover,a.btn:hover{border-color:var(--accent)}
+.menu{border-radius:50%}
+main{padding-bottom:96px}
+#map{height:clamp(260px,42vw,420px);border-radius:20px;box-shadow:0 14px 44px rgba(0,0,0,.5)}
+.bar{font-size:13px;letter-spacing:.03em}
+#admin{border-radius:20px;background:rgba(36,16,25,.72);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+input{border-radius:12px}
+dialog{border-radius:20px}
+.folder .fbody{border-radius:0 18px 18px 18px;box-shadow:0 6px 22px rgba(0,0,0,.35);transition:transform .2s,box-shadow .2s,border-color .2s}
+.folder:hover .fbody{box-shadow:0 14px 34px rgba(255,111,156,.2);border-color:rgba(255,111,156,.5)}
+.ftext{padding:12px 14px 14px}
+.ahead h2{font-size:clamp(26px,5vw,36px);letter-spacing:-.015em}
+@media (max-width:640px){
+  header{padding:22px 14px 8px;gap:10px;flex-wrap:nowrap;align-items:flex-start}
+  .hl{gap:10px;align-items:flex-start}
+  #loginBtn{padding:8px 12px;font-size:14px;white-space:nowrap}
+  main{padding:0 14px 96px}
+  .grid{grid-template-columns:repeat(2,1fr);gap:16px}
+  .folders{grid-template-columns:repeat(2,1fr);gap:22px 14px}
+  .ftext strong{font-size:16px}
+  figcaption{font-size:18px}
+  .bar{flex-wrap:wrap}
+}
 @media (prefers-reduced-motion:reduce){figure,.folder .fbody,#drawer{transition:none}#hearts{display:none}.pet.jump svg,.tail{animation:none}}
 </style>
 </head>
@@ -110,8 +144,9 @@ a.btn{font:inherit;font-size:14px;text-decoration:none;border:1px solid var(--li
   <div class="hl">
     <button id="menuBtn" class="menu" aria-label="Buka daftar tempat" aria-controls="drawer" aria-expanded="false"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
     <div>
-    <h1>Album Farhan &amp; Eva</h1>
-    <p class="sub">Foto-foto kita, dikelompokkan berdasarkan tempat.</p>
+    <h1>F&amp;E: The Journey</h1>
+      <p class="tag">Every place has a story, every story has us</p>
+    <p class="sub">A collection of places we’ve visited and memories we’ve made.</p>
     </div>
   </div>
   <div><button id="loginBtn">Masuk admin</button></div>
