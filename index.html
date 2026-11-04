@@ -90,7 +90,10 @@ a.btn{font:inherit;font-size:14px;text-decoration:none;border:1px solid var(--li
 .heart.pop{bottom:auto;animation-name:popUp}
 @keyframes popUp{0%{transform:translate(0,0) scale(.5);opacity:1}100%{transform:translate(var(--dx),-90px) scale(1.2);opacity:0}}
 .pet{position:fixed;left:0;bottom:3px;z-index:9997;cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent;touch-action:manipulation;will-change:transform;line-height:0}
-.pet .dir{display:inline-block}
+.pet .dir,.pet .rot{display:inline-block}
+.pet .rot{transform-origin:50% 50%}
+.pet.land svg{animation:squash .35s;transform-origin:50% 100%}
+@keyframes squash{0%{transform:scale(1.3,.65)}60%{transform:scale(.94,1.08)}100%{transform:none}}
 .pet svg{display:block;overflow:visible}
 .pet .bubble{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);margin-bottom:6px;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:4px 10px;font:13px/1.3 'DM Sans',sans-serif;white-space:nowrap;opacity:0;transition:opacity .2s;pointer-events:none}
 .pet.say .bubble{opacity:1}
@@ -136,7 +139,7 @@ dialog{border-radius:20px}
   figcaption{font-size:18px}
   .bar{flex-wrap:wrap}
 }
-@media (prefers-reduced-motion:reduce){figure,.folder .fbody,#drawer{transition:none}#hearts{display:none}.pet.jump svg,.tail{animation:none}}
+@media (prefers-reduced-motion:reduce){figure,.folder .fbody,#drawer{transition:none}#hearts{display:none}.pet.jump svg,.pet.land svg,.tail{animation:none}}
 </style>
 </head>
 <body>

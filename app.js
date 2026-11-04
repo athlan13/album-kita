@@ -439,13 +439,92 @@ const MUSIC_TITLE = 'Lagu kita';
   a.src = MUSIC_SRC;
 })();
 
-// ---------- Animasi: hati melayang + dua kucing kejar-kejaran ----------
+// ---------- Animasi: hati melayang + dua kucing (lari, manjat, jatuh) ----------
 const PET_ON = true;       // false = tanpa kucing
 const HEARTS_ON = true;    // false = tanpa hati melayang
-const CAT_LEAD = ['#f4a259', '#d9822b'];    // kucing yang dikejar: [warna badan, warna kaki]
-const CAT_CHASE = ['#9aa5b8', '#657089'];   // kucing yang mengejar
+const CAT_LEAD = { kind: 'orange', body: '#f1a550', dark: '#d97f2b', white: '#fff8f0', eye: '#d7a93a' };   // kucing oranye-putih
+const CAT_CHASE = { kind: 'gray', body: '#b7adb3', dark: '#716b79', white: '#fcfaf8', eye: '#6db3e8' };    // kucing abu-abu bermata biru
 const WORDS_LEAD = ['Wlee, tangkap aku! 😜', 'Sayang kamu ❤', 'Kangen kamu 💕', 'Semangat ya! ✨'];
 const WORDS_CHASE = ['Awas ya, kukejar! 😼', 'Meong~ 🐾', 'Peluk dong 🤗', 'Kalian lucu banget! 💞'];
+const WORDS_FALL = ['Aduh! 😵', 'Bruk! 🙀', 'Hehe, jatuh 😅'];
+
+// <cat>
+const catSVG = c => {
+  const gray = c.kind === 'gray';
+  const leg = (cls, x, far) => '<g class="leg ' + cls + '"><rect x="' + x + '" y="30" width="6.6" height="12.5" rx="3.3" fill="' + (far ? c.dark : c.body) + '"/><rect x="' + x + '" y="36.8" width="6.6" height="5.7" rx="2.9" fill="' + c.white + '"/></g>';
+  const ear = gray ? c.dark : c.body;
+  return '<svg viewBox="0 0 66 44" width="66" height="44" aria-hidden="true">'
+    + '<g class="tail"><path d="M10 25 C0 26 0 11 7 7" stroke="' + c.body + '" stroke-width="6.5" stroke-linecap="round" fill="none"/>' + (gray ? '<circle cx="7" cy="7.5" r="3.3" fill="' + c.dark + '"/>' : '') + '</g>'
+    + leg('l2', 17, true) + leg('l4', 36, true)
+    + '<ellipse cx="28" cy="25" rx="20.5" ry="11.5" fill="' + c.body + '"/>'
+    + (gray ? '' : '<ellipse cx="21" cy="19" rx="9" ry="4" fill="' + c.dark + '" opacity=".35"/>')
+    + '<ellipse cx="27" cy="33" rx="15" ry="4.6" fill="' + c.white + '"/><ellipse cx="41" cy="29" rx="8.5" ry="8" fill="' + c.white + '"/>'
+    + leg('l1', 12, false) + leg('l3', 41, false)
+    + '<path d="M43 11.5 L44.6 1.2 L51.5 8.2Z" fill="' + ear + '"/><path d="M52.5 8 L58 1.2 L61 12.5Z" fill="' + ear + '"/><path d="M45.2 9.2 L45.6 4.8 L48.6 7.8Z" fill="#f3a2bb"/>'
+    + '<circle cx="51.5" cy="17.5" r="10.5" fill="' + c.body + '"/>'
+    + (gray ? '<ellipse cx="54" cy="18.5" rx="8.6" ry="7.6" fill="' + c.dark + '" opacity=".85"/><path d="M51.2 8.6 Q54.4 14 56 20 L52.4 20 Q50 14 51.2 8.6Z" fill="' + c.white + '"/>' : '')
+    + '<ellipse cx="58" cy="21.2" rx="5" ry="4" fill="' + c.white + '"/>'
+    + '<ellipse cx="55.4" cy="16.2" rx="2.5" ry="2.2" fill="' + c.eye + '"/><ellipse cx="55.9" cy="16.2" rx="1" ry="1.8" fill="#1b1b1b"/><circle cx="56.3" cy="15.4" r=".55" fill="#fff"/>'
+    + '<path d="M60.6 19.3 q1.4 .2 1 1.5 q-.8 .9 -1.8 0 q-.6 -1.2 .8 -1.5z" fill="' + (gray ? '#3a3036' : '#ff8fb1') + '"/>'
+    + '<path d="M59 22 L65.5 21 M59 23.2 L65.5 25" stroke="#fff" stroke-width=".7" opacity=".85"/></svg>';
+};
+// </cat>
+
+// <sim>  (logika gerak: murni angka, tanpa DOM)
+const rnd = (a, b) => a + Math.random() * (b - a);
+const newCat = (x, d) => ({ x, y: 0, d, mode: 'ground', wall: null, rot: 0, r0: 0, H: 0, hang: 0, vy: 0, fT: 0, fTot: 1, pause: 0, moving: false, landed: false, started: false });
+function startClimb(c, wall, H, maxX) { c.mode = 'climb'; c.wall = wall; c.d = wall === 'L' ? -1 : 1; c.x = wall === 'L' ? -11 : maxX + 11; c.H = H; c.hang = 0; c.started = true; }
+function climb(c, dt) {
+  c.y = Math.min(c.H, c.y + 58 * dt); c.moving = c.y < c.H;
+  c.rot += ((c.wall === 'L' ? 90 : -90) - c.rot) * Math.min(1, 10 * dt);
+  if (c.y >= c.H) { c.hang += dt; if (c.hang > .7) { c.mode = 'fall'; c.vy = 0; c.fT = 0; c.fTot = Math.max(.25, Math.sqrt(2 * c.y / 1500)); c.r0 = c.rot; c.moving = false; } }
+}
+function fall(c, dt, maxX) {
+  c.fT += dt; c.vy -= 1500 * dt; c.y += c.vy * dt; c.x += (c.wall === 'L' ? 1 : -1) * 45 * dt;
+  const e = c.wall === 'L' ? 360 : -360;
+  c.rot = c.r0 + (e - c.r0) * Math.min(1, c.fT / c.fTot);
+  if (c.y <= 0) { c.y = 0; c.mode = 'ground'; c.rot = 0; c.d = c.wall === 'L' ? 1 : -1; c.x = Math.min(maxX, Math.max(0, c.x)); c.pause = 1; c.landed = true; c.wall = null; }
+}
+function step(S, dt, maxX, maxH) {
+  const { lead, chase } = S;
+  S.phase += dt; S.hold = Math.max(0, S.hold - dt);
+  for (const c of [lead, chase]) { c.moving = c.landed = c.started = false; if (c.mode === 'ground') c.x = Math.min(maxX, Math.max(0, c.x)); if (c.mode === 'fall') fall(c, dt, maxX); }
+  if (S.hold > 0) return;
+  S.nextClimb -= dt;
+  if (lead.mode === 'ground') {
+    if (!S.wall && S.nextClimb <= 0 && chase.mode === 'ground') { S.wall = lead.x < maxX / 2 ? 'L' : 'R'; lead.d = S.wall === 'L' ? -1 : 1; lead.pause = 0; }
+    if (S.wall) {
+      if (lead.pause > 0) lead.pause -= dt;
+      else {
+        lead.x += lead.d * 85 * dt; lead.moving = true;
+        if ((S.wall === 'L' && lead.x <= 0) || (S.wall === 'R' && lead.x >= maxX)) startClimb(lead, S.wall, rnd(.45, .9) * maxH, maxX);
+      }
+    } else if (lead.pause > 0) lead.pause -= dt;
+    else {
+      lead.x += lead.d * 75 * dt; lead.moving = true;
+      if (lead.x < 0) { lead.x = 0; lead.d = 1; } else if (lead.x > maxX) { lead.x = maxX; lead.d = -1; }
+      if (Math.random() < dt * .08) lead.d = -lead.d;
+      if (Math.random() < dt * .12) lead.pause = rnd(1, 2.8);
+    }
+  } else if (lead.mode === 'climb') climb(lead, dt);
+  if (lead.landed) { S.wall = null; S.nextClimb = rnd(9, 16); }
+  if (chase.mode === 'ground') {
+    if (chase.pause > 0) chase.pause -= dt;
+    else {
+      const edge = S.wall === 'L' ? 0 : maxX;
+      const gap = 75 + Math.sin(S.phase * .6) * 50;
+      const target = S.wall ? edge : Math.min(maxX, Math.max(0, lead.x - lead.d * gap));
+      const diff = target - chase.x;
+      if (Math.abs(diff) > 6) { chase.d = diff > 0 ? 1 : -1; chase.x += chase.d * Math.min(98, Math.abs(diff) * 3) * dt; chase.moving = true; }
+      else {
+        chase.d = S.wall ? (S.wall === 'L' ? -1 : 1) : lead.d;
+        if (S.wall && lead.mode === 'climb') startClimb(chase, S.wall, Math.max(70, lead.H * .6), maxX);
+      }
+    }
+  } else if (chase.mode === 'climb') climb(chase, dt);
+}
+// </sim>
+
 (function () {
   const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   const hearts = $('hearts');
@@ -467,80 +546,56 @@ const WORDS_CHASE = ['Awas ya, kukejar! 😼', 'Meong~ 🐾', 'Peluk dong 🤗',
   if (HEARTS_ON && !reduce) setInterval(() => { if (!document.hidden) spawn(Math.random() * innerWidth, 0, false); }, 1800);
   if (!PET_ON) return;
 
-  const catSVG = (c, d, stripes) => '<svg viewBox="0 0 64 44" width="58" height="40" aria-hidden="true">'
-    + '<g class="tail"><path d="M10 25 C1 25 1 12 7 8" stroke="' + c + '" stroke-width="5" stroke-linecap="round" fill="none"/></g>'
-    + '<rect class="leg l2" x="17" y="30" width="6" height="12" rx="3" fill="' + d + '"/>'
-    + '<rect class="leg l4" x="36" y="30" width="6" height="12" rx="3" fill="' + d + '"/>'
-    + '<ellipse cx="28" cy="25" rx="20" ry="11" fill="' + c + '"/>'
-    + (stripes ? '<path d="M20 16 q2 4 0 7M27 15 q2 5 0 9M34 16 q2 4 0 7" stroke="' + d + '" stroke-width="2" fill="none" stroke-linecap="round" opacity=".7"/>' : '')
-    + '<rect class="leg l1" x="12" y="30" width="6" height="12" rx="3" fill="' + c + '"/>'
-    + '<rect class="leg l3" x="41" y="30" width="6" height="12" rx="3" fill="' + c + '"/>'
-    + '<path d="M43 11 L45 1 L51 8Z" fill="' + c + '"/><path d="M53 8 L58 1 L60 12Z" fill="' + c + '"/>'
-    + '<path d="M45 9 L45.5 4.5 L48.5 8Z" fill="#ff9db8"/>'
-    + '<circle cx="51" cy="17" r="10" fill="' + c + '"/>'
-    + '<circle cx="55" cy="16" r="1.8" fill="#1d1d1d"/><circle cx="55.6" cy="15.4" r=".6" fill="#fff"/>'
-    + '<circle cx="60" cy="19.5" r="1.4" fill="#ff8fb1"/>'
-    + '<path d="M58 21 L64 20 M58 22.5 L64 24" stroke="#fff" stroke-width=".8" opacity=".8"/></svg>';
-
-  function makeCat(colors, stripes, label, words) {
+  const S = { hold: 0, phase: 0, nextClimb: rnd(6, 10), wall: null };
+  const pick = a => a[Math.floor(Math.random() * a.length)];
+  function talk(c, text) {
+    c.bubble.textContent = text; c.el.classList.add('say');
+    clearTimeout(c.timer); c.timer = setTimeout(() => c.el.classList.remove('say'), 2200);
+  }
+  function makeCat(colors, label, words, x, d) {
     const el = document.createElement('div');
-    el.className = 'pet';
-    el.tabIndex = 0;
-    el.setAttribute('role', 'button');
-    el.setAttribute('aria-label', label + '. Klik untuk menyapa');
-    el.innerHTML = '<span class="bubble"></span><span class="dir">' + catSVG(colors[0], colors[1], stripes) + '</span>';
+    el.className = 'pet'; el.tabIndex = 0;
+    el.setAttribute('role', 'button'); el.setAttribute('aria-label', label + '. Klik untuk menyapa');
+    el.innerHTML = '<span class="bubble"></span><span class="rot"><span class="dir">' + catSVG(colors) + '</span></span>';
     document.body.append(el);
-    const cat = { el, dir: el.querySelector('.dir'), bubble: el.querySelector('.bubble'), x: 0, d: 1, words, timer: null };
+    const c = Object.assign(newCat(x, d), { el, rotEl: el.querySelector('.rot'), dir: el.querySelector('.dir'), bubble: el.querySelector('.bubble'), timer: null });
     const poke = () => {
       const r = el.getBoundingClientRect();
       if (!reduce) {
         el.classList.remove('jump'); void el.offsetWidth; el.classList.add('jump');
         for (let i = 0; i < 7; i++) spawn(r.left + r.width / 2 + (Math.random() * 30 - 15), r.top, true);
       }
-      cat.bubble.textContent = words[Math.floor(Math.random() * words.length)];
-      el.classList.add('say');
-      clearTimeout(cat.timer); cat.timer = setTimeout(() => el.classList.remove('say'), 2400);
-      hold = 2.4; // keduanya berhenti sebentar
+      talk(c, pick(words)); S.hold = 2.4;
     };
     el.addEventListener('click', poke);
     el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); poke(); } });
-    return cat;
+    return c;
   }
-
-  let hold = 0, pause = 0, phase = 0, last = performance.now();
-  const lead = makeCat(CAT_LEAD, true, 'Kucing oranye', WORDS_LEAD);
-  const chase = makeCat(CAT_CHASE, false, 'Kucing abu-abu', WORDS_CHASE);
-  lead.x = 170; chase.x = 40;
-  const place = (c, bob) => { c.el.style.transform = 'translate(' + c.x + 'px,' + (bob || 0) + 'px)'; c.dir.style.transform = c.d < 0 ? 'scaleX(-1)' : 'none'; };
-  if (reduce) { place(lead); place(chase); return; }
-
+  S.lead = makeCat(CAT_LEAD, 'Kucing oranye', WORDS_LEAD, 170, 1);
+  S.chase = makeCat(CAT_CHASE, 'Kucing abu-abu', WORDS_CHASE, 40, 1);
+  const cats = [S.lead, S.chase];
+  function render(c, t) {
+    const lift = Math.abs(Math.sin(c.rot * Math.PI / 180)) * 11;   // cat tegak: tubuhnya turun 11px di bawah garis dasar
+    const bob = c.mode === 'ground' && c.moving ? -Math.abs(Math.sin(t / 110)) * 3 : 0;
+    c.el.style.transform = 'translate(' + c.x + 'px,' + (-c.y - lift + bob) + 'px)';
+    c.rotEl.style.transform = 'rotate(' + c.rot + 'deg)';
+    c.dir.style.transform = c.d < 0 ? 'scaleX(-1)' : 'none';
+    c.el.classList.toggle('walk', c.moving);
+  }
+  if (reduce) { cats.forEach(c => render(c, 0)); return; }
+  let last = performance.now();
   function tick(t) {
-    const dt = Math.min(.1, (t - last) / 1000); last = t; phase += dt;
-    const maxX = Math.max(0, innerWidth - 60);
-    let leadMoves = false, chaseMoves = false;
-    if (hold > 0) hold -= dt;
-    else {
-      if (pause > 0) pause -= dt;
-      else {
-        lead.x += lead.d * 75 * dt; leadMoves = true;
-        if (lead.x < 0) { lead.x = 0; lead.d = 1; } else if (lead.x > maxX) { lead.x = maxX; lead.d = -1; }
-        if (Math.random() < dt * .08) lead.d = -lead.d;
-        if (Math.random() < dt * .12) pause = 1 + Math.random() * 1.8;
-      }
-      const gap = 75 + Math.sin(phase * .6) * 50;            // jarak naik-turun: kadang hampir tertangkap
-      const target = Math.min(maxX, Math.max(0, lead.x - lead.d * gap));
-      const diff = target - chase.x;
-      if (Math.abs(diff) > 6) {
-        chase.d = diff > 0 ? 1 : -1;
-        chase.x += chase.d * Math.min(98, Math.abs(diff) * 3) * dt; chaseMoves = true;
-      } else chase.d = lead.d;
-      if (Math.abs(lead.x - chase.x) < 45 && Math.random() < dt * .6) { // hampir tertangkap: muncul hati
-        const r = chase.el.getBoundingClientRect(); spawn(r.left + r.width / 2, r.top, true);
-      }
+    const dt = Math.min(.1, (t - last) / 1000); last = t;
+    const maxX = Math.max(0, innerWidth - 66), maxH = Math.max(90, Math.min(300, innerHeight * .55 - 60));
+    step(S, dt, maxX, maxH);
+    cats.forEach(c => {
+      if (c.started) talk(c, 'Manjat ah~ 🧗');
+      if (c.landed) { c.el.classList.remove('land'); void c.el.offsetWidth; c.el.classList.add('land'); talk(c, pick(WORDS_FALL)); }
+    });
+    render(S.lead, t); render(S.chase, t * 1.15);
+    if (S.lead.mode === 'ground' && S.chase.mode === 'ground' && Math.abs(S.lead.x - S.chase.x) < 45 && Math.random() < dt * .6) {
+      const r = S.chase.el.getBoundingClientRect(); spawn(r.left + r.width / 2, r.top, true);
     }
-    lead.el.classList.toggle('walk', leadMoves); chase.el.classList.toggle('walk', chaseMoves);
-    place(lead, leadMoves ? -Math.abs(Math.sin(t / 110)) * 3 : 0);
-    place(chase, chaseMoves ? -Math.abs(Math.sin(t / 95)) * 3 : 0);
     requestAnimationFrame(tick);
   }
   requestAnimationFrame(tick);
