@@ -1,5 +1,14 @@
 const PHOTOS = [
   {
+    "src": "photos/foto-1793779487189-7b6p.jpg",
+    "place": "Paris Van Java",
+    "lat": -6.88931,
+    "lng": 107.59651,
+    "address": "",
+    "caption": "Versi editan princess",
+    "date": "2026-10-24"
+  },
+  {
     "src": "photos/foto-1793779379437-zgcf.jpg",
     "place": "Paris Van Java",
     "lat": -6.88931,
