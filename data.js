@@ -1,5 +1,50 @@
 const PHOTOS = [
   {
+    "src": "photos/foto-1793779379437-zgcf.jpg",
+    "place": "Paris Van Java",
+    "lat": -6.88931,
+    "lng": 107.59651,
+    "address": "",
+    "caption": "Photobooth sebelum nonton🩷",
+    "date": "2026-10-24"
+  },
+  {
+    "src": "photos/foto-1793779379990-h1fs.jpg",
+    "place": "Paris Van Java",
+    "lat": -6.88931,
+    "lng": 107.59651,
+    "address": "",
+    "caption": "Photobooth sebelum nonton🩷",
+    "date": "2026-10-24"
+  },
+  {
+    "src": "photos/foto-1793779380950-6f0n.jpg",
+    "place": "Paris Van Java",
+    "lat": -6.88931,
+    "lng": 107.59651,
+    "address": "",
+    "caption": "Photobooth sebelum nonton🩷",
+    "date": "2026-10-24"
+  },
+  {
+    "src": "photos/foto-1793779381299-eqyv.jpg",
+    "place": "Paris Van Java",
+    "lat": -6.88931,
+    "lng": 107.59651,
+    "address": "",
+    "caption": "Photobooth sebelum nonton🩷",
+    "date": "2026-10-24"
+  },
+  {
+    "src": "photos/foto-1793779382439-isf3.jpg",
+    "place": "Paris Van Java",
+    "lat": -6.88931,
+    "lng": 107.59651,
+    "address": "",
+    "caption": "Photobooth sebelum nonton🩷",
+    "date": "2026-10-24"
+  },
+  {
     "src": "photos/foto-1793595806549-5lbt.jpg",
     "place": "Kos\"an Princesss",
     "lat": -6.367,
