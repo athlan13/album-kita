@@ -1,5 +1,68 @@
 const PHOTOS = [
   {
+    "src": "photos/foto-1793868003869-n076.jpg",
+    "place": "The Great Asia Africa",
+    "lat": -6.8326,
+    "lng": 107.60476,
+    "address": "Jl. Raya Lembang - Bandung No.71, Gudangkahuripan, Kec. Lembang, Kabupaten Bandung Barat, Jawa Barat 40391",
+    "caption": "",
+    "date": "2026-10-25"
+  },
+  {
+    "src": "photos/foto-1793868008462-jfx1.jpg",
+    "place": "The Great Asia Africa",
+    "lat": -6.8326,
+    "lng": 107.60476,
+    "address": "Jl. Raya Lembang - Bandung No.71, Gudangkahuripan, Kec. Lembang, Kabupaten Bandung Barat, Jawa Barat 40391",
+    "caption": "",
+    "date": "2026-10-25"
+  },
+  {
+    "src": "photos/foto-1793868012952-a9jb.jpg",
+    "place": "The Great Asia Africa",
+    "lat": -6.8326,
+    "lng": 107.60476,
+    "address": "Jl. Raya Lembang - Bandung No.71, Gudangkahuripan, Kec. Lembang, Kabupaten Bandung Barat, Jawa Barat 40391",
+    "caption": "",
+    "date": "2026-10-25"
+  },
+  {
+    "src": "photos/foto-1793868017497-3l8u.jpg",
+    "place": "The Great Asia Africa",
+    "lat": -6.8326,
+    "lng": 107.60476,
+    "address": "Jl. Raya Lembang - Bandung No.71, Gudangkahuripan, Kec. Lembang, Kabupaten Bandung Barat, Jawa Barat 40391",
+    "caption": "",
+    "date": "2026-10-25"
+  },
+  {
+    "src": "photos/foto-1793868022063-93sg.jpg",
+    "place": "The Great Asia Africa",
+    "lat": -6.8326,
+    "lng": 107.60476,
+    "address": "Jl. Raya Lembang - Bandung No.71, Gudangkahuripan, Kec. Lembang, Kabupaten Bandung Barat, Jawa Barat 40391",
+    "caption": "",
+    "date": "2026-10-25"
+  },
+  {
+    "src": "photos/foto-1793868026683-ci0v.jpg",
+    "place": "The Great Asia Africa",
+    "lat": -6.8326,
+    "lng": 107.60476,
+    "address": "Jl. Raya Lembang - Bandung No.71, Gudangkahuripan, Kec. Lembang, Kabupaten Bandung Barat, Jawa Barat 40391",
+    "caption": "",
+    "date": "2026-10-25"
+  },
+  {
+    "src": "photos/foto-1793868031211-13pc.jpg",
+    "place": "The Great Asia Africa",
+    "lat": -6.8326,
+    "lng": 107.60476,
+    "address": "Jl. Raya Lembang - Bandung No.71, Gudangkahuripan, Kec. Lembang, Kabupaten Bandung Barat, Jawa Barat 40391",
+    "caption": "",
+    "date": "2026-10-25"
+  },
+  {
     "src": "photos/foto-1793867873230-46b5.jpg",
     "place": "Seblak Mamah Saleh",
     "lat": -6.88876,
