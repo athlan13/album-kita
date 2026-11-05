@@ -1,5 +1,140 @@
 const PHOTOS = [
   {
+    "src": "photos/foto-1793865326405-o8es.jpg",
+    "place": "Pisang Madu Bu Nanik",
+    "lat": -6.17227,
+    "lng": 106.78355,
+    "address": "Jl. Tanjung Duren Raya No.67, RT.2/RW.5, Tj. Duren Utara, Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta",
+    "caption": "PISANG🐒🍌",
+    "date": "2026-08-01"
+  },
+  {
+    "src": "photos/foto-1793865335457-fhkr.jpg",
+    "place": "Pisang Madu Bu Nanik",
+    "lat": -6.17227,
+    "lng": 106.78355,
+    "address": "Jl. Tanjung Duren Raya No.67, RT.2/RW.5, Tj. Duren Utara, Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta",
+    "caption": "PISANG🐒🍌",
+    "date": "2026-08-01"
+  },
+  {
+    "src": "photos/foto-1793865344136-3d6q.jpg",
+    "place": "Pisang Madu Bu Nanik",
+    "lat": -6.17227,
+    "lng": 106.78355,
+    "address": "Jl. Tanjung Duren Raya No.67, RT.2/RW.5, Tj. Duren Utara, Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta",
+    "caption": "PISANG🐒🍌",
+    "date": "2026-08-01"
+  },
+  {
+    "src": "photos/foto-1793865352071-rvc2.jpg",
+    "place": "Pisang Madu Bu Nanik",
+    "lat": -6.17227,
+    "lng": 106.78355,
+    "address": "Jl. Tanjung Duren Raya No.67, RT.2/RW.5, Tj. Duren Utara, Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta",
+    "caption": "PISANG🐒🍌",
+    "date": "2026-08-01"
+  },
+  {
+    "src": "photos/foto-1793865363081-xjrg.jpg",
+    "place": "Pisang Madu Bu Nanik",
+    "lat": -6.17227,
+    "lng": 106.78355,
+    "address": "Jl. Tanjung Duren Raya No.67, RT.2/RW.5, Tj. Duren Utara, Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta",
+    "caption": "PISANG🐒🍌",
+    "date": "2026-08-01"
+  },
+  {
+    "src": "photos/foto-1793865370255-kuko.jpg",
+    "place": "Pisang Madu Bu Nanik",
+    "lat": -6.17227,
+    "lng": 106.78355,
+    "address": "Jl. Tanjung Duren Raya No.67, RT.2/RW.5, Tj. Duren Utara, Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta",
+    "caption": "PISANG🐒🍌",
+    "date": "2026-08-01"
+  },
+  {
+    "src": "photos/foto-1793865380375-y34t.jpg",
+    "place": "Pisang Madu Bu Nanik",
+    "lat": -6.17227,
+    "lng": 106.78355,
+    "address": "Jl. Tanjung Duren Raya No.67, RT.2/RW.5, Tj. Duren Utara, Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta",
+    "caption": "PISANG🐒🍌",
+    "date": "2026-08-01"
+  },
+  {
+    "src": "photos/foto-1793865391353-rg5e.jpg",
+    "place": "Pisang Madu Bu Nanik",
+    "lat": -6.17227,
+    "lng": 106.78355,
+    "address": "Jl. Tanjung Duren Raya No.67, RT.2/RW.5, Tj. Duren Utara, Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta",
+    "caption": "PISANG🐒🍌",
+    "date": "2026-08-01"
+  },
+  {
+    "src": "photos/foto-1793865395080-mbwy.jpg",
+    "place": "Pisang Madu Bu Nanik",
+    "lat": -6.17227,
+    "lng": 106.78355,
+    "address": "Jl. Tanjung Duren Raya No.67, RT.2/RW.5, Tj. Duren Utara, Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta",
+    "caption": "PISANG🐒🍌",
+    "date": "2026-08-01"
+  },
+  {
+    "src": "photos/foto-1793865403652-evb5.jpg",
+    "place": "Pisang Madu Bu Nanik",
+    "lat": -6.17227,
+    "lng": 106.78355,
+    "address": "Jl. Tanjung Duren Raya No.67, RT.2/RW.5, Tj. Duren Utara, Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta",
+    "caption": "PISANG🐒🍌",
+    "date": "2026-08-01"
+  },
+  {
+    "src": "photos/foto-1793865412532-ljir.jpg",
+    "place": "Pisang Madu Bu Nanik",
+    "lat": -6.17227,
+    "lng": 106.78355,
+    "address": "Jl. Tanjung Duren Raya No.67, RT.2/RW.5, Tj. Duren Utara, Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta",
+    "caption": "PISANG🐒🍌",
+    "date": "2026-08-01"
+  },
+  {
+    "src": "photos/foto-1793865417719-5uts.jpg",
+    "place": "Pisang Madu Bu Nanik",
+    "lat": -6.17227,
+    "lng": 106.78355,
+    "address": "Jl. Tanjung Duren Raya No.67, RT.2/RW.5, Tj. Duren Utara, Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta",
+    "caption": "PISANG🐒🍌",
+    "date": "2026-08-01"
+  },
+  {
+    "src": "photos/foto-1793865420559-vrv4.jpg",
+    "place": "Pisang Madu Bu Nanik",
+    "lat": -6.17227,
+    "lng": 106.78355,
+    "address": "Jl. Tanjung Duren Raya No.67, RT.2/RW.5, Tj. Duren Utara, Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta",
+    "caption": "PISANG🐒🍌",
+    "date": "2026-08-01"
+  },
+  {
+    "src": "photos/foto-1793865429938-zcgz.jpg",
+    "place": "Pisang Madu Bu Nanik",
+    "lat": -6.17227,
+    "lng": 106.78355,
+    "address": "Jl. Tanjung Duren Raya No.67, RT.2/RW.5, Tj. Duren Utara, Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta",
+    "caption": "PISANG🐒🍌",
+    "date": "2026-08-01"
+  },
+  {
+    "src": "photos/foto-1793865440959-s1mx.jpg",
+    "place": "Pisang Madu Bu Nanik",
+    "lat": -6.17227,
+    "lng": 106.78355,
+    "address": "Jl. Tanjung Duren Raya No.67, RT.2/RW.5, Tj. Duren Utara, Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta",
+    "caption": "PISANG🐒🍌",
+    "date": "2026-08-01"
+  },
+  {
     "src": "photos/foto-1793864898448-paar.jpg",
     "place": "Central Park",
     "lat": -6.17617,
