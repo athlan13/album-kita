@@ -1,5 +1,32 @@
 const PHOTOS = [
   {
+    "src": "photos/foto-1793867873230-46b5.jpg",
+    "place": "Seblak Mamah Saleh",
+    "lat": -6.88876,
+    "lng": 107.58276,
+    "address": "Jl. Babakan Jeruk 1 No.47, Sukagalih, Kec. Sukajadi, Kota Bandung, Jawa Barat 40163",
+    "caption": "Warga bekasi harus tau seblak ini🦵🏻",
+    "date": "2026-10-24"
+  },
+  {
+    "src": "photos/foto-1793867873779-k0pj.jpg",
+    "place": "Seblak Mamah Saleh",
+    "lat": -6.88876,
+    "lng": 107.58276,
+    "address": "",
+    "caption": "Warga bekasi harus tau seblak ini🦵🏻",
+    "date": "2026-10-24"
+  },
+  {
+    "src": "photos/foto-1793867881023-dpjp.jpg",
+    "place": "Seblak Mamah Saleh",
+    "lat": -6.88876,
+    "lng": 107.58276,
+    "address": "Jl. Babakan Jeruk 1 No.47, Sukagalih, Kec. Sukajadi, Kota Bandung, Jawa Barat 40163",
+    "caption": "",
+    "date": "2026-10-24"
+  },
+  {
     "src": "photos/foto-1793867859121-yg5k.jpg",
     "place": "Seblak Mamah Saleh",
     "lat": -6.88876,
