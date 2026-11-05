@@ -1,5 +1,68 @@
 const PHOTOS = [
   {
+    "src": "photos/foto-1793866418500-7yks.jpg",
+    "place": "Cafe Betawi",
+    "lat": -6.18447,
+    "lng": 106.75812,
+    "address": "Central Park Mall Lantai LG, Jalan Letjen. S. Parman No. 28, RT.12 / RW.06, Tanjung Duren Selatan, Grogol petamburan, RT.12/RW.6, Tj. Duren Sel., Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470",
+    "caption": "",
+    "date": "2026-08-01"
+  },
+  {
+    "src": "photos/foto-1793866420716-hhqy.jpg",
+    "place": "Cafe Betawi",
+    "lat": -6.18447,
+    "lng": 106.75812,
+    "address": "Central Park Mall Lantai LG, Jalan Letjen. S. Parman No. 28, RT.12 / RW.06, Tanjung Duren Selatan, Grogol petamburan, RT.12/RW.6, Tj. Duren Sel., Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470",
+    "caption": "",
+    "date": "2026-08-01"
+  },
+  {
+    "src": "photos/foto-1793866430510-zedf.jpg",
+    "place": "Cafe Betawi",
+    "lat": -6.18447,
+    "lng": 106.75812,
+    "address": "Central Park Mall Lantai LG, Jalan Letjen. S. Parman No. 28, RT.12 / RW.06, Tanjung Duren Selatan, Grogol petamburan, RT.12/RW.6, Tj. Duren Sel., Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470",
+    "caption": "",
+    "date": "2026-08-01"
+  },
+  {
+    "src": "photos/foto-1793866434219-rqdp.jpg",
+    "place": "Cafe Betawi",
+    "lat": -6.18447,
+    "lng": 106.75812,
+    "address": "Central Park Mall Lantai LG, Jalan Letjen. S. Parman No. 28, RT.12 / RW.06, Tanjung Duren Selatan, Grogol petamburan, RT.12/RW.6, Tj. Duren Sel., Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470",
+    "caption": "",
+    "date": "2026-08-01"
+  },
+  {
+    "src": "photos/foto-1793866435565-n4f5.jpg",
+    "place": "Cafe Betawi",
+    "lat": -6.18447,
+    "lng": 106.75812,
+    "address": "Central Park Mall Lantai LG, Jalan Letjen. S. Parman No. 28, RT.12 / RW.06, Tanjung Duren Selatan, Grogol petamburan, RT.12/RW.6, Tj. Duren Sel., Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470",
+    "caption": "",
+    "date": "2026-08-01"
+  },
+  {
+    "src": "photos/foto-1793866444882-vyd5.jpg",
+    "place": "Cafe Betawi",
+    "lat": -6.18447,
+    "lng": 106.75812,
+    "address": "Central Park Mall Lantai LG, Jalan Letjen. S. Parman No. 28, RT.12 / RW.06, Tanjung Duren Selatan, Grogol petamburan, RT.12/RW.6, Tj. Duren Sel., Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470",
+    "caption": "",
+    "date": "2026-08-01"
+  },
+  {
+    "src": "photos/foto-1793866448548-dv5t.jpg",
+    "place": "Cafe Betawi",
+    "lat": -6.18447,
+    "lng": 106.75812,
+    "address": "Central Park Mall Lantai LG, Jalan Letjen. S. Parman No. 28, RT.12 / RW.06, Tanjung Duren Selatan, Grogol petamburan, RT.12/RW.6, Tj. Duren Sel., Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470",
+    "caption": "",
+    "date": "2026-08-01"
+  },
+  {
     "src": "photos/foto-1793866166775-4un0.jpg",
     "place": "M BLoc Space",
     "lat": -6.24152,
