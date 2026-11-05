@@ -1,5 +1,131 @@
 const PHOTOS = [
   {
+    "src": "photos/foto-1793865936346-r9y1.jpg",
+    "place": "Seafoid 08 Vian Jaya Antasari",
+    "lat": -6.28811,
+    "lng": 106.7976,
+    "address": "Jl. Pangeran Antasari No.20, RT.11/RW.1, Cilandak Bar., Kec. Cilandak, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta",
+    "caption": "",
+    "date": "2026-07-26"
+  },
+  {
+    "src": "photos/foto-1793865936994-10ea.jpg",
+    "place": "Seafoid 08 Vian Jaya Antasari",
+    "lat": -6.28811,
+    "lng": 106.7976,
+    "address": "Jl. Pangeran Antasari No.20, RT.11/RW.1, Cilandak Bar., Kec. Cilandak, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta",
+    "caption": "",
+    "date": "2026-07-26"
+  },
+  {
+    "src": "photos/foto-1793865950668-zs7u.jpg",
+    "place": "Seafoid 08 Vian Jaya Antasari",
+    "lat": -6.28811,
+    "lng": 106.7976,
+    "address": "Jl. Pangeran Antasari No.20, RT.11/RW.1, Cilandak Bar., Kec. Cilandak, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta",
+    "caption": "",
+    "date": "2026-07-26"
+  },
+  {
+    "src": "photos/foto-1793865952211-ecil.jpg",
+    "place": "Seafoid 08 Vian Jaya Antasari",
+    "lat": -6.28811,
+    "lng": 106.7976,
+    "address": "Jl. Pangeran Antasari No.20, RT.11/RW.1, Cilandak Bar., Kec. Cilandak, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta",
+    "caption": "",
+    "date": "2026-07-26"
+  },
+  {
+    "src": "photos/foto-1793865965092-qmm1.jpg",
+    "place": "Seafoid 08 Vian Jaya Antasari",
+    "lat": -6.28811,
+    "lng": 106.7976,
+    "address": "Jl. Pangeran Antasari No.20, RT.11/RW.1, Cilandak Bar., Kec. Cilandak, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta",
+    "caption": "",
+    "date": "2026-07-26"
+  },
+  {
+    "src": "photos/foto-1793865966548-wmey.jpg",
+    "place": "Seafoid 08 Vian Jaya Antasari",
+    "lat": -6.28811,
+    "lng": 106.7976,
+    "address": "Jl. Pangeran Antasari No.20, RT.11/RW.1, Cilandak Bar., Kec. Cilandak, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta",
+    "caption": "",
+    "date": "2026-07-26"
+  },
+  {
+    "src": "photos/foto-1793865979280-aage.jpg",
+    "place": "Seafoid 08 Vian Jaya Antasari",
+    "lat": -6.28811,
+    "lng": 106.7976,
+    "address": "Jl. Pangeran Antasari No.20, RT.11/RW.1, Cilandak Bar., Kec. Cilandak, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta",
+    "caption": "",
+    "date": "2026-07-26"
+  },
+  {
+    "src": "photos/foto-1793865980642-7ni9.jpg",
+    "place": "Seafoid 08 Vian Jaya Antasari",
+    "lat": -6.28811,
+    "lng": 106.7976,
+    "address": "Jl. Pangeran Antasari No.20, RT.11/RW.1, Cilandak Bar., Kec. Cilandak, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta",
+    "caption": "",
+    "date": "2026-07-26"
+  },
+  {
+    "src": "photos/foto-1793865992508-490l.jpg",
+    "place": "Seafoid 08 Vian Jaya Antasari",
+    "lat": -6.28811,
+    "lng": 106.7976,
+    "address": "Jl. Pangeran Antasari No.20, RT.11/RW.1, Cilandak Bar., Kec. Cilandak, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta",
+    "caption": "",
+    "date": "2026-07-26"
+  },
+  {
+    "src": "photos/foto-1793865992630-crup.jpg",
+    "place": "Seafoid 08 Vian Jaya Antasari",
+    "lat": -6.28811,
+    "lng": 106.7976,
+    "address": "Jl. Pangeran Antasari No.20, RT.11/RW.1, Cilandak Bar., Kec. Cilandak, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta",
+    "caption": "",
+    "date": "2026-07-26"
+  },
+  {
+    "src": "photos/foto-1793866006716-ubea.jpg",
+    "place": "Seafoid 08 Vian Jaya Antasari",
+    "lat": -6.28811,
+    "lng": 106.7976,
+    "address": "Jl. Pangeran Antasari No.20, RT.11/RW.1, Cilandak Bar., Kec. Cilandak, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta",
+    "caption": "",
+    "date": "2026-07-26"
+  },
+  {
+    "src": "photos/foto-1793866008013-l1zd.jpg",
+    "place": "Seafoid 08 Vian Jaya Antasari",
+    "lat": -6.28811,
+    "lng": 106.7976,
+    "address": "Jl. Pangeran Antasari No.20, RT.11/RW.1, Cilandak Bar., Kec. Cilandak, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta",
+    "caption": "",
+    "date": "2026-07-26"
+  },
+  {
+    "src": "photos/foto-1793866021004-gfup.jpg",
+    "place": "Seafoid 08 Vian Jaya Antasari",
+    "lat": -6.28811,
+    "lng": 106.7976,
+    "address": "Jl. Pangeran Antasari No.20, RT.11/RW.1, Cilandak Bar., Kec. Cilandak, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta",
+    "caption": "",
+    "date": "2026-07-26"
+  },
+  {
+    "src": "photos/foto-1793866022428-vy0y.jpg",
+    "place": "Seafoid 08 Vian Jaya Antasari",
+    "lat": -6.28811,
+    "lng": 106.7976,
+    "address": "Jl. Pangeran Antasari No.20, RT.11/RW.1, Cilandak Bar., Kec. Cilandak, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta",
+    "caption": "",
+    "date": "2026-07-26"
+  },
+  {
     "src": "photos/foto-1793865922173-d1gt.jpg",
     "place": "Seafoid 08 Vian Jaya Antasari",
     "lat": -6.28811,
