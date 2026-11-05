@@ -1,5 +1,68 @@
 const PHOTOS = [
   {
+    "src": "photos/foto-1793867507887-esmf.jpg",
+    "place": "Paris Van Java",
+    "lat": -6.88931,
+    "lng": 107.59651,
+    "address": "",
+    "caption": "Photobooth",
+    "date": "2026-10-24"
+  },
+  {
+    "src": "photos/foto-1793867517219-g35v.jpg",
+    "place": "Paris Van Java",
+    "lat": -6.88931,
+    "lng": 107.59651,
+    "address": "",
+    "caption": "Photobooth",
+    "date": "2026-10-24"
+  },
+  {
+    "src": "photos/foto-1793867531727-hkne.jpg",
+    "place": "Paris Van Java",
+    "lat": -6.88931,
+    "lng": 107.59651,
+    "address": "",
+    "caption": "Photobooth",
+    "date": "2026-10-24"
+  },
+  {
+    "src": "photos/foto-1793867537439-8l9n.jpg",
+    "place": "Paris Van Java",
+    "lat": -6.88931,
+    "lng": 107.59651,
+    "address": "",
+    "caption": "Photobooth",
+    "date": "2026-10-24"
+  },
+  {
+    "src": "photos/foto-1793867551761-ohu5.jpg",
+    "place": "Paris Van Java",
+    "lat": -6.88931,
+    "lng": 107.59651,
+    "address": "",
+    "caption": "Photobooth",
+    "date": "2026-10-24"
+  },
+  {
+    "src": "photos/foto-1793867565929-ptoj.jpg",
+    "place": "Paris Van Java",
+    "lat": -6.88931,
+    "lng": 107.59651,
+    "address": "",
+    "caption": "Photobooth",
+    "date": "2026-10-24"
+  },
+  {
+    "src": "photos/foto-1793867580177-7csq.jpg",
+    "place": "Paris Van Java",
+    "lat": -6.88931,
+    "lng": 107.59651,
+    "address": "",
+    "caption": "Photobooth",
+    "date": "2026-10-24"
+  },
+  {
     "src": "photos/foto-1793867356242-4fam.jpg",
     "place": "Paris Van Java",
     "lat": -6.88931,
