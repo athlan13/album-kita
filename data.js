@@ -1,5 +1,86 @@
 const PHOTOS = [
   {
+    "src": "photos/foto-1793866736728-jj6d.jpg",
+    "place": "Paris Van Java",
+    "lat": -6.88931,
+    "lng": 107.59651,
+    "address": "",
+    "caption": "Miniso PVJ",
+    "date": "2026-10-24"
+  },
+  {
+    "src": "photos/foto-1793866739322-pr2p.jpg",
+    "place": "Paris Van Java",
+    "lat": -6.88931,
+    "lng": 107.59651,
+    "address": "",
+    "caption": "Miniso PVJ",
+    "date": "2026-10-24"
+  },
+  {
+    "src": "photos/foto-1793866746535-jeim.jpg",
+    "place": "Paris Van Java",
+    "lat": -6.88931,
+    "lng": 107.59651,
+    "address": "",
+    "caption": "Miniso PVJ",
+    "date": "2026-10-24"
+  },
+  {
+    "src": "photos/foto-1793866754661-fsdg.jpg",
+    "place": "Paris Van Java",
+    "lat": -6.88931,
+    "lng": 107.59651,
+    "address": "",
+    "caption": "Miniso PVJ",
+    "date": "2026-10-24"
+  },
+  {
+    "src": "photos/foto-1793866756451-tebb.jpg",
+    "place": "Paris Van Java",
+    "lat": -6.88931,
+    "lng": 107.59651,
+    "address": "",
+    "caption": "Miniso PVJ",
+    "date": "2026-10-24"
+  },
+  {
+    "src": "photos/foto-1793866759313-s73k.jpg",
+    "place": "Paris Van Java",
+    "lat": -6.88931,
+    "lng": 107.59651,
+    "address": "",
+    "caption": "Miniso PVJ",
+    "date": "2026-10-24"
+  },
+  {
+    "src": "photos/foto-1793866763288-gjs2.jpg",
+    "place": "Paris Van Java",
+    "lat": -6.88931,
+    "lng": 107.59651,
+    "address": "",
+    "caption": "Miniso PVJ",
+    "date": "2026-10-24"
+  },
+  {
+    "src": "photos/foto-1793866768908-wkea.jpg",
+    "place": "Paris Van Java",
+    "lat": -6.88931,
+    "lng": 107.59651,
+    "address": "",
+    "caption": "Miniso PVJ",
+    "date": "2026-10-24"
+  },
+  {
+    "src": "photos/foto-1793866773114-7rrg.jpg",
+    "place": "Paris Van Java",
+    "lat": -6.88931,
+    "lng": 107.59651,
+    "address": "",
+    "caption": "Miniso PVJ",
+    "date": "2026-10-24"
+  },
+  {
     "src": "photos/foto-1793866418500-7yks.jpg",
     "place": "Cafe Betawi",
     "lat": -6.18447,
