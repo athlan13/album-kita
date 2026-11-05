@@ -1,5 +1,221 @@
 const PHOTOS = [
   {
+    "src": "photos/foto-1793864805746-lxxy.jpg",
+    "place": "Central Park",
+    "lat": -6.17617,
+    "lng": 106.79193,
+    "address": "Jl. Letjen S. Parman No.Kav.28, RT.12/RW.6, Tj. Duren Sel., Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470",
+    "caption": "",
+    "date": "2026-07-04"
+  },
+  {
+    "src": "photos/foto-1793864808423-u0we.jpg",
+    "place": "Central Park",
+    "lat": -6.17617,
+    "lng": 106.79193,
+    "address": "Jl. Letjen S. Parman No.Kav.28, RT.12/RW.6, Tj. Duren Sel., Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470",
+    "caption": "",
+    "date": "2026-07-04"
+  },
+  {
+    "src": "photos/foto-1793864809882-sl2n.jpg",
+    "place": "Central Park",
+    "lat": -6.17617,
+    "lng": 106.79193,
+    "address": "Jl. Letjen S. Parman No.Kav.28, RT.12/RW.6, Tj. Duren Sel., Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470",
+    "caption": "",
+    "date": "2026-07-04"
+  },
+  {
+    "src": "photos/foto-1793864811683-4tfj.jpg",
+    "place": "Central Park",
+    "lat": -6.17617,
+    "lng": 106.79193,
+    "address": "Jl. Letjen S. Parman No.Kav.28, RT.12/RW.6, Tj. Duren Sel., Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470",
+    "caption": "",
+    "date": "2026-07-04"
+  },
+  {
+    "src": "photos/foto-1793864814697-kjs2.jpg",
+    "place": "Central Park",
+    "lat": -6.17617,
+    "lng": 106.79193,
+    "address": "Jl. Letjen S. Parman No.Kav.28, RT.12/RW.6, Tj. Duren Sel., Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470",
+    "caption": "",
+    "date": "2026-07-04"
+  },
+  {
+    "src": "photos/foto-1793864818413-xv22.jpg",
+    "place": "Central Park",
+    "lat": -6.17617,
+    "lng": 106.79193,
+    "address": "Jl. Letjen S. Parman No.Kav.28, RT.12/RW.6, Tj. Duren Sel., Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470",
+    "caption": "",
+    "date": "2026-07-04"
+  },
+  {
+    "src": "photos/foto-1793864820879-gfc3.jpg",
+    "place": "Central Park",
+    "lat": -6.17617,
+    "lng": 106.79193,
+    "address": "Jl. Letjen S. Parman No.Kav.28, RT.12/RW.6, Tj. Duren Sel., Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470",
+    "caption": "",
+    "date": "2026-07-04"
+  },
+  {
+    "src": "photos/foto-1793864826170-qcxc.jpg",
+    "place": "Central Park",
+    "lat": -6.17617,
+    "lng": 106.79193,
+    "address": "Jl. Letjen S. Parman No.Kav.28, RT.12/RW.6, Tj. Duren Sel., Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470",
+    "caption": "",
+    "date": "2026-07-04"
+  },
+  {
+    "src": "photos/foto-1793864831781-3y5b.jpg",
+    "place": "Central Park",
+    "lat": -6.17617,
+    "lng": 106.79193,
+    "address": "Jl. Letjen S. Parman No.Kav.28, RT.12/RW.6, Tj. Duren Sel., Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470",
+    "caption": "",
+    "date": "2026-07-04"
+  },
+  {
+    "src": "photos/foto-1793864834788-crxd.jpg",
+    "place": "Central Park",
+    "lat": -6.17617,
+    "lng": 106.79193,
+    "address": "Jl. Letjen S. Parman No.Kav.28, RT.12/RW.6, Tj. Duren Sel., Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470",
+    "caption": "",
+    "date": "2026-07-04"
+  },
+  {
+    "src": "photos/foto-1793864837200-mf3y.jpg",
+    "place": "Central Park",
+    "lat": -6.17617,
+    "lng": 106.79193,
+    "address": "Jl. Letjen S. Parman No.Kav.28, RT.12/RW.6, Tj. Duren Sel., Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470",
+    "caption": "",
+    "date": "2026-07-04"
+  },
+  {
+    "src": "photos/foto-1793864840645-t3mg.jpg",
+    "place": "Central Park",
+    "lat": -6.17617,
+    "lng": 106.79193,
+    "address": "Jl. Letjen S. Parman No.Kav.28, RT.12/RW.6, Tj. Duren Sel., Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470",
+    "caption": "",
+    "date": "2026-07-04"
+  },
+  {
+    "src": "photos/foto-1793864847447-q90j.jpg",
+    "place": "Central Park",
+    "lat": -6.17617,
+    "lng": 106.79193,
+    "address": "Jl. Letjen S. Parman No.Kav.28, RT.12/RW.6, Tj. Duren Sel., Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470",
+    "caption": "",
+    "date": "2026-07-04"
+  },
+  {
+    "src": "photos/foto-1793864850604-kxq3.jpg",
+    "place": "Central Park",
+    "lat": -6.17617,
+    "lng": 106.79193,
+    "address": "Jl. Letjen S. Parman No.Kav.28, RT.12/RW.6, Tj. Duren Sel., Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470",
+    "caption": "",
+    "date": "2026-07-04"
+  },
+  {
+    "src": "photos/foto-1793864852943-sh1p.jpg",
+    "place": "Central Park",
+    "lat": -6.17617,
+    "lng": 106.79193,
+    "address": "Jl. Letjen S. Parman No.Kav.28, RT.12/RW.6, Tj. Duren Sel., Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470",
+    "caption": "",
+    "date": "2026-07-04"
+  },
+  {
+    "src": "photos/foto-1793864857358-2csi.jpg",
+    "place": "Central Park",
+    "lat": -6.17617,
+    "lng": 106.79193,
+    "address": "Jl. Letjen S. Parman No.Kav.28, RT.12/RW.6, Tj. Duren Sel., Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470",
+    "caption": "",
+    "date": "2026-07-04"
+  },
+  {
+    "src": "photos/foto-1793864863276-b9jp.jpg",
+    "place": "Central Park",
+    "lat": -6.17617,
+    "lng": 106.79193,
+    "address": "Jl. Letjen S. Parman No.Kav.28, RT.12/RW.6, Tj. Duren Sel., Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470",
+    "caption": "",
+    "date": "2026-07-04"
+  },
+  {
+    "src": "photos/foto-1793864865802-sbm1.jpg",
+    "place": "Central Park",
+    "lat": -6.17617,
+    "lng": 106.79193,
+    "address": "Jl. Letjen S. Parman No.Kav.28, RT.12/RW.6, Tj. Duren Sel., Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470",
+    "caption": "",
+    "date": "2026-07-04"
+  },
+  {
+    "src": "photos/foto-1793864867622-qpbf.jpg",
+    "place": "Central Park",
+    "lat": -6.17617,
+    "lng": 106.79193,
+    "address": "Jl. Letjen S. Parman No.Kav.28, RT.12/RW.6, Tj. Duren Sel., Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470",
+    "caption": "",
+    "date": "2026-07-04"
+  },
+  {
+    "src": "photos/foto-1793864872748-os98.jpg",
+    "place": "Central Park",
+    "lat": -6.17617,
+    "lng": 106.79193,
+    "address": "Jl. Letjen S. Parman No.Kav.28, RT.12/RW.6, Tj. Duren Sel., Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470",
+    "caption": "",
+    "date": "2026-07-04"
+  },
+  {
+    "src": "photos/foto-1793864874983-28gh.jpg",
+    "place": "Central Park",
+    "lat": -6.17617,
+    "lng": 106.79193,
+    "address": "Jl. Letjen S. Parman No.Kav.28, RT.12/RW.6, Tj. Duren Sel., Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470",
+    "caption": "",
+    "date": "2026-07-04"
+  },
+  {
+    "src": "photos/foto-1793864878069-5nci.jpg",
+    "place": "Central Park",
+    "lat": -6.17617,
+    "lng": 106.79193,
+    "address": "Jl. Letjen S. Parman No.Kav.28, RT.12/RW.6, Tj. Duren Sel., Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470",
+    "caption": "",
+    "date": "2026-07-04"
+  },
+  {
+    "src": "photos/foto-1793864879755-f8d7.jpg",
+    "place": "Central Park",
+    "lat": -6.17617,
+    "lng": 106.79193,
+    "address": "Jl. Letjen S. Parman No.Kav.28, RT.12/RW.6, Tj. Duren Sel., Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470",
+    "caption": "",
+    "date": "2026-07-04"
+  },
+  {
+    "src": "photos/foto-1793864887496-4rkf.jpg",
+    "place": "Central Park",
+    "lat": -6.17617,
+    "lng": 106.79193,
+    "address": "Jl. Letjen S. Parman No.Kav.28, RT.12/RW.6, Tj. Duren Sel., Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470",
+    "caption": "",
+    "date": "2026-07-04"
+  },
+  {
     "src": "photos/foto-1793779487189-7b6p.jpg",
     "place": "Paris Van Java",
     "lat": -6.88931,
