@@ -45,15 +45,6 @@ const PHOTOS = [
     "date": "2026-08-01"
   },
   {
-    "src": "photos/foto-1793866444882-vyd5.jpg",
-    "place": "Cafe Betawi",
-    "lat": -6.18447,
-    "lng": 106.75812,
-    "address": "Central Park Mall Lantai LG, Jalan Letjen. S. Parman No. 28, RT.12 / RW.06, Tanjung Duren Selatan, Grogol petamburan, RT.12/RW.6, Tj. Duren Sel., Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470",
-    "caption": "",
-    "date": "2026-08-01"
-  },
-  {
     "src": "photos/foto-1793866448548-dv5t.jpg",
     "place": "Cafe Betawi",
     "lat": -6.18447,
