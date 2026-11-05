@@ -1,5 +1,50 @@
 const PHOTOS = [
   {
+    "src": "photos/foto-1793866166775-4un0.jpg",
+    "place": "M BLoc Space",
+    "lat": -6.24152,
+    "lng": 106.79877,
+    "address": "Jl. Panglima Polim No.37, RT.1/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12160",
+    "caption": "",
+    "date": "2026-07-26"
+  },
+  {
+    "src": "photos/foto-1793866168730-gvhc.jpg",
+    "place": "M BLoc Space",
+    "lat": -6.24152,
+    "lng": 106.79877,
+    "address": "Jl. Panglima Polim No.37, RT.1/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12160",
+    "caption": "",
+    "date": "2026-07-26"
+  },
+  {
+    "src": "photos/foto-1793866170393-i5rs.jpg",
+    "place": "M BLoc Space",
+    "lat": -6.24152,
+    "lng": 106.79877,
+    "address": "Jl. Panglima Polim No.37, RT.1/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12160",
+    "caption": "",
+    "date": "2026-07-26"
+  },
+  {
+    "src": "photos/foto-1793866176220-3xc9.jpg",
+    "place": "M BLoc Space",
+    "lat": -6.24152,
+    "lng": 106.79877,
+    "address": "Jl. Panglima Polim No.37, RT.1/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12160",
+    "caption": "",
+    "date": "2026-07-26"
+  },
+  {
+    "src": "photos/foto-1793866179027-4bob.jpg",
+    "place": "M BLoc Space",
+    "lat": -6.24152,
+    "lng": 106.79877,
+    "address": "Jl. Panglima Polim No.37, RT.1/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12160",
+    "caption": "",
+    "date": "2026-07-26"
+  },
+  {
     "src": "photos/foto-1793866035360-mvfy.jpg",
     "place": "Seafood 08 Vian Jaya Antasari",
     "lat": -6.28811,
