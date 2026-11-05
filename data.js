@@ -1,5 +1,14 @@
 const PHOTOS = [
   {
+    "src": "photos/foto-1793865922173-d1gt.jpg",
+    "place": "Seafoid 08 Vian Jaya Antasari",
+    "lat": -6.28811,
+    "lng": 106.7976,
+    "address": "Jl. Pangeran Antasari No.20, RT.11/RW.1, Cilandak Bar., Kec. Cilandak, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta",
+    "caption": "",
+    "date": "2026-07-26"
+  },
+  {
     "src": "photos/foto-1793865326405-o8es.jpg",
     "place": "Pisang Madu Bu Nanik",
     "lat": -6.17227,
