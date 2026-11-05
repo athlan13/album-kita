@@ -1,5 +1,41 @@
 const PHOTOS = [
   {
+    "src": "photos/foto-1793864898448-paar.jpg",
+    "place": "Central Park",
+    "lat": -6.17617,
+    "lng": 106.79193,
+    "address": "Jl. Letjen S. Parman No.Kav.28, RT.12/RW.6, Tj. Duren Sel., Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470",
+    "caption": "",
+    "date": "2026-07-04"
+  },
+  {
+    "src": "photos/foto-1793864906782-4zcc.jpg",
+    "place": "Central Park",
+    "lat": -6.17617,
+    "lng": 106.79193,
+    "address": "Jl. Letjen S. Parman No.Kav.28, RT.12/RW.6, Tj. Duren Sel., Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470",
+    "caption": "",
+    "date": "2026-07-04"
+  },
+  {
+    "src": "photos/foto-1793864920884-2vvt.jpg",
+    "place": "Central Park",
+    "lat": -6.17617,
+    "lng": 106.79193,
+    "address": "Jl. Letjen S. Parman No.Kav.28, RT.12/RW.6, Tj. Duren Sel., Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470",
+    "caption": "",
+    "date": "2026-07-04"
+  },
+  {
+    "src": "photos/foto-1793865313428-xho9.jpg",
+    "place": "Pisang Madu Bu Nanik",
+    "lat": -6.17227,
+    "lng": 106.78355,
+    "address": "Jl. Tanjung Duren Raya No.67, RT.2/RW.5, Tj. Duren Utara, Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta",
+    "caption": "PISANG🐒🍌",
+    "date": "2026-08-01"
+  },
+  {
     "src": "photos/foto-1793864805746-lxxy.jpg",
     "place": "Central Park",
     "lat": -6.17617,
