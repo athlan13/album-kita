@@ -1,5 +1,14 @@
 const PHOTOS = [
   {
+    "src": "photos/foto-1793867286017-le38.jpg",
+    "place": "Paris Van Java",
+    "lat": -6.88931,
+    "lng": 107.59651,
+    "address": "",
+    "caption": "Boneka baru (temen capy)",
+    "date": "2026-10-24"
+  },
+  {
     "src": "photos/foto-1793866736728-jj6d.jpg",
     "place": "Paris Van Java",
     "lat": -6.88931,
