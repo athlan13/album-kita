@@ -1,5 +1,50 @@
 const PHOTOS = [
   {
+    "src": "photos/foto-1793867356242-4fam.jpg",
+    "place": "Paris Van Java",
+    "lat": -6.88931,
+    "lng": 107.59651,
+    "address": "",
+    "caption": "Nonton Other Mommy",
+    "date": "2026-10-24"
+  },
+  {
+    "src": "photos/foto-1793867357983-bx4p.jpg",
+    "place": "Paris Van Java",
+    "lat": -6.88931,
+    "lng": 107.59651,
+    "address": "",
+    "caption": "Nonton Other Mommy",
+    "date": "2026-10-24"
+  },
+  {
+    "src": "photos/foto-1793867365951-7vp0.jpg",
+    "place": "Paris Van Java",
+    "lat": -6.88931,
+    "lng": 107.59651,
+    "address": "",
+    "caption": "Nonton Other Mommy",
+    "date": "2026-10-24"
+  },
+  {
+    "src": "photos/foto-1793867369905-c49x.jpg",
+    "place": "Paris Van Java",
+    "lat": -6.88931,
+    "lng": 107.59651,
+    "address": "",
+    "caption": "Nonton Other Mommy",
+    "date": "2026-10-24"
+  },
+  {
+    "src": "photos/foto-1793867371763-790a.jpg",
+    "place": "Paris Van Java",
+    "lat": -6.88931,
+    "lng": 107.59651,
+    "address": "",
+    "caption": "Nonton Other Mommy",
+    "date": "2026-10-24"
+  },
+  {
     "src": "photos/foto-1793867286017-le38.jpg",
     "place": "Paris Van Java",
     "lat": -6.88931,
