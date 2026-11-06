@@ -99,12 +99,6 @@ a.btn{font:inherit;font-size:14px;text-decoration:none;border:1px solid var(--li
 .pet.say .bubble{opacity:1}
 .pet.jump svg{animation:hop .5s}
 @keyframes hop{0%,100%{transform:translateY(0)}40%{transform:translateY(-30px) rotate(-8deg)}}
-.leg{transform-box:fill-box;transform-origin:50% 0}
-.tail{transform-box:fill-box;transform-origin:90% 90%;animation:wag 1.2s ease-in-out infinite alternate}
-@keyframes wag{from{transform:rotate(-10deg)}to{transform:rotate(14deg)}}
-.pet.walk .l1,.pet.walk .l4{animation:swing .36s ease-in-out infinite alternate}
-.pet.walk .l2,.pet.walk .l3{animation:swing .36s ease-in-out infinite alternate-reverse}
-@keyframes swing{from{transform:rotate(-28deg)}to{transform:rotate(28deg)}}
 /* ===== Penyempurnaan tampilan: modern, minimalis, elegan, responsif ===== */
 html{scroll-behavior:smooth}
 body{-webkit-font-smoothing:antialiased;letter-spacing:.005em}
@@ -139,7 +133,7 @@ dialog{border-radius:20px}
   figcaption{font-size:18px}
   .bar{flex-wrap:wrap}
 }
-@media (prefers-reduced-motion:reduce){figure,.folder .fbody,#drawer{transition:none}#hearts{display:none}.pet.jump svg,.pet.land svg,.tail{animation:none}}
+@media (prefers-reduced-motion:reduce){figure,.folder .fbody,#drawer{transition:none}#hearts{display:none}.pet.jump svg,.pet.land svg{animation:none}}
 </style>
 </head>
 <body>

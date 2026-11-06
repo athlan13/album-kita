@@ -451,77 +451,114 @@ const WORDS_FALL = ['Aduh! 😵', 'Bruk! 🙀', 'Hehe, jatuh 😅'];
 // <cat>
 const catSVG = c => {
   const gray = c.kind === 'gray';
-  const leg = (cls, x, far) => '<g class="leg ' + cls + '"><rect x="' + x + '" y="30" width="6.6" height="12.5" rx="3.3" fill="' + (far ? c.dark : c.body) + '"/><rect x="' + x + '" y="36.8" width="6.6" height="5.7" rx="2.9" fill="' + c.white + '"/></g>';
+  const leg = (cls, cx, far) => '<g class="leg ' + cls + '"><rect x="' + (cx - 3.3) + '" y="28" width="6.6" height="9.2" rx="3.3" fill="' + (far ? c.dark : c.body) + '"/>'
+    + '<g class="low"><rect x="' + (cx - 3) + '" y="35.6" width="6" height="7.6" rx="3" fill="' + (far ? c.dark : c.body) + '"/><rect x="' + (cx - 3) + '" y="39" width="6" height="4.2" rx="2.1" fill="' + c.white + '"/></g></g>';
   const ear = gray ? c.dark : c.body;
   return '<svg viewBox="0 0 66 44" width="66" height="44" aria-hidden="true">'
     + '<g class="tail"><path d="M10 25 C0 26 0 11 7 7" stroke="' + c.body + '" stroke-width="6.5" stroke-linecap="round" fill="none"/>' + (gray ? '<circle cx="7" cy="7.5" r="3.3" fill="' + c.dark + '"/>' : '') + '</g>'
-    + leg('l2', 17, true) + leg('l4', 36, true)
-    + '<ellipse cx="28" cy="25" rx="20.5" ry="11.5" fill="' + c.body + '"/>'
+    + leg('l2', 20, true) + leg('l4', 39, true)
+    + '<g class="body"><ellipse cx="28" cy="25" rx="20.5" ry="11.5" fill="' + c.body + '"/>'
     + (gray ? '' : '<ellipse cx="21" cy="19" rx="9" ry="4" fill="' + c.dark + '" opacity=".35"/>')
     + '<ellipse cx="27" cy="33" rx="15" ry="4.6" fill="' + c.white + '"/><ellipse cx="41" cy="29" rx="8.5" ry="8" fill="' + c.white + '"/>'
-    + leg('l1', 12, false) + leg('l3', 41, false)
-    + '<path d="M43 11.5 L44.6 1.2 L51.5 8.2Z" fill="' + ear + '"/><path d="M52.5 8 L58 1.2 L61 12.5Z" fill="' + ear + '"/><path d="M45.2 9.2 L45.6 4.8 L48.6 7.8Z" fill="#f3a2bb"/>'
+    + '<g class="head"><path d="M43 11.5 L44.6 1.2 L51.5 8.2Z" fill="' + ear + '"/><path d="M52.5 8 L58 1.2 L61 12.5Z" fill="' + ear + '"/><path d="M45.2 9.2 L45.6 4.8 L48.6 7.8Z" fill="#f3a2bb"/>'
     + '<circle cx="51.5" cy="17.5" r="10.5" fill="' + c.body + '"/>'
     + (gray ? '<ellipse cx="54" cy="18.5" rx="8.6" ry="7.6" fill="' + c.dark + '" opacity=".85"/><path d="M51.2 8.6 Q54.4 14 56 20 L52.4 20 Q50 14 51.2 8.6Z" fill="' + c.white + '"/>' : '')
     + '<ellipse cx="58" cy="21.2" rx="5" ry="4" fill="' + c.white + '"/>'
     + '<ellipse cx="55.4" cy="16.2" rx="2.5" ry="2.2" fill="' + c.eye + '"/><ellipse cx="55.9" cy="16.2" rx="1" ry="1.8" fill="#1b1b1b"/><circle cx="56.3" cy="15.4" r=".55" fill="#fff"/>'
     + '<path d="M60.6 19.3 q1.4 .2 1 1.5 q-.8 .9 -1.8 0 q-.6 -1.2 .8 -1.5z" fill="' + (gray ? '#3a3036' : '#ff8fb1') + '"/>'
-    + '<path d="M59 22 L65.5 21 M59 23.2 L65.5 25" stroke="#fff" stroke-width=".7" opacity=".85"/></svg>';
+    + '<path d="M59 22 L65.5 21 M59 23.2 L65.5 25" stroke="#fff" stroke-width=".7" opacity=".85"/></g></g>'
+    + leg('l1', 15, false) + leg('l3', 44, false) + '</svg>';
 };
 // </cat>
 
 // <sim>  (logika gerak: murni angka, tanpa DOM)
 const rnd = (a, b) => a + Math.random() * (b - a);
-const newCat = (x, d) => ({ x, y: 0, d, mode: 'ground', wall: null, rot: 0, r0: 0, H: 0, hang: 0, vy: 0, fT: 0, fTot: 1, pause: 0, moving: false, landed: false, started: false });
-function startClimb(c, wall, H, maxX) { c.mode = 'climb'; c.wall = wall; c.d = wall === 'L' ? -1 : 1; c.x = wall === 'L' ? -11 : maxX + 11; c.H = H; c.hang = 0; c.started = true; }
+const newCat = (x, d) => ({ x, y: 0, d, face: d, v: 0, mode: 'ground', wall: null, rot: 0, r0: 0, H: 0, hang: 0, clk: 0, slip: false, vy: 0, hopV: 0, fT: 0, fTot: 1,
+  pause: 0, ph: 0, look: 0, lookT: 0, lookTo: 0, shake: 0, moving: false, landed: false, started: false, bounced: false });
+function drive(c, dir, speed, dt) {   // percepatan halus menuju kecepatan tujuan (tidak langsung ngebut atau berhenti)
+  const a = 300 * dt;
+  c.v += Math.max(-a, Math.min(a, dir * speed - c.v));
+  c.x += c.v * dt; c.moving = Math.abs(c.v) > 8;
+}
+function startClimb(c, wall, H, maxX) { c.mode = 'climb'; c.wall = wall; c.d = wall === 'L' ? -1 : 1; c.x = wall === 'L' ? -11 : maxX + 11; c.v = 0; c.H = H; c.hang = 0; c.clk = 0; c.slip = false; c.started = true; }
 function climb(c, dt) {
-  c.y = Math.min(c.H, c.y + 58 * dt); c.moving = c.y < c.H;
+  c.clk += dt;
+  c.y = Math.min(c.H, c.y + (46 + 20 * Math.sin(c.clk * 9)) * dt); c.moving = c.y < c.H;   // memanjat dengan tarikan bergelombang
   c.rot += ((c.wall === 'L' ? 90 : -90) - c.rot) * Math.min(1, 10 * dt);
-  if (c.y >= c.H) { c.hang += dt; if (c.hang > .7) { c.mode = 'fall'; c.vy = 0; c.fT = 0; c.fTot = Math.max(.25, Math.sqrt(2 * c.y / 1500)); c.r0 = c.rot; c.moving = false; } }
+  if (c.y >= c.H) {
+    c.hang += dt; c.slip = c.hang > .45;   // cakar mulai tergelincir sebelum jatuh
+    if (c.hang > .8) { c.mode = 'fall'; c.vy = 0; c.fT = 0; c.fTot = Math.max(.25, Math.sqrt(2 * c.y / 1500)); c.r0 = c.rot; c.moving = false; }
+  }
 }
 function fall(c, dt, maxX) {
   c.fT += dt; c.vy -= 1500 * dt; c.y += c.vy * dt; c.x += (c.wall === 'L' ? 1 : -1) * 45 * dt;
   const e = c.wall === 'L' ? 360 : -360;
   c.rot = c.r0 + (e - c.r0) * Math.min(1, c.fT / c.fTot);
-  if (c.y <= 0) { c.y = 0; c.mode = 'ground'; c.rot = 0; c.d = c.wall === 'L' ? 1 : -1; c.x = Math.min(maxX, Math.max(0, c.x)); c.pause = 1; c.landed = true; c.wall = null; }
+  if (c.y <= 0) { c.y = 0; c.mode = 'ground'; c.rot = 0; c.d = c.wall === 'L' ? 1 : -1; c.x = Math.min(maxX, Math.max(0, c.x)); c.v = 0; c.pause = 1.1; c.shake = .8; c.slip = false; c.landed = true; c.wall = null; }
 }
 function step(S, dt, maxX, maxH) {
   const { lead, chase } = S;
   S.phase += dt; S.hold = Math.max(0, S.hold - dt);
-  for (const c of [lead, chase]) { c.moving = c.landed = c.started = false; if (c.mode === 'ground') c.x = Math.min(maxX, Math.max(0, c.x)); if (c.mode === 'fall') fall(c, dt, maxX); }
-  if (S.hold > 0) return;
+  for (const c of [lead, chase]) {
+    c.moving = c.landed = c.started = c.bounced = false;
+    if (c.mode === 'ground' && (c.x < 0 || c.x > maxX)) { c.x = Math.min(maxX, Math.max(0, c.x)); c.v = 0; }
+    if (c.mode === 'fall') fall(c, dt, maxX);
+    if (c.mode === 'ground' && (c.hopV || c.y > 0)) { c.y += c.hopV * dt; c.hopV -= 1400 * dt; if (c.y <= 0) { c.y = 0; c.hopV = 0; c.bounced = true; } }
+  }
+  if (S.hold > 0) { for (const c of [lead, chase]) if (c.mode === 'ground') drive(c, c.d, 0, dt); return; }
   S.nextClimb -= dt;
   if (lead.mode === 'ground') {
     if (!S.wall && S.nextClimb <= 0 && chase.mode === 'ground') { S.wall = lead.x < maxX / 2 ? 'L' : 'R'; lead.d = S.wall === 'L' ? -1 : 1; lead.pause = 0; }
     if (S.wall) {
-      if (lead.pause > 0) lead.pause -= dt;
-      else {
-        lead.x += lead.d * 85 * dt; lead.moving = true;
-        if ((S.wall === 'L' && lead.x <= 0) || (S.wall === 'R' && lead.x >= maxX)) startClimb(lead, S.wall, rnd(.45, .9) * maxH, maxX);
-      }
-    } else if (lead.pause > 0) lead.pause -= dt;
+      drive(lead, lead.d, 118, dt);   // berlari semangat menuju dinding
+      if ((S.wall === 'L' && lead.x <= 0) || (S.wall === 'R' && lead.x >= maxX)) startClimb(lead, S.wall, rnd(.45, .9) * maxH, maxX);
+    } else if (lead.pause > 0) { lead.pause -= dt; drive(lead, lead.d, 0, dt); }
     else {
-      lead.x += lead.d * 75 * dt; lead.moving = true;
-      if (lead.x < 0) { lead.x = 0; lead.d = 1; } else if (lead.x > maxX) { lead.x = maxX; lead.d = -1; }
+      drive(lead, lead.d, 78, dt);
+      if (lead.x < 24 && lead.d < 0) lead.d = 1; else if (lead.x > maxX - 24 && lead.d > 0) lead.d = -1;
       if (Math.random() < dt * .08) lead.d = -lead.d;
-      if (Math.random() < dt * .12) lead.pause = rnd(1, 2.8);
+      if (Math.random() < dt * .12) lead.pause = rnd(1.2, 3);
     }
   } else if (lead.mode === 'climb') climb(lead, dt);
   if (lead.landed) { S.wall = null; S.nextClimb = rnd(9, 16); }
   if (chase.mode === 'ground') {
-    if (chase.pause > 0) chase.pause -= dt;
+    if (chase.pause > 0) { chase.pause -= dt; drive(chase, chase.d, 0, dt); }
     else {
       const edge = S.wall === 'L' ? 0 : maxX;
       const gap = 75 + Math.sin(S.phase * .6) * 50;
       const target = S.wall ? edge : Math.min(maxX, Math.max(0, lead.x - lead.d * gap));
       const diff = target - chase.x;
-      if (Math.abs(diff) > 6) { chase.d = diff > 0 ? 1 : -1; chase.x += chase.d * Math.min(98, Math.abs(diff) * 3) * dt; chase.moving = true; }
+      if (Math.abs(diff) > 8) { chase.d = diff > 0 ? 1 : -1; drive(chase, chase.d, Math.min(125, Math.abs(diff) * 2.4), dt); }
       else {
+        drive(chase, chase.d, 0, dt);
         chase.d = S.wall ? (S.wall === 'L' ? -1 : 1) : lead.d;
         if (S.wall && lead.mode === 'climb') startClimb(chase, S.wall, Math.max(70, lead.H * .6), maxX);
       }
+      if (!S.wall && chase.y === 0 && Math.abs(lead.x - chase.x) < 60 && Math.abs(lead.v) > 20 && Math.random() < dt * .35) chase.hopV = 300;   // melompat menerkam
     }
   } else if (chase.mode === 'climb') climb(chase, dt);
+}
+// Pose tubuh: sudut tiap sendi, goyangan badan, kepala, dan ekor (kaki bergerak mengikuti kecepatan)
+function poseOf(c, t, dt) {
+  const m = c.mode, sp = m === 'ground' ? Math.abs(c.v) : m === 'climb' ? (c.moving ? 60 : 0) : 110;
+  const g = m === 'ground' ? Math.min(1, sp / 35) : m === 'climb' ? (c.moving ? 1 : .3) : 1;
+  const flail = m === 'fall' || c.slip, hop = m === 'ground' && c.y > 0;
+  if (sp > 4) c.ph += dt * sp * .185;
+  c.lookT -= dt; if (c.lookT <= 0) { c.lookTo = rnd(-16, 16); c.lookT = rnd(1.2, 3.2); }
+  c.look += (c.lookTo - c.look) * Math.min(1, 3 * dt); c.shake = Math.max(0, c.shake - dt * 1.2);
+  const A = flail ? 48 : Math.min(40, 16 + sp * .17), K = flail ? 22 : 42, offs = [0, Math.PI, Math.PI, 0];
+  const legs = offs.map((o, i) => {
+    if (hop) return [i < 2 ? 32 : -32, 55];
+    const a = c.ph + o + (flail ? i * 1.7 : 0);
+    return [A * g * Math.sin(a), K * g * Math.max(0, -Math.cos(a))];
+  });
+  return {
+    legs,
+    bob: hop ? 0 : -Math.abs(Math.sin(c.ph)) * 2.2 * g,
+    pitch: hop ? -10 : 1.6 * Math.sin(2 * c.ph) * g,
+    head: c.look * (1 - g) + 3 * Math.sin(2 * c.ph - .8) * g + 12 * c.shake * Math.sin(t / 22),
+    tail: -4 - 18 * Math.min(1, sp / 130) - (m === 'fall' ? 30 : 0) + (9 + (1 - g) * 5) * Math.sin(t / (420 - Math.min(200, sp)))
+  };
 }
 // </sim>
 
@@ -558,7 +595,9 @@ function step(S, dt, maxX, maxH) {
     el.setAttribute('role', 'button'); el.setAttribute('aria-label', label + '. Klik untuk menyapa');
     el.innerHTML = '<span class="bubble"></span><span class="rot"><span class="dir">' + catSVG(colors) + '</span></span>';
     document.body.append(el);
-    const c = Object.assign(newCat(x, d), { el, rotEl: el.querySelector('.rot'), dir: el.querySelector('.dir'), bubble: el.querySelector('.bubble'), timer: null });
+    const q = k => el.querySelector(k);
+    const legs = [['l1', 15], ['l2', 20], ['l3', 44], ['l4', 39]].map(([k, cx]) => ({ cx, up: q('.' + k), low: q('.' + k + ' .low') }));
+    const c = Object.assign(newCat(x, d), { el, rotEl: q('.rot'), dir: q('.dir'), bubble: q('.bubble'), bodyEl: q('.body'), headEl: q('.head'), tailEl: q('.tail'), legs, timer: null });
     const poke = () => {
       const r = el.getBoundingClientRect();
       if (!reduce) {
@@ -574,15 +613,22 @@ function step(S, dt, maxX, maxH) {
   S.lead = makeCat(CAT_LEAD, 'Kucing oranye', WORDS_LEAD, 170, 1);
   S.chase = makeCat(CAT_CHASE, 'Kucing abu-abu', WORDS_CHASE, 40, 1);
   const cats = [S.lead, S.chase];
-  function render(c, t) {
-    const lift = Math.abs(Math.sin(c.rot * Math.PI / 180)) * 11;   // cat tegak: tubuhnya turun 11px di bawah garis dasar
-    const bob = c.mode === 'ground' && c.moving ? -Math.abs(Math.sin(t / 110)) * 3 : 0;
-    c.el.style.transform = 'translate(' + c.x + 'px,' + (-c.y - lift + bob) + 'px)';
+  function render(c, t, dt) {
+    const p = poseOf(c, t, dt), f = n => n.toFixed(1);
+    c.legs.forEach((L, i) => {
+      L.up.setAttribute('transform', 'rotate(' + f(p.legs[i][0]) + ' ' + L.cx + ' 29)');
+      L.low.setAttribute('transform', 'rotate(' + f(p.legs[i][1]) + ' ' + L.cx + ' 36.5)');
+    });
+    c.bodyEl.setAttribute('transform', 'translate(0 ' + p.bob.toFixed(2) + ') rotate(' + p.pitch.toFixed(2) + ' 16 29)');
+    c.headEl.setAttribute('transform', 'rotate(' + f(p.head) + ' 46 22)');
+    c.tailEl.setAttribute('transform', 'rotate(' + f(p.tail) + ' 10 25)');
+    c.face += (c.d - c.face) * Math.min(1, 10 * dt);   // berbalik arah dengan halus
+    const lift = Math.abs(Math.sin(c.rot * Math.PI / 180)) * 11;
+    c.el.style.transform = 'translate(' + c.x + 'px,' + (-c.y - lift) + 'px)';
     c.rotEl.style.transform = 'rotate(' + c.rot + 'deg)';
-    c.dir.style.transform = c.d < 0 ? 'scaleX(-1)' : 'none';
-    c.el.classList.toggle('walk', c.moving);
+    c.dir.style.transform = 'scaleX(' + c.face.toFixed(2) + ')';
   }
-  if (reduce) { cats.forEach(c => render(c, 0)); return; }
+  if (reduce) { cats.forEach(c => render(c, 0, 0)); return; }
   let last = performance.now();
   function tick(t) {
     const dt = Math.min(.1, (t - last) / 1000); last = t;
@@ -590,9 +636,10 @@ function step(S, dt, maxX, maxH) {
     step(S, dt, maxX, maxH);
     cats.forEach(c => {
       if (c.started) talk(c, 'Manjat ah~ 🧗');
-      if (c.landed) { c.el.classList.remove('land'); void c.el.offsetWidth; c.el.classList.add('land'); talk(c, pick(WORDS_FALL)); }
+      if (c.landed || c.bounced) { c.el.classList.remove('land'); void c.el.offsetWidth; c.el.classList.add('land'); }
+      if (c.landed) talk(c, pick(WORDS_FALL));
     });
-    render(S.lead, t); render(S.chase, t * 1.15);
+    render(S.lead, t, dt); render(S.chase, t * 1.15, dt);
     if (S.lead.mode === 'ground' && S.chase.mode === 'ground' && Math.abs(S.lead.x - S.chase.x) < 45 && Math.random() < dt * .6) {
       const r = S.chase.el.getBoundingClientRect(); spawn(r.left + r.width / 2, r.top, true);
     }
