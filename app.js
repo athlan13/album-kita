@@ -46,10 +46,19 @@ async function updateData(mutate, message) {
 
 // ---------- Peta ----------
 const map = L.map('map').setView([-2.5, 118], 4);
-// OpenStreetMap untuk situs online; Esri untuk file/localhost (OSM sering memblokir akses lokal)
+// Peta gelap (Esri Dark Gray) serasi dengan tema pink-hitam. Jika gagal dimuat, otomatis pakai peta biasa.
 const isLocal = !location.protocol.startsWith('http') || /^(localhost|127\.|192\.168\.|10\.|\[?::1)/.test(location.hostname);
-if (!isLocal) L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '© OpenStreetMap' }).addTo(map);
-else L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19, attribution: 'Tiles © Esri' }).addTo(map);
+const ESRI = 'https://server.arcgisonline.com/ArcGIS/rest/services/';
+const darkBase = L.tileLayer(ESRI + 'Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', { maxNativeZoom: 16, maxZoom: 19, keepBuffer: 6, attribution: 'Tiles © Esri, HERE, Garmin, © OpenStreetMap contributors' }).addTo(map);
+const darkLabels = L.tileLayer(ESRI + 'Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}', { maxNativeZoom: 16, maxZoom: 19, keepBuffer: 6 }).addTo(map);
+let tilesOk = 0, tilesBad = 0, fellBack = false;
+darkBase.on('tileload', () => tilesOk++);
+darkBase.on('tileerror', () => {
+  if (fellBack || ++tilesBad < 4 || tilesOk) return;
+  fellBack = true; darkBase.remove(); darkLabels.remove();
+  (isLocal ? L.tileLayer(ESRI + 'World_Street_Map/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19, attribution: 'Tiles © Esri' })
+           : L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '© OpenStreetMap' })).addTo(map);
+});
 map.on('click', e => {
   if (!admin) return;
   pick = e.latlng;
@@ -412,21 +421,43 @@ try { const t = localStorage.getItem('gh_token'); if (t) tryLogin(t, true); } ca
 
 // <tour>
 // ---------- Putar perjalanan: peta terbang dari tempat ke tempat sesuai urutan tanggal ----------
-const tour = { id: 0, paused: false, card: null, line: null, pts: [], pins: [] };
+const tour = { id: 0, paused: false, card: null, line: null, pts: [], pins: [], veh: null, snap: null };
+const MOTO = '<svg viewBox="0 0 64 44" width="64" height="44" aria-hidden="true">'
+  + '<g class="sl" stroke="#fff" stroke-width="1.8" stroke-linecap="round" opacity=".75"><path d="M1 14h9M0 20h7M3 26h8"/></g>'
+  + '<g class="mb"><rect x="10" y="30" width="16" height="2.6" rx="1.3" fill="#9aa5b8"/>'
+  + '<path d="M13 29 C14 22 20 21 26 22 L41 21 C45 21 46 24 45 27 L42 30 L20 30 Z" fill="#ff6f9c"/>'
+  + '<rect x="14" y="19" width="19" height="3.6" rx="1.8" fill="#2b0715"/>'
+  + '<path d="M44 15 L50 31" stroke="#2b0715" stroke-width="2.6" stroke-linecap="round"/><path d="M41 14.5 H47" stroke="#2b0715" stroke-width="2.6" stroke-linecap="round"/>'
+  + '<circle cx="48.5" cy="19" r="2.2" fill="#ffe08a"/>'
+  + '<rect x="16.5" y="9" width="6" height="11" rx="3" fill="#ff9db8"/><circle cx="19.5" cy="6" r="3.7" fill="#fff8f0"/><path d="M15.8 6 a3.7 3.7 0 0 1 7.4 0z" fill="#ff6f9c"/>'
+  + '<rect x="27" y="9.5" width="6.5" height="11" rx="3.2" fill="#4a5068"/><circle cx="30.5" cy="6.4" r="3.8" fill="#f1a550"/>'
+  + '<path d="M32 13 L42 15.5" stroke="#4a5068" stroke-width="2.8" stroke-linecap="round"/><path d="M30 20 L35 27" stroke="#4a5068" stroke-width="3" stroke-linecap="round"/></g>'
+  + '<g class="wh"><circle cx="14" cy="32" r="8" fill="none" stroke="#2b0715" stroke-width="3.4"/><circle cx="14" cy="32" r="3" fill="#ff9db8"/><path d="M14 24v16M6 32h16" stroke="#2b0715" stroke-width="1.2"/></g>'
+  + '<g class="wh"><circle cx="50" cy="32" r="8" fill="none" stroke="#2b0715" stroke-width="3.4"/><circle cx="50" cy="32" r="3" fill="#ff9db8"/><path d="M50 24v16M42 32h16" stroke="#2b0715" stroke-width="1.2"/></g></svg>';
+const motoIcon = flip => L.divIcon({ className: 'moto', html: '<div class="mo' + (flip ? ' flip' : '') + '">' + MOTO + '</div>', iconSize: [64, 44], iconAnchor: [32, 40] });
+const HANDLERS = ['dragging', 'scrollWheelZoom', 'touchZoom', 'doubleClickZoom', 'boxZoom', 'keyboard'];
+function lockMap(on) {   // saat perjalanan: peta dikunci agar tidak bentrok dengan gerak kamera
+  HANDLERS.forEach(h => map[h] && map[h][on ? 'disable' : 'enable']());
+  if (on && tour.snap === null) { tour.snap = map.options.zoomSnap; map.options.zoomSnap = 0; }   // zoom pecahan agar mulus
+  if (!on && tour.snap !== null) { map.options.zoomSnap = tour.snap; tour.snap = null; }
+}
 const fmtMY = d => d ? new Date(d + 'T00:00').toLocaleDateString('id-ID', { month: 'long', year: 'numeric' }) : '';
 const tourWait = (ms, id) => new Promise(res => {   // menunggu, ikut berhenti saat dijeda; false jika perjalanan dibatalkan
   let left = ms;
   const tick = () => { if (id !== tour.id) return res(false); if (!tour.paused) left -= 100; if (left <= 0) return res(true); setTimeout(tick, 100); };
   tick();
 });
-function drawTo(from, to, ms, id) {   // garis tumbuh pelan dari tempat sebelumnya ke tempat berikutnya
+// Satu perhitungan per frame: kamera, garis, dan motor selalu di titik yang sama (tidak ada selisih)
+function glide(a, b, za, zb, dip, ms, id, onFrame) {
   return new Promise(res => {
-    if (ms <= 0) return res(id === tour.id);
+    if (ms <= 0) { map.setView(b, zb, { animate: false }); if (onFrame) onFrame(b); return res(id === tour.id); }
     const t0 = performance.now();
     const f = now => {
       if (id !== tour.id) return res(false);
-      const k = Math.min(1, (now - t0) / ms), e = k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
-      tour.line.setLatLngs([...tour.pts, [from[0] + (to[0] - from[0]) * e, from[1] + (to[1] - from[1]) * e]]);
+      const k = Math.min(1, (now - t0) / ms), e = k * k * k * (k * (6 * k - 15) + 10);
+      const p = [a[0] + (b[0] - a[0]) * e, a[1] + (b[1] - a[1]) * e];
+      map.setView(p, za + (zb - za) * e - dip * Math.sin(Math.PI * k), { animate: false });
+      if (onFrame) onFrame(p);
       k < 1 ? requestAnimationFrame(f) : res(true);
     };
     requestAnimationFrame(f);
@@ -434,9 +465,11 @@ function drawTo(from, to, ms, id) {   // garis tumbuh pelan dari tempat sebelumn
 }
 function tourClear() {
   if (tour.line) tour.line.remove();
+  if (tour.veh) tour.veh.remove();
   tour.pins.forEach(p => p.remove());
   if (tour.card) tour.card.remove();
-  tour.line = tour.card = null; tour.pins = []; tour.pts = [];
+  tour.line = tour.card = tour.veh = null; tour.pins = []; tour.pts = [];
+  lockMap(false);
   $('map').classList.remove('touring');
   setTimeout(() => map.invalidateSize(), 350);
 }
@@ -474,25 +507,30 @@ async function playTour() {
   if (typeof closeDrawer === 'function') closeDrawer();
   filter = null; render(true); window.scrollTo({ top: 0, behavior: 'smooth' });
   $('map').classList.add('touring');
-  if (!await tourWait(400, id)) return;
-  map.invalidateSize();
-  tour.line = L.polyline([], { color: '#ff6f9c', weight: 4, opacity: .95, lineCap: 'round' }).addTo(map);
+  if (!await tourWait(500, id)) return;
+  map.invalidateSize(); lockMap(true);
+  tour.line = L.polyline([], { color: '#ff6f9c', weight: 4, opacity: .95, lineCap: 'round', lineJoin: 'round' }).addTo(map);
   for (let i = 0; i < stops.length; i++) {
     const s = stops[i], ll = [s.lat, s.lng];
     if (i === 0) {
+      const c = map.getCenter();
+      if (!await glide([c.lat, c.lng], ll, map.getZoom(), 13, 0, reduce ? 0 : 2200, id)) return;
       tour.pts = [ll]; tour.line.setLatLngs([ll]);
-      reduce ? map.setView(ll, 13) : map.flyTo(ll, 13, { duration: 2 });
-      if (!await tourWait(reduce ? 200 : 2000, id)) return;
     } else {
-      const prev = tour.pts[tour.pts.length - 1], ms = reduce ? 0 : 2600;
-      reduce ? map.setView(ll, 13) : map.flyTo(ll, 13, { duration: ms / 1000 });
-      if (!await drawTo(prev, ll, ms, id)) return;
+      const prev = tour.pts[tour.pts.length - 1], km = map.distance(prev, ll) / 1000, ms = reduce ? 0 : Math.min(7000, 2600 + km * 9);
+      const fit = map.getBoundsZoom(L.latLngBounds([prev, ll]), false, L.point(70, 150));
+      const dip = 13 - Math.max(3, Math.min(13, fit - .4));   // zoom keluar sedikit agar kedua tempat terlihat
+      if (!reduce) tour.veh = L.marker(prev, { icon: motoIcon(ll[1] < prev[1]), interactive: false, zIndexOffset: 1000 }).addTo(map);
+      const ok = await glide(prev, ll, 13, 13, dip, ms, id, p => { if (tour.veh) tour.veh.setLatLng(p); tour.line.setLatLngs([...tour.pts, p]); });
+      if (tour.veh) { tour.veh.remove(); tour.veh = null; }
+      if (!ok) return;
       tour.pts.push(ll); tour.line.setLatLngs(tour.pts);
     }
     tour.pins.push(L.marker(ll, { icon: L.divIcon({ className: 'tourpin', html: String(i + 1), iconSize: [26, 26] }), interactive: false, zIndexOffset: 500 }).addTo(map));
     tourCard(i, stops.length, s);
     if (!await tourWait(3400, id)) return;
   }
+  lockMap(false);
   map.fitBounds(L.latLngBounds(stops.map(x => [x.lat, x.lng])).pad(.3), { maxZoom: 12, animate: !reduce, duration: 1.6 });
   tourDone(stops);
 }
@@ -508,7 +546,14 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape' && tour.card)
     + '.tourcard .tb{grid-column:2 / span 2;display:flex;gap:8px;flex-wrap:wrap}.tourcard .tb button{padding:5px 12px;font-size:13px}'
     + '.tourcard .x{grid-column:3;grid-row:1;align-self:start;border:0;background:none;font-size:22px;line-height:1;padding:0 4px}'
     + ".tourpin{background:var(--accent);color:#2b0715;font:700 13px/22px 'DM Sans',sans-serif;text-align:center;border-radius:50%;border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.5)}"
-    + '@media (prefers-reduced-motion:reduce){.tourcard{animation:none}#map{transition:none}}';
+    + '.leaflet-container{background:#1b1b1f}.leaflet-control-attribution{background:rgba(20,7,13,.75)!important;color:#c9a3b3!important}.leaflet-control-attribution a{color:#ff9db8!important}'
+    + '.leaflet-bar a{background:#241019;color:#fbeef3;border-bottom-color:#4a2535}.leaflet-bar a:hover{background:#3a1a2a;color:#fff}'
+    + 'img.leaflet-marker-icon{filter:hue-rotate(133deg) saturate(1.5) brightness(1.1)}'
+    + '.moto{background:none;border:0}.moto .mo{width:64px;height:44px;filter:drop-shadow(0 0 1.2px rgba(255,255,255,.95)) drop-shadow(0 3px 3px rgba(0,0,0,.55))}.moto .mo.flip{transform:scaleX(-1)}'
+    + '.moto .wh{transform-box:fill-box;transform-origin:center;animation:whspin .3s linear infinite}@keyframes whspin{to{transform:rotate(360deg)}}'
+    + '.moto .mb{animation:mbob .32s ease-in-out infinite}@keyframes mbob{0%,100%{transform:translateY(0)}50%{transform:translateY(-1.4px)}}'
+    + '.moto .sl{animation:slf .45s linear infinite}@keyframes slf{0%{transform:translateX(4px);opacity:0}30%{opacity:.8}100%{transform:translateX(-6px);opacity:0}}'
+    + '@media (prefers-reduced-motion:reduce){.tourcard{animation:none}#map{transition:none}.moto .wh,.moto .mb,.moto .sl{animation:none}}';
   document.head.append(st);
   const b = el('button', { id: 'tourBtn', className: 'primary' }, '▶ Putar perjalanan');
   b.style.display = 'none'; b.onclick = playTour;
