@@ -46,18 +46,15 @@ async function updateData(mutate, message) {
 
 // ---------- Peta ----------
 const map = L.map('map').setView([-2.5, 118], 4);
-// Peta gelap (Esri Dark Gray) serasi dengan tema pink-hitam. Jika gagal dimuat, otomatis pakai peta biasa.
+// Peta berwarna seperti semula: OpenStreetMap untuk situs online; Esri untuk file/localhost (OSM sering memblokir akses lokal)
 const isLocal = !location.protocol.startsWith('http') || /^(localhost|127\.|192\.168\.|10\.|\[?::1)/.test(location.hostname);
-const ESRI = 'https://server.arcgisonline.com/ArcGIS/rest/services/';
-const darkBase = L.tileLayer(ESRI + 'Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', { maxNativeZoom: 16, maxZoom: 19, keepBuffer: 6, attribution: 'Tiles © Esri, HERE, Garmin, © OpenStreetMap contributors' }).addTo(map);
-const darkLabels = L.tileLayer(ESRI + 'Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}', { maxNativeZoom: 16, maxZoom: 19, keepBuffer: 6 }).addTo(map);
+const esriStreet = () => L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19, keepBuffer: 6, attribution: 'Tiles © Esri' });
+const mainBase = (isLocal ? esriStreet() : L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, keepBuffer: 6, attribution: '© OpenStreetMap' })).addTo(map);
 let tilesOk = 0, tilesBad = 0, fellBack = false;
-darkBase.on('tileload', () => tilesOk++);
-darkBase.on('tileerror', () => {
-  if (fellBack || ++tilesBad < 4 || tilesOk) return;
-  fellBack = true; darkBase.remove(); darkLabels.remove();
-  (isLocal ? L.tileLayer(ESRI + 'World_Street_Map/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19, attribution: 'Tiles © Esri' })
-           : L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '© OpenStreetMap' })).addTo(map);
+mainBase.on('tileload', () => tilesOk++);
+mainBase.on('tileerror', () => {   // jika OSM gagal dimuat, pakai peta Esri sebagai cadangan
+  if (isLocal || fellBack || ++tilesBad < 4 || tilesOk) return;
+  fellBack = true; mainBase.remove(); esriStreet().addTo(map);
 });
 map.on('click', e => {
   if (!admin) return;
@@ -548,7 +545,6 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape' && tour.card)
     + ".tourpin{background:var(--accent);color:#2b0715;font:700 13px/22px 'DM Sans',sans-serif;text-align:center;border-radius:50%;border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.5)}"
     + '.leaflet-container{background:#1b1b1f}.leaflet-control-attribution{background:rgba(20,7,13,.75)!important;color:#c9a3b3!important}.leaflet-control-attribution a{color:#ff9db8!important}'
     + '.leaflet-bar a{background:#241019;color:#fbeef3;border-bottom-color:#4a2535}.leaflet-bar a:hover{background:#3a1a2a;color:#fff}'
-    + 'img.leaflet-marker-icon{filter:hue-rotate(133deg) saturate(1.5) brightness(1.1)}'
     + '.moto{background:none;border:0}.moto .mo{width:64px;height:44px;filter:drop-shadow(0 0 1.2px rgba(255,255,255,.95)) drop-shadow(0 3px 3px rgba(0,0,0,.55))}.moto .mo.flip{transform:scaleX(-1)}'
     + '.moto .wh{transform-box:fill-box;transform-origin:center;animation:whspin .3s linear infinite}@keyframes whspin{to{transform:rotate(360deg)}}'
     + '.moto .mb{animation:mbob .32s ease-in-out infinite}@keyframes mbob{0%,100%{transform:translateY(0)}50%{transform:translateY(-1.4px)}}'
