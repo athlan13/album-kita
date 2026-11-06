@@ -474,7 +474,7 @@ const catSVG = c => {
 // <sim>  (logika gerak: murni angka, tanpa DOM)
 const rnd = (a, b) => a + Math.random() * (b - a);
 const newCat = (x, d) => ({ x, y: 0, d, face: d, v: 0, mode: 'ground', wall: null, rot: 0, r0: 0, H: 0, hang: 0, clk: 0, slip: false, vy: 0, hopV: 0, fT: 0, fTot: 1,
-  pause: 0, ph: 0, look: 0, lookT: 0, lookTo: 0, shake: 0, moving: false, landed: false, started: false, bounced: false });
+  pause: 0, ph: 0, look: 0, lookT: 0, lookTo: 0, shake: 0, crouch: 0, awayDir: 0, moving: false, landed: false, started: false, bounced: false });
 function drive(c, dir, speed, dt) {   // percepatan halus menuju kecepatan tujuan (tidak langsung ngebut atau berhenti)
   const a = 300 * dt;
   c.v += Math.max(-a, Math.min(a, dir * speed - c.v));
@@ -492,18 +492,19 @@ function climb(c, dt) {
 }
 function fall(c, dt, maxX) {
   c.fT += dt; c.vy -= 1500 * dt; c.y += c.vy * dt; c.x += (c.wall === 'L' ? 1 : -1) * 45 * dt;
-  const e = c.wall === 'L' ? 360 : -360;
-  c.rot = c.r0 + (e - c.r0) * Math.min(1, c.fT / c.fTot);
-  if (c.y <= 0) { c.y = 0; c.mode = 'ground'; c.rot = 0; c.d = c.wall === 'L' ? 1 : -1; c.x = Math.min(maxX, Math.max(0, c.x)); c.v = 0; c.pause = 1.1; c.shake = .8; c.slip = false; c.landed = true; c.wall = null; }
+  const k = Math.min(1, c.fT / (c.fTot * .55));   // refleks kucing: badan membalik tegak dalam separuh awal jatuhan
+  c.rot = c.r0 * (1 - (1 - (1 - k) * (1 - k)));    // dari tegak-lurus ke datar, searah terpendek, tanpa salto
+  if (c.y <= 0) { c.y = 0; c.mode = 'ground'; c.rot = 0; c.awayDir = c.wall === 'L' ? 1 : -1; c.x = Math.min(maxX, Math.max(0, c.x)); c.v = 0; c.pause = 1.1; c.crouch = .45; c.shake = .8; c.slip = false; c.landed = true; c.wall = null; }
 }
 function step(S, dt, maxX, maxH) {
   const { lead, chase } = S;
   S.phase += dt; S.hold = Math.max(0, S.hold - dt);
   for (const c of [lead, chase]) {
     c.moving = c.landed = c.started = c.bounced = false;
+    if (c.mode === 'ground' && c.awayDir && c.pause <= 0) { c.d = c.awayDir; c.awayDir = 0; }   // setelah pulih, baru berbalik menjauh dari dinding
     if (c.mode === 'ground' && (c.x < 0 || c.x > maxX)) { c.x = Math.min(maxX, Math.max(0, c.x)); c.v = 0; }
     if (c.mode === 'fall') fall(c, dt, maxX);
-    if (c.mode === 'ground' && (c.hopV || c.y > 0)) { c.y += c.hopV * dt; c.hopV -= 1400 * dt; if (c.y <= 0) { c.y = 0; c.hopV = 0; c.bounced = true; } }
+    if (c.mode === 'ground' && (c.hopV || c.y > 0)) { c.y += c.hopV * dt; c.hopV -= 1400 * dt; if (c.y <= 0) { c.y = 0; c.hopV = 0; c.bounced = true; c.crouch = .22; } }
   }
   if (S.hold > 0) { for (const c of [lead, chase]) if (c.mode === 'ground') drive(c, c.d, 0, dt); return; }
   S.nextClimb -= dt;
@@ -514,7 +515,7 @@ function step(S, dt, maxX, maxH) {
       if ((S.wall === 'L' && lead.x <= 0) || (S.wall === 'R' && lead.x >= maxX)) startClimb(lead, S.wall, rnd(.45, .9) * maxH, maxX);
     } else if (lead.pause > 0) { lead.pause -= dt; drive(lead, lead.d, 0, dt); }
     else {
-      drive(lead, lead.d, 78, dt);
+      drive(lead, lead.d, 66, dt);
       if (lead.x < 24 && lead.d < 0) lead.d = 1; else if (lead.x > maxX - 24 && lead.d > 0) lead.d = -1;
       if (Math.random() < dt * .08) lead.d = -lead.d;
       if (Math.random() < dt * .12) lead.pause = rnd(1.2, 3);
@@ -538,26 +539,35 @@ function step(S, dt, maxX, maxH) {
     }
   } else if (chase.mode === 'climb') climb(chase, dt);
 }
-// Pose tubuh: sudut tiap sendi, goyangan badan, kepala, dan ekor (kaki bergerak mengikuti kecepatan)
+// Pose tubuh: sudut tiap sendi, goyangan badan, kepala, dan ekor
 function poseOf(c, t, dt) {
-  const m = c.mode, sp = m === 'ground' ? Math.abs(c.v) : m === 'climb' ? (c.moving ? 60 : 0) : 110;
-  const g = m === 'ground' ? Math.min(1, sp / 35) : m === 'climb' ? (c.moving ? 1 : .3) : 1;
-  const flail = m === 'fall' || c.slip, hop = m === 'ground' && c.y > 0;
+  const m = c.mode, fl = m === 'fall', hop = m === 'ground' && c.y > 0;
+  const sp = m === 'ground' ? Math.abs(c.v) : m === 'climb' ? (c.slip ? 120 : c.moving ? 60 : 0) : 110;
+  const g = m === 'ground' ? Math.min(1, sp / 35) : m === 'climb' ? (c.slip || c.moving ? 1 : .3) : 1;
   if (sp > 4) c.ph += dt * sp * .185;
   c.lookT -= dt; if (c.lookT <= 0) { c.lookTo = rnd(-16, 16); c.lookT = rnd(1.2, 3.2); }
-  c.look += (c.lookTo - c.look) * Math.min(1, 3 * dt); c.shake = Math.max(0, c.shake - dt * 1.2);
-  const A = flail ? 48 : Math.min(40, 16 + sp * .17), K = flail ? 22 : 42, offs = [0, Math.PI, Math.PI, 0];
+  c.look += (c.lookTo - c.look) * Math.min(1, 3 * dt); c.shake = Math.max(0, c.shake - dt * 1.2); c.crouch = Math.max(0, c.crouch - dt);
+  const sm = (a, b, x) => { const u = Math.max(0, Math.min(1, (x - a) / (b - a))); return u * u * (3 - 2 * u); };
+  const w1 = sm(62, 96, sp), w2 = sm(104, 124, sp);   // pelan = jalan 4-ketuk, lebih cepat = trot, kencang = lari melompat
+  const P = Math.PI, walk = [0, P, P / 2, 1.5 * P], trot = [0, P, P, 2 * P], gal = [.8 * P, .8 * P + .2, 0, 2 * P + .2];
+  const offs = walk.map((a, i) => a + (trot[i] - a) * w1).map((a, i) => a + (gal[i] - a) * w2);
+  const A = Math.min(38, 15 + sp * .17), K = 42, cr = Math.min(1, c.crouch / .3), fp = fl ? c.fT / c.fTot : 0;
   const legs = offs.map((o, i) => {
-    if (hop) return [i < 2 ? 32 : -32, 55];
-    const a = c.ph + o + (flail ? i * 1.7 : 0);
+    const front = i >= 2, a2 = c.ph + i * 1.7;
+    if (hop) { const s = c.hopV / 300; return front ? [-34 + 10 * s, 14] : [34 - 8 * s, 22]; }   // badan terentang saat melompat
+    if (fl) return fp < .5 ? [30 * Math.sin(a2), 38 + 10 * Math.sin(a2 + 1)] : (front ? [-26, 6] : [20, 10]);   // menggapai, lalu kaki terjulur siap mendarat
+    if (c.slip) return [48 * Math.sin(a2), 22 * Math.max(0, -Math.cos(a2))];   // cakar menggaruk dinding
+    if (cr > 0) return [front ? -16 * cr : 16 * cr, 62 * cr];                   // menekuk meredam benturan
+    const a = c.ph + o;
     return [A * g * Math.sin(a), K * g * Math.max(0, -Math.cos(a))];
   });
+  const arch = (1 - w2) * Math.abs(Math.sin(c.ph)) + w2 * (.5 + .5 * Math.sin(c.ph + .8));
   return {
     legs,
-    bob: hop ? 0 : -Math.abs(Math.sin(c.ph)) * 2.2 * g,
-    pitch: hop ? -10 : 1.6 * Math.sin(2 * c.ph) * g,
+    bob: hop ? 0 : cr > 0 ? 3.2 * cr : -arch * (2.2 + 1.6 * w2) * g,
+    pitch: hop ? -8 * c.hopV / 300 : fl ? (fp < .5 ? 0 : -4) : cr > 0 ? 3 * cr : ((1 - w2) * 1.6 * Math.sin(2 * c.ph) + w2 * 5 * Math.sin(c.ph + .8)) * g,
     head: c.look * (1 - g) + 3 * Math.sin(2 * c.ph - .8) * g + 12 * c.shake * Math.sin(t / 22),
-    tail: -4 - 18 * Math.min(1, sp / 130) - (m === 'fall' ? 30 : 0) + (9 + (1 - g) * 5) * Math.sin(t / (420 - Math.min(200, sp)))
+    tail: -4 - 18 * Math.min(1, sp / 130) - (fl ? 30 : 0) + (9 + (1 - g) * 5) * Math.sin(t / (420 - Math.min(200, sp)))
   };
 }
 // </sim>
@@ -583,6 +593,10 @@ function poseOf(c, t, dt) {
   if (HEARTS_ON && !reduce) setInterval(() => { if (!document.hidden) spawn(Math.random() * innerWidth, 0, false); }, 1800);
   if (!PET_ON) return;
 
+  // Pengaman: CSS lama di index.html (jika belum diperbarui) tidak boleh mengganggu gerak kaki, ekor, dan kepala.
+  const fix = document.createElement('style');
+  fix.textContent = '.pet .leg,.pet .low,.pet .tail,.pet .body,.pet .head{transform-box:view-box!important;transform-origin:0 0!important;animation:none!important}';
+  document.head.append(fix);
   const S = { hold: 0, phase: 0, nextClimb: rnd(6, 10), wall: null };
   const pick = a => a[Math.floor(Math.random() * a.length)];
   function talk(c, text) {
@@ -601,7 +615,7 @@ function poseOf(c, t, dt) {
     const poke = () => {
       const r = el.getBoundingClientRect();
       if (!reduce) {
-        el.classList.remove('jump'); void el.offsetWidth; el.classList.add('jump');
+        if (c.mode === 'ground' && c.y === 0) c.hopV = 260;
         for (let i = 0; i < 7; i++) spawn(r.left + r.width / 2 + (Math.random() * 30 - 15), r.top, true);
       }
       talk(c, pick(words)); S.hold = 2.4;
