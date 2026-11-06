@@ -64,7 +64,14 @@ function allPhotos() {
   return [...d, ...saved].sort((a, b) => (b.date || '').localeCompare(a.date || ''));
 }
 
-function openAlbum(place) { filter = place; render(true); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+let routeLayer = null;
+function stopsList() {   // tempat-tempat berurutan sesuai tanggal kunjungan pertama (yang tanpa tanggal di akhir)
+  const g = {};
+  allPhotos().forEach(p => { (g[p.place] ||= { place: p.place, lat: p.lat, lng: p.lng, items: [] }).items.push(p); });
+  return Object.values(g).map(x => { const ds = x.items.map(i => i.date).filter(Boolean).sort(); return Object.assign(x, { first: ds[0] || '', last: ds[ds.length - 1] || '' }); })
+    .sort((a, b) => (a.first || '\uffff').localeCompare(b.first || '\uffff') || a.place.localeCompare(b.place));
+}
+function openAlbum(place) { stopTour(); filter = place; render(true); window.scrollTo({ top: 0, behavior: 'smooth' }); }
 
 function render(fit) {
   const photos = allPhotos(), g = {};
@@ -78,12 +85,15 @@ function render(fit) {
     m.on('click', () => openAlbum(x.place));
     markers.push(m);
   });
+  if (routeLayer) { routeLayer.remove(); routeLayer = null; }
+  if (!cur && gs.length > 1) routeLayer = L.polyline(stopsList().map(x => [x.lat, x.lng]), { color: '#ff6f9c', weight: 2.5, opacity: .55, dashArray: '6 8', interactive: false }).addTo(map);
   if (fit) {
     if (cur) map.setView([cur.lat, cur.lng], 14);
     else if (gs.length) map.fitBounds(L.latLngBounds(gs.map(x => [x.lat, x.lng])).pad(.3), { maxZoom: 12 });
   }
   $('places').replaceChildren(...gs.map(x => el('option', { value: x.place })));
   $('allBtn').style.display = cur ? '' : 'none';
+  const tb = $('tourBtn'); if (tb) tb.style.display = !cur && gs.length > 1 ? '' : 'none';
   $('info').textContent = cur ? cur.place : photos.length + ' foto di ' + gs.length + ' album';
   const box = $('gallery'); box.replaceChildren();
   // daftar tempat yang sudah dikunjungi (menu geser di kiri atas)
@@ -399,6 +409,113 @@ $('allBtn').onclick = () => { filter = null; render(true); };
 $('lb').onclick = () => $('lb').close();
 render(true);
 try { const t = localStorage.getItem('gh_token'); if (t) tryLogin(t, true); } catch (_) {}
+
+// <tour>
+// ---------- Putar perjalanan: peta terbang dari tempat ke tempat sesuai urutan tanggal ----------
+const tour = { id: 0, paused: false, card: null, line: null, pts: [], pins: [] };
+const fmtMY = d => d ? new Date(d + 'T00:00').toLocaleDateString('id-ID', { month: 'long', year: 'numeric' }) : '';
+const tourWait = (ms, id) => new Promise(res => {   // menunggu, ikut berhenti saat dijeda; false jika perjalanan dibatalkan
+  let left = ms;
+  const tick = () => { if (id !== tour.id) return res(false); if (!tour.paused) left -= 100; if (left <= 0) return res(true); setTimeout(tick, 100); };
+  tick();
+});
+function drawTo(from, to, ms, id) {   // garis tumbuh pelan dari tempat sebelumnya ke tempat berikutnya
+  return new Promise(res => {
+    if (ms <= 0) return res(id === tour.id);
+    const t0 = performance.now();
+    const f = now => {
+      if (id !== tour.id) return res(false);
+      const k = Math.min(1, (now - t0) / ms), e = k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+      tour.line.setLatLngs([...tour.pts, [from[0] + (to[0] - from[0]) * e, from[1] + (to[1] - from[1]) * e]]);
+      k < 1 ? requestAnimationFrame(f) : res(true);
+    };
+    requestAnimationFrame(f);
+  });
+}
+function tourClear() {
+  if (tour.line) tour.line.remove();
+  tour.pins.forEach(p => p.remove());
+  if (tour.card) tour.card.remove();
+  tour.line = tour.card = null; tour.pins = []; tour.pts = [];
+  $('map').classList.remove('touring');
+  setTimeout(() => map.invalidateSize(), 350);
+}
+function stopTour() { tour.id++; tour.paused = false; tourClear(); }
+function tourCardBase() {
+  if (!tour.card) { const c = el('div', { className: 'tourcard' }); L.DomEvent.disableClickPropagation(c); L.DomEvent.disableScrollPropagation(c); map.getContainer().append(c); tour.card = c; }
+  tour.card.replaceChildren(); return tour.card;
+}
+function tourCard(i, n, s) {
+  const c = tourCardBase();
+  const t = el('div', { className: 'tt' });
+  t.append(el('small', {}, 'Tempat ' + (i + 1) + ' dari ' + n), el('strong', {}, s.place), el('span', {}, [fmtMY(s.first), s.items.length + ' foto'].filter(Boolean).join(' · ')));
+  const b = el('div', { className: 'tb' });
+  const pa = el('button', {}, tour.paused ? 'Lanjut' : 'Jeda'); pa.onclick = () => { tour.paused = !tour.paused; pa.textContent = tour.paused ? 'Lanjut' : 'Jeda'; };
+  const op = el('button', {}, 'Buka album'); op.onclick = () => { stopTour(); openAlbum(s.place); };
+  const x = el('button', { className: 'x', title: 'Hentikan' }, '×'); x.setAttribute('aria-label', 'Hentikan perjalanan'); x.onclick = stopTour;
+  b.append(pa, op);
+  c.append(el('img', { src: s.items[0].src, alt: s.place }), t, x, b);
+}
+function tourDone(stops) {
+  const c = tourCardBase(), photos = stops.reduce((a, s) => a + s.items.length, 0);
+  const t = el('div', { className: 'tt' });
+  t.append(el('small', {}, 'Perjalanan selesai'), el('strong', {}, stops.length + ' tempat'), el('span', {}, photos + ' foto kenangan'));
+  const b = el('div', { className: 'tb' });
+  const again = el('button', { className: 'primary' }, 'Putar lagi'); again.onclick = playTour;
+  const close = el('button', {}, 'Tutup'); close.onclick = stopTour;
+  b.append(again, close);
+  c.append(el('img', { src: stops[stops.length - 1].items[0].src, alt: '' }), t, b);
+}
+async function playTour() {
+  const stops = stopsList();
+  if (!stops.length) return;
+  stopTour();
+  const id = tour.id, reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (typeof closeDrawer === 'function') closeDrawer();
+  filter = null; render(true); window.scrollTo({ top: 0, behavior: 'smooth' });
+  $('map').classList.add('touring');
+  if (!await tourWait(400, id)) return;
+  map.invalidateSize();
+  tour.line = L.polyline([], { color: '#ff6f9c', weight: 4, opacity: .95, lineCap: 'round' }).addTo(map);
+  for (let i = 0; i < stops.length; i++) {
+    const s = stops[i], ll = [s.lat, s.lng];
+    if (i === 0) {
+      tour.pts = [ll]; tour.line.setLatLngs([ll]);
+      reduce ? map.setView(ll, 13) : map.flyTo(ll, 13, { duration: 2 });
+      if (!await tourWait(reduce ? 200 : 2000, id)) return;
+    } else {
+      const prev = tour.pts[tour.pts.length - 1], ms = reduce ? 0 : 2600;
+      reduce ? map.setView(ll, 13) : map.flyTo(ll, 13, { duration: ms / 1000 });
+      if (!await drawTo(prev, ll, ms, id)) return;
+      tour.pts.push(ll); tour.line.setLatLngs(tour.pts);
+    }
+    tour.pins.push(L.marker(ll, { icon: L.divIcon({ className: 'tourpin', html: String(i + 1), iconSize: [26, 26] }), interactive: false, zIndexOffset: 500 }).addTo(map));
+    tourCard(i, stops.length, s);
+    if (!await tourWait(3400, id)) return;
+  }
+  map.fitBounds(L.latLngBounds(stops.map(x => [x.lat, x.lng])).pad(.3), { maxZoom: 12, animate: !reduce, duration: 1.6 });
+  tourDone(stops);
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && tour.card) stopTour(); });
+(function () {
+  const st = document.createElement('style');
+  st.textContent = '#map{transition:height .3s}#map.touring{height:clamp(320px,62vh,560px)}'
+    + '.tourcard{position:absolute;left:12px;right:12px;bottom:12px;max-width:380px;z-index:1001;display:grid;grid-template-columns:56px 1fr auto;gap:6px 12px;align-items:center;background:rgba(36,16,25,.92);color:var(--ink);border:1px solid var(--line);border-radius:16px;padding:10px 12px;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);box-shadow:0 8px 28px rgba(0,0,0,.5);animation:tcIn .35s ease-out}'
+    + '@keyframes tcIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}'
+    + '.tourcard img{width:56px;height:56px;object-fit:cover;border-radius:12px;grid-row:1 / span 2}'
+    + '.tourcard .tt{display:flex;flex-direction:column;min-width:0}.tourcard .tt small,.tourcard .tt span{color:var(--mute);font-size:12px}'
+    + ".tourcard .tt strong{font:600 17px/1.2 'Fraunces',serif;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}"
+    + '.tourcard .tb{grid-column:2 / span 2;display:flex;gap:8px;flex-wrap:wrap}.tourcard .tb button{padding:5px 12px;font-size:13px}'
+    + '.tourcard .x{grid-column:3;grid-row:1;align-self:start;border:0;background:none;font-size:22px;line-height:1;padding:0 4px}'
+    + ".tourpin{background:var(--accent);color:#2b0715;font:700 13px/22px 'DM Sans',sans-serif;text-align:center;border-radius:50%;border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.5)}"
+    + '@media (prefers-reduced-motion:reduce){.tourcard{animation:none}#map{transition:none}}';
+  document.head.append(st);
+  const b = el('button', { id: 'tourBtn', className: 'primary' }, '▶ Putar perjalanan');
+  b.style.display = 'none'; b.onclick = playTour;
+  const all = $('allBtn'); if (all) all.before(b);
+  render(false);   // tampilkan tombol sesuai jumlah tempat
+})();
+// </tour>
 
 // ---------- Musik latar (tetap berputar saat login atau pindah album) ----------
 // Taruh file lagu di repo dengan nama di bawah ini (satu folder dengan index.html).
